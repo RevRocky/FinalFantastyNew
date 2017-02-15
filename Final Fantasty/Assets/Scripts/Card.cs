@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 /*
@@ -11,17 +12,19 @@ public class Card : MonoBehaviour {
 
 	public const int NUM_STATS = 6;
 	public static GameObject CardPrefab;													// Drag this over in the editor
+	Image spriteDrawer; 
 
 	private string name;
 	private string type;
-	private Sprite graphic;
+	public Sprite graphic;
 	private List<Mechanic> mechanics;
 	private byte[] stats;
 
 
 	// Use this for initialization
 	void Start () {
-		
+		spriteDrawer = gameObject.GetComponent<Image> ();
+		spriteDrawer.sprite = graphic;				// TODO RID SELF OF ME
 	}
 
 	// Instantiates a new card prefab object and returns reference to its card script
@@ -48,6 +51,7 @@ public class Card : MonoBehaviour {
 			graphic = IMG2Sprite.instance.LoadNewSprite(cardInfo.spriteLocation);	// Creating a sprite from said meal card
 			// TODO Position card correctly
 		}
+		spriteDrawer.sprite = graphic;
 	return;
 	}
 
