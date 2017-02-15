@@ -10,7 +10,7 @@ public class CookOption : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
 	public string message;
 	public IEnumerator messageRoutine;
 	public GameObject buttonBox;
-	public int buttonInt;
+	public List<int> buttonInt;
 	private bool noButton;
 	private GameObject cookButton;
 	private int dropzoneObjects;
@@ -18,7 +18,6 @@ public class CookOption : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
 	// Use this for initialization
 	void Start () {
 		noButton = false;
-		buttonInt = 0;
 		dropzoneObjects = 0;
 	}
 
@@ -46,8 +45,8 @@ public class CookOption : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
 			d.placeholderParent = d.parentToReturnTo;
 		}
 
-
-		if(buttonInt< 2 && noButton == true){
+		buttonInt.Remove (0);
+		if(buttonInt.Count< 2 && noButton == true){
 			Destroy(cookButton);
 			noButton = false;
 		}
@@ -63,9 +62,8 @@ public class CookOption : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
 			d.parentToReturnTo = this.transform;
 		}
 
-	
-		buttonInt = buttonInt + 1;
-		if (buttonInt >= 2 && noButton==false) {
+		buttonInt.Add (1);
+		if (buttonInt.Count >= 2 && noButton==false) {
 			Instantiate (buttonBox,new Vector3(0,0,0),new Quaternion(0,0,0,0), this.transform);
 			noButton = true;
 		}

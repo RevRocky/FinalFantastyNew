@@ -10,7 +10,7 @@ public class Database : MonoBehaviour {
 	public TextAsset InventoryAsset;
 
 	private static Database _instance;											// Private copy of instance		
-	public Dictionary<string, DatabaseEntry> itemsDict;
+	private Dictionary<string, DatabaseEntry> itemsDict;
 
 	public static Database instance												// Tracks present instance of database. Now we can use it from anywhere!
 	{
@@ -43,7 +43,7 @@ public class Database : MonoBehaviour {
 
 		foreach(XmlNode itemInfo in itemList) {
 			newEntry = new DatabaseEntry (itemInfo);
-			string tag = newEntry.tag;
+			tag = newEntry.tag;
 			itemsDict.Add(tag, newEntry);	// Associate the tag with a database entry read from the XML's node
 		}
 	}

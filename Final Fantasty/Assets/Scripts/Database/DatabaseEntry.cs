@@ -24,7 +24,7 @@ public class DatabaseEntry {
 	 * data to correct attributes!
 	*/
 	public DatabaseEntry(XmlNode cardInfo) {
-		string[] python_List_Delimiters = {"[", ",", "]", "(", ")", "\'", "\""};
+		string[] python_List_Delimiters = {"[", ",", "]", "(", ")"};
 		int i;
 		XmlNodeList itemContent = cardInfo.ChildNodes;
 		foreach(XmlNode data in itemContent){
@@ -44,9 +44,9 @@ public class DatabaseEntry {
 				case "Stats":
 					stats = new byte[6];
 					string[] statString = data.InnerText.Split(python_List_Delimiters, 
-					StringSplitOptions.RemoveEmptyEntries);		// Parsing into array of strings!
+											StringSplitOptions.RemoveEmptyEntries);		// Parsing into array of strings!
 					for (i = 0; i < 6; i++) {
-					stats[i] = Byte.Parse(statString[i]);							// Writing to stats array!
+						stats[i] = Byte.Parse(statString[i]);							// Writing to stats array!
 					}
 				break;
 				case "Mechanics":
@@ -56,10 +56,10 @@ public class DatabaseEntry {
 				case "Art":
 					artLocation = data.InnerText;
 				break;
-				case "PictureLocation":
+				case "Picture Location":
 					spriteLocation = data.InnerText;
 				break;
-				case "IngredientTag":
+				case "Ingredient Tag":
 					ingredientTag = data.InnerText;
 				break;
 				case "Tag":
