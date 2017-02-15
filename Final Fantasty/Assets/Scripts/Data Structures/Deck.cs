@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Deck  {
 
-	private List<Card> cardList;
+	private List<DatabaseEntry> cardList;
 	public int length;
 
 	// Constructs an empty deck
@@ -26,12 +26,14 @@ public class Deck  {
 		}
 	}
 
-	// Returns the top card of the deck
-	public Card drawCard() {
-		Card drawnCard = cardList[0];
+	// Returns the a game object containing the top card of the deck.
+	public GameObject drawCard() {
+		DatabaseEntry drawnCardInfo = cardList[0];	
+		Card drawnCard = Card.instantiateCard(drawnCardInfo);		// Read card from DB
+		GameObject newObject = drawnCard.gameObject;				// Get the associated game object
 		cardList.RemoveAt(0);
 		length--;
-		return drawnCard;
+		return newObject;
 	}
 
 	// Adds a card to the bottom of the deck
