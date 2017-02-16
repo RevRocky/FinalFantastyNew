@@ -2,21 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Deck  {
+public class Deck : MonoBehaviour {
 
-	private List<Card> cardList;
+	public TextAsset deckList;					// A text file containing each card in the text asset!
+	private List<DatabaseEntry> cardList;
 	public int length;
+	public GameObject hand;
 
 	// Constructs an empty deck
-	public Deck() {
-		cardList = new List<Card>();
+	public void Start() {
+		
 	}
 
 	// TODO create a constructor which reads in a list of cards and creates a deck that way
 
 	// Implements Fisher - Yates Sort
 	public void shuffle() {
-		Card temp;
+		DatabaseEntry temp;
 		int random;
 		for (int i = 0; i < cardList.Count; i++) {
 			random = Random.Range(i, cardList.Count);
@@ -26,22 +28,29 @@ public class Deck  {
 		}
 	}
 
-	// Returns the top card of the deck
-	public Card drawCard() {
-		Card drawnCard = cardList[0];
+	// When we click down on the collider we want to draw a card
+	public void OnMouseDown() {
+		drawCard();					// We can disregard the game object in this case
+	}
+
+	// Returns the a game object containing the top card of the deck.
+	public GameObject drawCard() {
+		DatabaseEntry drawnCardInfo = cardList[0];	
+		Card drawnCard = Card.instantiateCard(drawnCardInfo, hand);		// Read card from DB
+		GameObject newObject = drawnCard.gameObject;				// Get the associated game object
 		cardList.RemoveAt(0);
 		length--;
-		return drawnCard;
+		return newObject;
 	}
 
 	// Adds a card to the bottom of the deck
-	public void addCard(Card newCard) {
+	public void addCard(DatabaseEntry newCard) {
 		cardList.Add(newCard);
 		length++;			// Increment our length
 	}
 
 	// Adds a card to the index specified of the deck
-	public void addCard(Card newCard, int index) {
+	public void addCard(DatabaseEntry newCard, int index) {
 		cardList.Insert(index, newCard);
 		length++;
 	}

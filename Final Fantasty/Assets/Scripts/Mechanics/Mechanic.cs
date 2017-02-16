@@ -26,6 +26,7 @@ public abstract class Mechanic : MonoBehaviour {
 
 
 	public void init(string name, Card parentCard, string description, bool inheritable) {
+		this.name = name;					// Set the mechanics name.
 		parent = parentCard;
 		toolTip = description;
 		activated = false;
