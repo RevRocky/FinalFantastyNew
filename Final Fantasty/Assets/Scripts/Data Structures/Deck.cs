@@ -9,14 +9,14 @@ public class Deck  {
 
 	// Constructs an empty deck
 	public Deck() {
-		cardList = new List<Card>();
+		cardList = new List<DatabaseEntry>();
 	}
 
 	// TODO create a constructor which reads in a list of cards and creates a deck that way
 
 	// Implements Fisher - Yates Sort
 	public void shuffle() {
-		Card temp;
+		DatabaseEntry temp;
 		int random;
 		for (int i = 0; i < cardList.Count; i++) {
 			random = Random.Range(i, cardList.Count);
@@ -37,13 +37,13 @@ public class Deck  {
 	}
 
 	// Adds a card to the bottom of the deck
-	public void addCard(Card newCard) {
+	public void addCard(DatabaseEntry newCard) {
 		cardList.Add(newCard);
 		length++;			// Increment our length
 	}
 
 	// Adds a card to the index specified of the deck
-	public void addCard(Card newCard, int index) {
+	public void addCard(DatabaseEntry newCard, int index) {
 		cardList.Insert(index, newCard);
 		length++;
 	}

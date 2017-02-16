@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 
 /*
@@ -11,7 +12,6 @@ using UnityEngine.UI;
 public class Card : MonoBehaviour {
 
 	public const int NUM_STATS = 6;
-	public static GameObject CardPrefab;													// Drag this over in the editor
 	Image spriteDrawer; 
 
 	private string name;
@@ -29,7 +29,7 @@ public class Card : MonoBehaviour {
 
 	// Instantiates a new card prefab object and returns reference to its card script
 	public static Card instantiateCard(DatabaseEntry cardInfo) {
-		GameObject newObj = Instantiate(CardPrefab);								// TODO Ask the location manager where to put the card!			
+		GameObject newObj = CardFactory.instance.create();								// TODO Ask the location manager where to put the card!			
 		Card newCard = newObj.GetComponent<Card>();
 		newCard.Init(cardInfo);	
 		return newCard;

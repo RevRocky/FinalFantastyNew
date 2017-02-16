@@ -9,20 +9,24 @@ using System.IO;
 /* This is a class that contains some static methods that will permit the
  * generation of meal card images based upon the stats of the generated card.
 */
-public class IngredientStack : MonoBehaviour {
+public class IngredientStack {
 
 	private List<Card> theCards;
 	public const int NUM_STATS=6;
 	public const string MEAL_IMAGE_DIRECTORY =  "..";
 
-	public void Start() {
+	public IngredientStack() {
 		theCards = new List<Card>();
 	}
 
-	public void Update() {
-		if (theCards.Count > 0) {
-			// Display Update Button. Ensuring that the button has access to this instances classes
-		}
+	// Adds a card to our stack
+	public void addCard(Card newCard) {
+		theCards.Add(newCard);
+	}
+
+	// Removes a card from our list of cards
+	public void removeCard(Card oldCard) {
+		theCards.Remove(oldCard);				// Removing a card object that matches the one we've passed in!
 	}
 
 	/*
@@ -107,4 +111,8 @@ public class IngredientStack : MonoBehaviour {
 		return ingredientMechanics;		// TODO Come up with negative side-effects
 	}
 
+	// Returns how many cards are in the stack!
+	public int getCount () {
+		return theCards.Count;
+	}
 }
