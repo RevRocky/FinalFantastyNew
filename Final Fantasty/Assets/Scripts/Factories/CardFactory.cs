@@ -17,7 +17,7 @@ public class CardFactory : MonoBehaviour {
 	}
 
 	// Creates a card prefab object and returns it.
-	public GameObject create() {
-		return Instantiate(CardPrefab);
+	public GameObject create(GameObject parent) {
+		return Instantiate(CardPrefab, parent);
 	}
 }

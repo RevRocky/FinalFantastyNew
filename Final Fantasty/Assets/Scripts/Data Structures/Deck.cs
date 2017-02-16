@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Deck  {
+public class Deck : MonoBehaviour {
 
+	public TextAsset deckList;					// A text file containing each card in the text asset!
 	private List<DatabaseEntry> cardList;
 	public int length;
+	public GameObject hand;
 
 	// Constructs an empty deck
-	public Deck() {
-		cardList = new List<DatabaseEntry>();
+	public void Start() {
+		
 	}
 
 	// TODO create a constructor which reads in a list of cards and creates a deck that way
@@ -26,10 +28,15 @@ public class Deck  {
 		}
 	}
 
+	// When we click down on the collider we want to draw a card
+	public void OnMouseDown() {
+		drawCard();					// We can disregard the game object in this case
+	}
+
 	// Returns the a game object containing the top card of the deck.
 	public GameObject drawCard() {
 		DatabaseEntry drawnCardInfo = cardList[0];	
-		Card drawnCard = Card.instantiateCard(drawnCardInfo);		// Read card from DB
+		Card drawnCard = Card.instantiateCard(drawnCardInfo, hand);		// Read card from DB
 		GameObject newObject = drawnCard.gameObject;				// Get the associated game object
 		cardList.RemoveAt(0);
 		length--;

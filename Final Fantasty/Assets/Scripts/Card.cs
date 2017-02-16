@@ -28,8 +28,8 @@ public class Card : MonoBehaviour {
 	}
 
 	// Instantiates a new card prefab object and returns reference to its card script
-	public static Card instantiateCard(DatabaseEntry cardInfo) {
-		GameObject newObj = CardFactory.instance.create();								// TODO Ask the location manager where to put the card!			
+	public static Card instantiateCard(DatabaseEntry cardInfo, GameObject parent) {
+		GameObject newObj = CardFactory.instance.create(parent);					// TODO Ask the location manager where to put the card!			
 		Card newCard = newObj.GetComponent<Card>();
 		newCard.Init(cardInfo);	
 		return newCard;

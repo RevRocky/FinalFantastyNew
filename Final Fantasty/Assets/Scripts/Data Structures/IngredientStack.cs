@@ -26,7 +26,8 @@ public class IngredientStack {
 
 	// Removes a card from our list of cards
 	public void removeCard(Card oldCard) {
-		theCards.Remove(oldCard);				// Removing a card object that matches the one we've passed in!
+		bool theBest = theCards.Remove(oldCard);				// Removing a card object that matches the one we've passed in!
+		return;
 	}
 
 	/*
