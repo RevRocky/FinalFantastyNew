@@ -45,6 +45,10 @@ public abstract class Mechanic : MonoBehaviour {
 				AlDente newMechanic = parentCard.gameObject.AddComponent<AlDente>() as AlDente;
 				newMechanic.init(parentCard);
 				return (Mechanic) newMechanic;
+			case("Burn"):
+				Burn newMechanic = parentCard.gameObject.AddComponent<Burn>() as Burn;
+				newMechanic.init(parentCard);
+				return (Mechanic) newMechanic;
 				break;
 			default:
 			throw new MechanicNotFound(String.Format("The mechanic {0} could not be found", mechanicName));

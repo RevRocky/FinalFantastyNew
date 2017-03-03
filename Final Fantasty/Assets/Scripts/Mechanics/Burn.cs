@@ -62,8 +62,7 @@ public class Burn : Mechanic {
 		if (!getActivated()){
 			activate();															// Mechanic will activate the first time it is added to stack
 		}
-		timer = getParent().gameObject.AddComponent<CookTimer>() as CookTimer;	// Adding the timer. It
-
+		timer = getParent().gameObject.AddComponent<CookTimer>() as CookTimer;	// Adding the timer.
 	}
 
 	// Contains any effects that will happen when play is over

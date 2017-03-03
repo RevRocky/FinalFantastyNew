@@ -18,6 +18,8 @@ public class AlDente : Mechanic {
 	public const string NAME = "AlDente";
 	public const string DESCRIPTION = "Combine this card into a meal before time is up for Great Rewards";
 	public const bool INHERITABLE = false;
+	
+	private CookTimer timer; 
 
 
 	/*
@@ -34,18 +36,25 @@ public class AlDente : Mechanic {
 		;															// It does nothing when drawn in to one's hand
 	}
 
-	// When we enter play we want to activate the effect as well as create a timer near the card
+	//	Nothing is called when the card simply enters play (into a holding zone)
 	public override void onPlayEnter () {
-		activate();													// Activate that sonuvabitch
-		// Create a new timer!
+		;
+	}
+
+	// Contains any effects that are triggered when a card is "stacked" upon another
+	public override void onStack () {
+		if (!getActivated()){
+			activate();															// Mechanic will activate the first time it is added to stack
+		}
+		timer = getParent().gameObject.AddComponent<CookTimer>() as CookTimer;	// Adding the timer.														// Nothing happens if we stack a card!
 	}
 
 	// If there is still time left when the card is combined, we augment the stats of the parent
 	public override void onCombine () {
-//		if (timer.timeRemaining > 0.00) {
-//				getParent().setStats(boostStats());
-//			}
-//		}
+		timer.stop();											// Stop the timer
+		if (timer.getTimeRemaining() > 0.0) {
+			getParent().setStats(boostStats());					// Replace card stats with boosted ones
+		}		
 	}
 	// Boosts the stats of the parent card by 1 each. 2 for the highest stat
 	// Accurate only for a test implementation
@@ -77,10 +86,5 @@ public class AlDente : Mechanic {
 			}
 		}
 		return indexMax;
-	}
-
-	// Contains any effects that are triggered when a card is "stacked" upon another
-	public override void onStack () {
-		;														// Nothing happens if we stack a card!
 	}
 }
