@@ -56,10 +56,10 @@ public class DatabaseEntry {
 				case "Art":
 					artLocation = data.InnerText;
 				break;
-				case "Picture Location":
+				case "PictureLocation":
 					spriteLocation = data.InnerText;
 				break;
-				case "Ingredient Tag":
+				case "IngredientTag":
 					ingredientTag = data.InnerText;
 				break;
 				case "Tag":

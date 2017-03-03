@@ -43,4 +43,37 @@
 		<Art>Spaghetti.jpg</Art>
 		<PictureLocation>ING004</PictureLocation>
 	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Marinara</Name>
+		<Description>A Seaside Classic</Description>
+		<Stats>(1, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>spaghettitomato</Tag>
+		<Art>Marinara.jpg</Art>
+		<PictureLocation>MEA001</PictureLocation>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Salmon</Name>
+		<Description></Description>
+		<Stats>(0, 0, 0, 0, 2, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>salmon</IngredientTag>
+		<Tag>salmon</Tag>
+		<Art>Salmon.jpg</Art>
+		<PictureLocation>ING005</PictureLocation>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Yak Milk</Name>
+		<Description>Yak Milk, Best Milk</Description>
+		<Stats>(1, 0, 0, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>milk</IngredientTag>
+		<Tag>yak, milk</Tag>
+		<Art>Milk.jpg</Art>
+		<PictureLocation>ING006</PictureLocation>
+	</Card>
 </Database>

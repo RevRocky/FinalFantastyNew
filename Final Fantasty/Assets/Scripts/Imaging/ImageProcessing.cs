@@ -27,7 +27,7 @@ public class ImageProcessing{
 	 * saved image.
 	 */
 	public static string hybridCardArt(List<Card> cardList) {
-		return (TEMP_DIRECTORY + "Ramsay.png"); 			// Stub implementation
+		return (TEMP_DIRECTORY + "Ramsay"); 			// Stub implementation
 	}
 
 	/*
@@ -36,6 +36,9 @@ public class ImageProcessing{
 	 * the location of the file on DISK
 	 */
 	 public static string createMealCard(DatabaseEntry cardInfo) {
-	 	return (TEMP_DIRECTORY + "Timewizard.png"); 		 	// Stub implementation
+		if (cardInfo.name == "Spaghetti Marinara") {
+			return ("Art" + Path.DirectorySeparatorChar + "Cards" + Path.DirectorySeparatorChar + "MEA001");
+		}
+	 	return (TEMP_DIRECTORY + "Timewizard"); 		 	// Stub implementation
 	 }
 }

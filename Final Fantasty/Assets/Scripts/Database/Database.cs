@@ -26,7 +26,7 @@ public class Database : MonoBehaviour {
 	}
 
 	// TODO We need to ensure this persists across scenes, otherwise there will be a signifigant overhead on game start
-	void Start (){
+	void Awake (){
 		ReadItems ();		// We shouldn't need to do anything more. The database is a behind the scenes thing
 	}
 
@@ -40,6 +40,7 @@ public class Database : MonoBehaviour {
 		xmlDoc.LoadXml (InventoryAsset.text);					 				// Loading the XML document
 		XmlNodeList itemList = xmlDoc.GetElementsByTagName("Card"); 			// look for the card tag in the xml file
 		DatabaseEntry newEntry;
+		string tag;
 
 		foreach(XmlNode itemInfo in itemList) {
 			newEntry = new DatabaseEntry (itemInfo);
