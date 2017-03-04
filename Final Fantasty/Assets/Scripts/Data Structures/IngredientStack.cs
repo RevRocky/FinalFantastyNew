@@ -46,13 +46,13 @@ public class IngredientStack {
 		List<string> mechanicList = new List<string> ();
 
 		// Loop over cumulating mechanics, stats and tags for each of our cards
+		int i = 0;
 		foreach (Card card in theCards) {
-			int i = 0;
 			byte[] cardStats = card.getStats();
 			for (j = 0; j < NUM_STATS; j++) {
 				sumStats [j] += cardStats[j];							// Taking the sum of each stat
 			}
-			tags[i] = card.tag;											// Adding the tag to the list
+			tags[i] = card.ingredientTag;											// Adding the tag to the list
 			foreach (Mechanic mechanic in card.getMechanics()) {
 				if (! mechanic.inheritable) {
 					mechanicList.Add(mechanic.getName());				// If the mechanic can be inherited add the name!			
@@ -80,6 +80,12 @@ public class IngredientStack {
 		}	
 		finally {
 			Card.instantiateCard(mealEntry);							// Instantiate the card prefab (or what ever it is called)
+			int loopMax = theCards.Count;
+			for (i = 0; i < loopMax; i++) {
+				Card card = theCards[0];
+				theCards.RemoveAt (0);
+				GameObject.Destroy (card.gameObject);
+			}
 		}
 	}
 

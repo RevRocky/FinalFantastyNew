@@ -58,11 +58,18 @@ public abstract class Mechanic : MonoBehaviour {
 	// Contains any effects that happen when a card enters play
 	public abstract void onPlayEnter ();
 
+	// Any effects that happen when this card leaves play. Generally unpacking the impact of the 
+	// on play enter method
+	public abstract void onPlayExit();
+
 	// Contains any effects that happens when ingredients containing this card are combined. 
 	public abstract void onCombine ();
 
 	// Contains any effects that are triggered when a card is "stacked" upon another
 	public abstract void onStack (); 
+
+	// Contains any effects that will happen when play is over
+	public abstract void onGameOver();
 
 	// Accessor for parent card object
 	public Card getParent() {

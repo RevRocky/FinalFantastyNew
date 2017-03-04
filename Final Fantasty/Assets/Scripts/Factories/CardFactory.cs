@@ -4,6 +4,7 @@ public class CardFactory : MonoBehaviour {
 	
 	public GameObject CardPrefab;					// Drag over in editor
 	private static CardFactory _instance;
+	public GameObject mealZone;						// For cards with no parent
 
 	public static CardFactory instance {
 		get    
@@ -16,8 +17,12 @@ public class CardFactory : MonoBehaviour {
 		}
 	}
 
+	public GameObject create() {
+		return create (mealZone);
+	}
+		
 	// Creates a card prefab object and returns it.
 	public GameObject create(GameObject parent) {
-		return Instantiate(CardPrefab, parent);
+		return Instantiate (CardPrefab, parent.transform);
 	}
 }

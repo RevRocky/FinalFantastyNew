@@ -14,18 +14,26 @@ public class Card : MonoBehaviour {
 	public const int NUM_STATS = 6;
 	Image spriteDrawer; 
 
+	private static string cardArtLocation = "Art" + Path.DirectorySeparatorChar + "Cards" + Path.DirectorySeparatorChar;
 	private string name;
 	private string type;
-	public Sprite graphic;
 	private List<Mechanic> mechanics;
 	private byte[] stats;
-
+	public string ingredientTag;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		spriteDrawer = gameObject.GetComponent<Image> ();
-		spriteDrawer.sprite = graphic;				// TODO RID SELF OF ME
 	}
+
+	// For when we can not obtain reference to the intended parent object of the card
+	public static Card instantiateCard(DatabaseEntry cardInfo) {
+		GameObject newObj = CardFactory.instance.create();					// TODO Ask the location manager where to put the card!			
+		Card newCard = newObj.GetComponent<Card>();
+		newCard.Init(cardInfo);	
+		return newCard;
+	}
+		
 
 	// Instantiates a new card prefab object and returns reference to its card script
 	public static Card instantiateCard(DatabaseEntry cardInfo, GameObject parent) {
@@ -42,17 +50,18 @@ public class Card : MonoBehaviour {
 		type = cardInfo.type;
 		stats = cardInfo.stats;
 		mechanics = instantiateMechanics(cardInfo.mechanics);
+		ingredientTag = cardInfo.ingredientTag;
 		
 		if (type == "Meal") {
 			string spriteLocation = ImageProcessing.createMealCard(cardInfo);		//  Creating meal card and getting its location on disk
-			graphic = IMG2Sprite.instance.LoadNewSprite(spriteLocation);			
+			spriteDrawer.sprite = IMG2Sprite.instance.LoadNewSprite(spriteLocation);			
 			// TODO Place card appropriately
 		}
 		else {
-			graphic = IMG2Sprite.instance.LoadNewSprite(cardInfo.spriteLocation);	// Creating a sprite from said meal card
+			
+			spriteDrawer.sprite = IMG2Sprite.instance.LoadNewSprite(cardArtLocation + cardInfo.spriteLocation);	// Creating a sprite from said meal card
 			// TODO Position card correctly
 		}
-		spriteDrawer.sprite = graphic;
 	return;
 	}
 

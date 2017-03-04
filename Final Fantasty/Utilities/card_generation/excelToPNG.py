@@ -70,7 +70,7 @@ def construct_card_image(card_description):
     centered_top_left = (FLAVOUR_TEXT_LOCATION[0] - (width/2), FLAVOUR_TEXT_LOCATION[1])
     image_draw.multiline_text(xy=centered_top_left, text=flavour_text, font=CARD_FONT_ITALIC, fill=BLACK)
 
-    card_image.save(card_description["PictureLocation"] + ".png")                     # Write to disk
+    card_image.save(CARD_DIRECTORY + os.sep + card_description["PictureLocation"] + ".png")    # Write to disk
 
 
 
