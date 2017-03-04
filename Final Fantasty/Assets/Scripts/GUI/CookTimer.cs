@@ -13,9 +13,9 @@ using UnityEngine.UI;
  *
  * Author: Rocky
  */
-public class Cooktimer : MonoBehaviour {
+public class CookTimer : MonoBehaviour {
 
-	public const START_TIME = 30;				// The time each clock will start with
+	public const double START_TIME = 30;		// The time each clock will start with
 	private double timeRemaining;				// The time remaining
 	private bool activated;						// Tracks whether the timer is activated
 
@@ -37,7 +37,7 @@ public class Cooktimer : MonoBehaviour {
 	}
 
 	// This will be sent by the governing mechanic to stop the timer!
-	void stop() {
+	public void stop() {
 		activated = false;						// Do not continue to decrement the timer
 	}
 
