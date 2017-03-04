@@ -12,7 +12,7 @@ using UnityEngine;
  */
 public class Burn : Mechanic {
 
-	public const string NAME = "Burn"
+	public const string NAME = "Burn";
 	public const string DESCRIPTION = "Finish before time is out or you'll have a charred husk!";
 	public const bool INHERITABLE = false;				// An inheritable mechanic is one that is meant to act on a meal card
 	public CookTimer timer;								// The timer that counts down on burn. It'll handle all the countdown stuff!
@@ -30,7 +30,7 @@ public class Burn : Mechanic {
 		// Using that short circuit AND. Whooee!
 		if (getActivated() && timer.getTimeRemaining() <= 0.0) {
 			// Send card to graveyard
-			Debug.log("The card has been sent to the graveyard");	// Debug print until grave yard is sorted out!
+			Debug.Log("The card has been sent to the graveyard");	// Debug print until grave yard is sorted out!
 		}
 	}
 

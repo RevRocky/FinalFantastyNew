@@ -87,4 +87,15 @@ public class AlDente : Mechanic {
 		}
 		return indexMax;
 	}
+
+	// Any effects that happen when this card leaves play. Generally unpacking the impact of the 
+	// on play enter method
+	public override void onPlayExit(){
+		;	// Code Here
+	}
+
+	// Contains any effects that will happen when play is over
+	public override void onGameOver() {
+		;	// Code Here
+	}
 }

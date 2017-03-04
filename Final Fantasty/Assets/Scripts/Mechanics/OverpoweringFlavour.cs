@@ -16,7 +16,7 @@ using UnityEngine;
  */
 public class OverpoweringFlavour : Mechanic {
 
-	public const string NAME = "OverpoweringFlavour"
+	public const string NAME = "OverpoweringFlavour";
 	public const string DESCRIPTION = "The flavour is strong with this one";		// Rewrite!
 	public const bool INHERITABLE = true;											// An inheritable mechanic is one that is meant to act on a meal card
 
@@ -62,18 +62,18 @@ public class OverpoweringFlavour : Mechanic {
 	// TODO: If this is the only type of mechanic that works on game over it may behoove us
 	// to simply return the byte array from this method.
 	public override void onGameOver() {
-		byte modifiers[];
-		modifiers = geneateModifiers();
-		// Somehow deliver this to the packet
+		byte[] modifiers;
+		modifiers = generateModifiers();
 	}
 
 	// Generates the Modifiers 
 	private byte[] generateModifiers(){
-		byte cardStats[] = getParent().getStats();	// Obtaining reference to the card's stats
-		byte modifiers[] = {0, 0, 0, 0, 0, 0};
-		int statsToModify[] = biggestTwoIndices(cardStats);
+		byte[] cardStats = getParent().getStats();	// Obtaining reference to the card's stats
+		byte[] modifiers = {0, 0, 0, 0, 0, 0};
+		int[] statsToModify = biggestTwoIndices(cardStats);
+
 		// Adjust the stats
-		foreach(int stat : statsToModify) {
+		foreach(int stat in statsToModify) {
 			modifiers[stat] -= cardStats[stat];		// Naive approach. Gives the player double advantage in their best stat (MAY DIV 2)
 		}
 		return modifiers;
@@ -83,17 +83,18 @@ public class OverpoweringFlavour : Mechanic {
 	 * Returns the index of an array of bytes with the largest value. 
 	 * Takes a naive approach as it will only be called with small arrays
 	 */
-	private int biggestTwoIndices(byte[] anArray) {
-		int indexMax[] = {0, 0}		// Position Zero is largest. Position One is second largest
+	private int[] biggestTwoIndices(byte[] anArray) {
+		int[] indexMax = { 0, 0 };		// Position Zero is largest. Position One is second largest
 		int i;
 		for (i = 0; i < anArray.Length ; i++) {
-			if (anArray[i] > anArray[indexMax]) {
+			if (anArray[i] > anArray[indexMax[0]]) {
 				indexMax[1] = indexMax[0];		// Update second largest
 				indexMax[0] = i;				// Update largest
+			}
+			else if (anArray[i]  > anArray[indexMax[1]]) {
+				indexMax[1] = i;				// Update just the second largest!
 			}
 		}
 		return indexMax;
 	}
-
-
 }
