@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
-
+using UnityEngine.EventSystems;
 
 /*
  * This is intended to be a rough sketch of
  * card implementation only
  */
-public class Card : MonoBehaviour {
+public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
 	public const int NUM_STATS = 6;
 	Image spriteDrawer; 
@@ -103,5 +103,24 @@ public class Card : MonoBehaviour {
 	// Returns a list of the card's mechanics!
 	public List<Mechanic> getMechanics() {
 		return mechanics;
+	}
+
+
+	public void OnPointerEnter(PointerEventData eventData)
+	{
+		Debug.Log("Mouse enter");
+		GameObject enlarge = GameObject.FindGameObjectWithTag ("enlargePicture");
+		enlarge.GetComponent<Image>().enabled = true;
+		enlarge.GetComponent<Image>().sprite = spriteDrawer.sprite;
+
+		//isOver = true;
+	}
+
+	public void OnPointerExit(PointerEventData eventData)
+	{
+		Debug.Log("Mouse exit");
+		//isOver = false;
+		GameObject enlarge = GameObject.FindGameObjectWithTag ("enlargePicture");
+		enlarge.GetComponent<Image>().enabled = false;
 	}
 }
