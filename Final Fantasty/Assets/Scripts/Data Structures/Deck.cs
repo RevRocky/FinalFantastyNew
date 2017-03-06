@@ -27,9 +27,8 @@ public class Deck : MonoBehaviour {
 		char[] delimiters = {'\n'};												// Deck list delimited with a new line!
 		cardArray = deckList.text.Split(delimiters);
 
-
 		foreach (string cardTag in cardArray) {
-			newCard = Database.instance.searchByTag (cardTag);					// Getting a copy of it's DB entry
+			newCard = Database.instance.searchByTag (cardTag.TrimEnd());					// Getting a copy of it's DB entry
 			addCard(newCard);													// Adding it to the deck
 		}
 		shuffle ();																// Shuffle the deck

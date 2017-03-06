@@ -1,4 +1,3 @@
-tomato, heirloom
 tomato
 salmon
 yak, milk
