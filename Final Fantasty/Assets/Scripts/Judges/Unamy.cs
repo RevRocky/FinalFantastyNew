@@ -1,29 +1,40 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unamy : Judge {
+namespace UnityStandardAssets.Characters.ThirdPerson
+{
+	public class Unamy : Judge {
 
-	private int CalStats()
-	{
+		public NavMeshAgent agent;
+		public ThirdPersonCharacter character;
+		public CookTimer timer;
+
+		public enum State {
+			CALCULATE,
+			TALK
+		}
+
+		public State state;
+		public static string NAME = "Sweetums";
+		private static float[] STAT_MODS = {1.0f, 1.05f, 1.25f, 1.0f, 1.0f, 2.0f};	// Stat modifiers for the judge
 		
-		int sum;
-		int i;
-		float[] favorites = {1.5, 1, 1, 1, 2};
-			for(i = 0; i < 6; i++){
-				sum = (stats[i] + overpoweringMods[i])*favorites[i];
-			}
-		return sum;
-	}
-
-
-	// Use this for initialization
-	public void Talk() {
-		Console.WriteLine(sum);
-	}
-	
-	// Update is called once per frame
-	void Update () {
+		// Passes some values up to the judge constructor
+		public void init() {
+			base.init(STAT_MODS, NAME); 	// Pass up the food chain
+		}
 		
+		
+
+		// Use this for initialization
+		void Start () {
+			
+		}
+
+		
+		// Update is called once per frame
+		void Update () {
+			
+		}
 	}
 }
