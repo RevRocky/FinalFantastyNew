@@ -35,7 +35,7 @@ public abstract class Judge : MonoBehaviour {
 		}
 	}
 
-	public abstract void Talk() {
+	public void Talk() {
 		
 	}
 	
