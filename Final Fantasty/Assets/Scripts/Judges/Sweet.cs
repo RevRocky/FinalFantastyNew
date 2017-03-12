@@ -16,26 +16,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 		public State state;
-
-		//Variables for Calculating
-		int Sweet 
-
-
-		//Variables for Talking
-
-		private byte[] boostStats() {
-		byte[] newStats = getParent().getStats();				
-		int maxStatIndex = maxIndex(newStats);				
-		int i = 2;												
-		if (i == maxStatIndex) {
-				newStats[i] += 2;							
+		public static string NAME = "Sweetums";
+		private static float[] STAT_MODS = {2.0f, 1.25f, .25f, 1.0f, 1.0f, .9f};	// Stat modifiers for the judge
+		
+		// Passes some values up to the judge constructor
+		public void init() {
+			base.init(STAT_MODS, NAME); 	// Pass up the food chain
 		}
-			else {
-				newStats[i] += 1;					
-			}
-		}
-		return newStats;
-	}
+		
+		
 
 		// Use this for initialization
 		void Start () {
