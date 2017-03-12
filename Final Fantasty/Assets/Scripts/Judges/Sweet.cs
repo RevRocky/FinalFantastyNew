@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace UnityStandardAssets.Characters.ThirdPerson
-{
-	public class Sweet : Judge {
+public class Sweet : Judge {
 
 		public NavMeshAgent agent;
 		public ThirdPersonCharacter character;
@@ -37,4 +35,3 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			
 		}
 	}
-}
