@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public abstract class Judge : MonoBehaviour {
 	
-	
-	public NavMeshAgent agent;
-	public ThirdPersonCharacter character;
 	public CookTimer timer;
 
 	public enum State {
