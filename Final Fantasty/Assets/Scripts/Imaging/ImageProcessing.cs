@@ -18,22 +18,29 @@ using UnityEngine;
  */
 public class ImageProcessing{
 
+	private static int NUM_STATS = 6;
+
 	private static string TEMP_DIRECTORY = "Resources" + Path.DirectorySeparatorChar + "Art" + Path.DirectorySeparatorChar + "PlaceHolder" + Path.DirectorySeparatorChar;	// A relative file path
 	private static string CARD_BASE_DIRECTORY = "Resources" + Path.DirectorySeparatorChar + "Art" + Path.DirectorySeparatorChar + "Templates" + Path.DirectorySeparatorChar;
 	private static string CARD_IMAGE_DRECTORY = "Resources" + Path.DirectorySeparatorChar + "Art" + Path.DirectorySeparatorChar + "Meal" + Path.DirectorySeparatorChar;
-	private static string STAT_IMAGE_DIRECTORY = "Resources" + "Art" + Path.DirectorySeparatorChar + "Stats" + Path.DirectorySeparatorChar;
+	private static string STAT_IMAGE_DIRECTORY = "Resources" + Path.DirectorySeparatorChar + "Art" + Path.DirectorySeparatorChar + "Stats" + Path.DirectorySeparatorChar;
 
 	private static string[] STAT_IMAGES = { "Sweet.png", "Sour.png", "Bitter.png", "Spicy.png", "Salty.png", "Umami.png" };
 
 	// Key points on each card
 	private static Rectangle PICTURE_RECTANGLE = new Rectangle (new Point (80, 77), new Size(576, 577));
 	private static Point PICTURE_SIZE = new Point ( 576, 577 );
-	private static Point NAME_LOCATION = new Point ( 368, 675 );
+	private static Point NAME_CENTRE = new Point ( 368, 675 );
+	private static Rectangle NAME_RECT = new Rectangle (new Point (115, 679), new Size (505, 66));
 	private static Point NAME_BOUNDARIES = new Point (515, 70);
 	private static Point MECHANICS_TOP_LEFT = new Point (87, 812);
-	private static Point FLAVOUR_TEXT_LOCATION = new Point (332, 738);
+	private static Point FLAVOUR_CENTRE = new Point (339, 913);
 	private static Point PICTOGRAMME_CENTRE = new Point ( 368, 738 );
-	private static Point PICTOGRAMME_SIZE = new Point ( 41, 41 );
+	private static Point PICTOGRAMME_SIZE = new Point ( 49, 49 );
+
+
+	// Some stuff that will mainly be used on OS based branching
+	private static bool WINDOWS = Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer;
 
 	/*
 	 * Combines various card arts into one hybrid image.
@@ -53,7 +60,13 @@ public class ImageProcessing{
 		Bitmap cardBase;		// The template card image
 		Bitmap cardArt;			// The card art!
 
-		if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer) {
+		System.Drawing.Font Bitter = new System.Drawing.Font ("Bitter", 32);
+		System.Drawing.Font Bitter_Bold = new System.Drawing.Font ("Bitter", 50, System.Drawing.FontStyle.Bold);
+		System.Drawing.Font Bitter_Italic = new System.Drawing.Font ("Bitter", 30, System.Drawing.FontStyle.Italic);
+
+		SolidBrush blackBrush = new SolidBrush (System.Drawing.Color.Black);	// Black like my... erm... python. Rex.
+
+		if (WINDOWS) {
 			string properWindowsPath = Application.dataPath.Replace ('/', '\\');		// Correct operator!
 			cardBase = (Bitmap)Bitmap.FromFile (properWindowsPath + Path.DirectorySeparatorChar + CARD_BASE_DIRECTORY + "CardBase.png");
 			cardArt = (Bitmap)Bitmap.FromFile (properWindowsPath + Path.DirectorySeparatorChar + CARD_IMAGE_DRECTORY + cardInfo.artLocation);
@@ -68,11 +81,22 @@ public class ImageProcessing{
 
 		// Pasting the card art on top of the base of the card.
 		Bitmap overlayedImage = pasteCardArt(cardBase, cardArt);
+		overlayedImage = drawStats (overlayedImage, cardInfo.stats);
 
-		// Writing title and flavour text
 
+		// Adjusting and centring messages
+		Bitter_Bold = fitText(cardInfo.name, Bitter_Bold);				// Adjust font
+		Point titleTopLeft = centreText(cardInfo.name, Bitter_Bold, NAME_CENTRE);	// Find a centred point
+		Point flavourTopLeft = centreText(cardInfo.description, Bitter_Italic, FLAVOUR_CENTRE);
+
+		// Actually Writing text
+		// TODO: Write mechanics text
+		var overlayedGraphics = System.Drawing.Graphics.FromImage(overlayedImage);
+		overlayedGraphics.DrawString (cardInfo.name, Bitter_Bold, blackBrush, titleTopLeft);		// Write title
+		overlayedGraphics.DrawString (cardInfo.description, Bitter_Italic, blackBrush, flavourTopLeft); 	// Writing flavour text
+
+		overlayedImage.Save("C:\\Users\\Mafia_000\\Pictures\\TestImg.png");
 		return (TEMP_DIRECTORY + "Timewizard");
-
 	 }
 
 	// This function resizes an image to have a width and height equal to the supplied
@@ -103,14 +127,70 @@ public class ImageProcessing{
 		return cardStock;																		// Should be the new version of the image.
 	}
 
-	// Scales down a font to fit a given text to a certain area
-	private System.Drawing.Font fitText(string message, System.Drawing.Font font, Rectangle constraints) {
-		SizeF messageSize = System.Drawing.Graphics.MeasureString (message, font);		// Computing the size of our message
+	// Draws each stat pictogramme correctly formatted on the card!
+	private static Bitmap drawStats(Bitmap cardImage, byte[] stats) {
+		Point pictogrammeTopLeft = new Point((int) (PICTOGRAMME_CENTRE.X - ((arraySum(stats) * PICTOGRAMME_SIZE.X)/2)), PICTOGRAMME_CENTRE.Y);
+		int stat;	// Tracking the current stat
+		Bitmap statImage;
+		var drawer = System.Drawing.Graphics.FromImage (cardImage);		// Allows us to draw on the image
+		byte statPoint;													// Tracks the cu
 
-		while (messageSize.Height > constraints.Height || messageSize.Width > constraints.Width) {
-			font = new System.Drawing.Font ("Bitter-Bold", font.Size - 1.0f);
-			messageSize = System.Drawing.Graphics.MeasureString (message, font);
+		// Loop through each stat, open and paste on it's picture
+		for (stat = 0; stat < NUM_STATS; stat++){
+			if (WINDOWS) {
+				string properWindowsPath = Application.dataPath.Replace ('/', '\\');		// Correct operator!
+				statImage = (Bitmap)Bitmap.FromFile (properWindowsPath + Path.DirectorySeparatorChar
+				+ STAT_IMAGE_DIRECTORY + STAT_IMAGES [stat]);
+			}
+			else {		// We don't need windows file pathing!
+				statImage = (Bitmap)Bitmap.FromFile (Application.dataPath + Path.DirectorySeparatorChar
+					+ STAT_IMAGE_DIRECTORY + STAT_IMAGES [stat]);
+			}
+			// Loop through each stat point and paste its picture!
+			for (statPoint = 0; statPoint < stats[stat]; statPoint ++) {
+				drawer.DrawImage (statImage, pictogrammeTopLeft);	// Draw the pictogramme
+				pictogrammeTopLeft.X += PICTOGRAMME_SIZE.X;			// Move to where we draw the next pictogramme
+			}
+		}
+		return cardImage;
+
+				
+	}
+
+	// This really should be genericised
+	private static byte arraySum(byte[] array){
+		byte sum = 0;
+		for (int i = 0; i<NUM_STATS; i++) {
+			sum += array [i];
+		}
+		return sum;
+	}
+				
+	// Scales down a font to fit a given text to a certain area
+	private static System.Drawing.Font fitText(string message, System.Drawing.Font font) {
+		// Due to the non static nature of the Measure string method, I need to do this work on a dummy image. WEW!
+		using (var image = new Bitmap (1, 1)) {
+			using (var temp_gfx = System.Drawing.Graphics.FromImage (image)) {
+				SizeF messageSize = temp_gfx.MeasureString (message, font);					// Computing the size of our message
+				while (messageSize.Height > NAME_RECT.Height || messageSize.Width > NAME_RECT.Width) {
+					font = new System.Drawing.Font ("Bitter-Bold", font.Size - 1.0f);		// Scale down our font until we have something acceptable!
+					messageSize = temp_gfx.MeasureString (message, font);
+				}
+			}
 		}
 		return font;
+	}
+
+	// Returns an XY coordinate pair such that a message written in the Font font will
+	// be centred around the provided centre point
+	private static Point centreText(string message, System.Drawing.Font font, Point centrePoint) {
+		Point messageTopLeft;
+		using (var image = new Bitmap(1,1)) {
+			using (var temp_gfx = System.Drawing.Graphics.FromImage (image)) {
+				SizeF messageSize = temp_gfx.MeasureString (message, font);					// Computing the size of our message
+				messageTopLeft = new Point((int)(centrePoint.X - (messageSize.Width / 2)), centrePoint.Y);
+			}
+		}
+		return messageTopLeft;
 	}
 }
