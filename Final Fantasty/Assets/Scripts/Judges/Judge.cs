@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Judge : MonoBehaviour {
+public abstract class Judge : MonoBehaviour {
 	
 	
 	public NavMeshAgent agent;
