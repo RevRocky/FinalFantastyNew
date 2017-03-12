@@ -28,10 +28,6 @@ public class DialogueManager : MonoBehaviour {
 			currentLine++;
 		}
 
-		if (currentLine == 2)
-		{
-			dialogLines[currentLine] = "The sum is " + sum;
-		}
 
 		if (currentLine >= dialogLines.Length)
 		{
