@@ -17,7 +17,7 @@ public abstract class Judge : MonoBehaviour {
 	public float[] statModifiers;
 	
 	// Initialisation Function
-	public void init(byte[] statModifiers, string name) {
+	public void init(float[] statModifiers, string name) {
 		this.statModifiers = statModifiers;	// Assigning a judges stat mods
 		this.name = name;
 	}
@@ -25,7 +25,7 @@ public abstract class Judge : MonoBehaviour {
 	// Computes a weighted sum of stats. Card stats is the a given players'
 	// card while modifiers is the overpowering flavour modifiers from
 	// their opponents submission;
-	public float CalculateStats(byte[] cardStats, byte[] modifiers){
+	public float CalculateStats(byte[] cardStats, float[] modifiers){
 		// Initialise i and sum
 		int i = 0;
 		float sum = 0;
