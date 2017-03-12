@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Sweet : Judge {
 
-		public NavMeshAgent agent;
-		public ThirdPersonCharacter character;
 		public CookTimer timer;
 
 		public enum State {
