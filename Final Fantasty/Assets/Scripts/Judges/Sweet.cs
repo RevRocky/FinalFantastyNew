@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
-	public class Sweet : MonoBehaviour {
+	public class Sweet : Judge {
 
 		public NavMeshAgent agent;
 		public ThirdPersonCharacter character;
