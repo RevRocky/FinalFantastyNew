@@ -33,6 +33,7 @@ public abstract class Judge : MonoBehaviour {
 		for(; i < NUM_STATS; i++) {
 			sum += statModifiers[i] * (cardStats[i] + modifiers[i]);
 		}
+		return sum;
 	}
 
 	public void Talk() {
