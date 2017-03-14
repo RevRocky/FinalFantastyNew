@@ -14,16 +14,19 @@ using UnityEngine;
  * stub methods so we can get to testing A LOT sooner
  * 
  * Author: Rocky Petkov
- * Version: Stubby
+ * Version: .9
  */
 public class ImageProcessing{
 
 	private static int NUM_STATS = 6;
 
-	private static string TEMP_DIRECTORY = "Resources" + Path.DirectorySeparatorChar + "Art" + Path.DirectorySeparatorChar + "PlaceHolder" + Path.DirectorySeparatorChar;	// A relative file path
-	private static string CARD_BASE_DIRECTORY = "Resources" + Path.DirectorySeparatorChar + "Art" + Path.DirectorySeparatorChar + "Templates" + Path.DirectorySeparatorChar;
-	private static string CARD_IMAGE_DRECTORY = "Resources" + Path.DirectorySeparatorChar + "Art" + Path.DirectorySeparatorChar + "Meal" + Path.DirectorySeparatorChar;
-	private static string STAT_IMAGE_DIRECTORY = "Resources" + Path.DirectorySeparatorChar + "Art" + Path.DirectorySeparatorChar + "Stats" + Path.DirectorySeparatorChar;
+	// Relative file paths.
+	// TODO Remove the tight coupling of all the directories.
+	private static string RESOURCES = "Resources" + Path.DirectorySeparatorChar;
+	private static string TEMP_DIRECTORY = "Temp" + Path.DirectorySeparatorChar;
+	private static string CARD_BASE_DIRECTORY = RESOURCES + "Art" + Path.DirectorySeparatorChar + "Templates" + Path.DirectorySeparatorChar;
+	private static string CARD_IMAGE_DRECTORY = RESOURCES + "Art" + Path.DirectorySeparatorChar + "Meal" + Path.DirectorySeparatorChar;
+	private static string STAT_IMAGE_DIRECTORY = RESOURCES + "Art" + Path.DirectorySeparatorChar + "Stats" + Path.DirectorySeparatorChar;			
 
 	private static string[] STAT_IMAGES = { "Sweet.png", "Sour.png", "Bitter.png", "Spicy.png", "Salty.png", "Umami.png" };
 
@@ -38,6 +41,7 @@ public class ImageProcessing{
 	private static Point PICTOGRAMME_CENTRE = new Point ( 368, 738 );
 	private static Point PICTOGRAMME_SIZE = new Point ( 49, 49 );
 
+	private static int imageNumber = 0;																														// Tracks which image it is... so it can be returned to calling environment		
 
 	// Some stuff that will mainly be used on OS based branching
 	private static bool WINDOWS = Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer;
@@ -92,11 +96,10 @@ public class ImageProcessing{
 		// Actually Writing text
 		// TODO: Write mechanics text
 		var overlayedGraphics = System.Drawing.Graphics.FromImage(overlayedImage);
-		overlayedGraphics.DrawString (cardInfo.name, Bitter_Bold, blackBrush, titleTopLeft);		// Write title
+		overlayedGraphics.DrawString (cardInfo.name, Bitter_Bold, blackBrush, titleTopLeft);				// Write title
 		overlayedGraphics.DrawString (cardInfo.description, Bitter_Italic, blackBrush, flavourTopLeft); 	// Writing flavour text
-
-		overlayedImage.Save("C:\\Users\\Mafia_000\\Pictures\\TestImg.png");
-		return (TEMP_DIRECTORY + "Timewizard");
+			
+		return saveImage (overlayedImage);	// Returning a filepath to our new image																	
 	 }
 
 	// This function resizes an image to have a width and height equal to the supplied
@@ -124,6 +127,8 @@ public class ImageProcessing{
 	private static Bitmap pasteCardArt(Bitmap cardStock, Bitmap cardArt) {
 		var baseImage = System.Drawing.Graphics.FromImage (cardStock);							// Converting the base to be something I can write on
 		baseImage.DrawImage(cardArt, PICTURE_RECTANGLE);
+
+
 		return cardStock;																		// Should be the new version of the image.
 	}
 
@@ -193,4 +198,20 @@ public class ImageProcessing{
 		}
 		return messageTopLeft;
 	}
+
+	// Saves an image to a temporary directory, increments the imageCounter and returns
+	// an absolute path to the image on disk.
+	private static string saveImage(Bitmap image) {
+		string relativePath = TEMP_DIRECTORY + "TMPML_" + imageNumber.ToString () + ".png";	// A relative path to the image
+		string absolutePath = Application.dataPath + Path.DirectorySeparatorChar + RESOURCES + relativePath.Clone();
+
+		// Handling Windows file separators
+		if (WINDOWS) {
+			absolutePath.Replace ('/', '\\');		// Replacing UNIX file separators. The "relative path" portion of the string is already set up correctly
+		}
+		image.Save (absolutePath);
+		imageNumber++;
+		return absolutePath;	// Return a path to the file
+	}
+
 }
