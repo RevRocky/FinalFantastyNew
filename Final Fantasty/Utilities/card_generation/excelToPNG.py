@@ -20,9 +20,9 @@ STAT_IMAGES = ["Sweet.png", "Sour.png", "Bitter.png", "Spicy.png", "Salty.png", 
 
 MECHANICS_WRITEUPS = ".." + os.sep + ".." + os.sep + "Docs" + os.sep + "Docs" + "mechanics.txt"
 
-CARD_FONT = ImageFont.truetype("Bitter-Regular.otf", size=18)
+CARD_FONT = ImageFont.truetype("Bitter-Regular.otf", size=32)
 CARD_FONT_BOLD = ImageFont.truetype("Bitter-Bold.otf", size=50)
-CARD_FONT_ITALIC = ImageFont.truetype("Bitter-Italic.otf", size=16)
+CARD_FONT_ITALIC = ImageFont.truetype("Bitter-Italic.otf", size=30)
 
 BLACK = (0, 0, 0)
 
