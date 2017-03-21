@@ -44,4 +44,10 @@ public abstract class Judge : MonoBehaviour {
 	void Update () {
 		
 	}
+	
+	// Returns a copy of the judges stat modifiers. Needed by the AI
+	// <3 Rocky
+	public float[] getStatModifiers(){
+		return statModifiers;
+	}
 }
