@@ -8,6 +8,7 @@ using System.IO;
 
 /* This is a class that contains some static methods that will permit the
  * generation of meal card images based upon the stats of the generated card.
+ * Author: Rocky Petkov
 */
 public class IngredientStack {
 
@@ -72,8 +73,9 @@ public class IngredientStack {
 		}
 		Array.Sort(tags, StringComparer.InvariantCulture);				// Sort dem tags
 		foreach (string tag in tags) {
-			searchTag += tag; 											// Combine those tags
+			searchTag += (tag + ";"); 									// Combine those tags. Meal ingredients are separated by semicolons
 		}
+		searchTag = searchTag.TrimEnd(';');				// Trim the final semicolon
 		try {
 			mealEntry = Database.instance.searchByTag(searchTag);		// Returns a clone of the database entry
 			mealEntry.stats = combineStatsGood(mealEntry.stats, sumStats);

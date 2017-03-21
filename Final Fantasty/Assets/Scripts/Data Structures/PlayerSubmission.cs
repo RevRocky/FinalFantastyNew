@@ -7,6 +7,7 @@ using UnityEngine.UI;
  * A simple struct containing the information necessary
  * for a player's submission to the judges. This will be
  * created at the completion of a player's turn.
+ * Author: Rocky Petkov
  */
 public struct PlayerSubmission {
 	public string owner;				// Whose card is this

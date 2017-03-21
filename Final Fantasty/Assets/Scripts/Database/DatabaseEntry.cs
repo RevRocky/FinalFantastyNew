@@ -65,6 +65,9 @@ public class DatabaseEntry {
 				case "Tag":
 					tag = data.InnerText;
 				break;
+				case "Step Up":
+					tag = data.InnerText;
+				break;
 			}
 		}
 	}

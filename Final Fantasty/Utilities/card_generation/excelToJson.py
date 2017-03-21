@@ -33,13 +33,16 @@ def readExcelFile(inFile):
 		card["Tag"] = rowValues[12]							# Tag must be a unique value
 		card["Art"] = rowValues[13]
 		card["PictureLocation"] = rowValues[14]
+		card["Step Up"] = rowValues[15]						# Tag of superior card in same "class"
 		cardList.append(card)
 
 	return cardList
 
+
 def write_XML(card_list, out_file):
 	with open(out_file, 'w') as f:
 		f.write(build_xml_string(card_list))		# Write our built string
+
 
 # We're taking the naive approach and manually building an XML file (At this time, I do not believe any good libraries exist for this
 def build_xml_string(card_list):
@@ -47,6 +50,7 @@ def build_xml_string(card_list):
 	for card_info in card_list:
 		XML_string += construct_XML_entry(card_info)
 	return XML_string + "</Database>"
+
 
 # Builds the entry for a given card. 
 # Currently there is no error checking as it should ALWAYS
@@ -58,3 +62,8 @@ def construct_XML_entry(card_info):
 		XML_entry += XML_tag_base.format(key, data)
 	XML_entry += "\t</Card>\n"							# End of card info
 	return XML_entry
+
+
+# Creates a long string of every meal
+def create_meal_list(card_list):
+	pass	# TODO Write on Tuesday!
