@@ -11,7 +11,7 @@ public class Unamy : Judge {
 		}
 
 		public State state;
-		public static string NAME = "Sweetums";
+		public static string NAME = "Unami";
 		private static float[] STAT_MODS = {1.0f, 1.05f, 1.25f, 1.0f, 1.0f, 2.0f};	// Stat modifiers for the judge
 		
 		// Passes some values up to the judge constructor

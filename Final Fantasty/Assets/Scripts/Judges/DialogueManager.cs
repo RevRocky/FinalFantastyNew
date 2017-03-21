@@ -28,7 +28,6 @@ public class DialogueManager : MonoBehaviour {
 			currentLine++;
 		}
 
-
 		if (currentLine >= dialogLines.Length)
 		{
 			dBox.SetActive(false);

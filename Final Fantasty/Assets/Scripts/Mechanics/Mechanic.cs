@@ -41,20 +41,20 @@ public abstract class Mechanic : MonoBehaviour {
 	 */
 	public static Mechanic instantiateByName(string mechanicName, Card parentCard) {
 		switch(mechanicName) {
-			case("AlDente"):
+			case("'Al Dente'"):
 				AlDente newMechanic = parentCard.gameObject.AddComponent<AlDente>() as AlDente;
 				newMechanic.init(parentCard);
 				return (Mechanic) newMechanic;
-			case("Burn"):
+			case("'Burn'"):
 				Burn newBurn = parentCard.gameObject.AddComponent<Burn>() as Burn;
 				newBurn.init(parentCard);
 				return (Mechanic) newBurn;
-			case("Overpowering Flavour"):
+			case("'Overpowering Flavour'"):
 				OverpoweringFlavour newOPF = parentCard.gameObject.AddComponent<OverpoweringFlavour>() as OverpoweringFlavour;
 				newOPF.init(parentCard);
 				return (Mechanic) newOPF;
 			default:
-			throw new MechanicNotFound(String.Format("The mechanic {0} could not be found", mechanicName));
+				throw new MechanicNotFound(String.Format("The mechanic {0} could not be found", mechanicName));
 		}
 	}
 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.IO;
+using System.Drawing;
 
 public class IMG2Sprite : MonoBehaviour {
 
@@ -43,8 +44,23 @@ public class IMG2Sprite : MonoBehaviour {
 		// Returns null if load fails
 
 		Texture2D Tex2D;
-		byte[] FileData;
 		Tex2D = (Texture2D) Resources.Load (FilePath) ;
+
+		// What if we can't load it from resources? Let's load it the regular way
+		if (Tex2D == null) {
+			Bitmap bmp = (Bitmap) Bitmap.FromFile(FilePath);		// File path is an absolute file path
+			Tex2D = new Texture2D(2, 2);
+			Tex2D.LoadImage(imageToByte(bmp));						// Load the byte array of our image
+		}
 		return Tex2D;                  // Return null if load failed
+	}
+
+	// This little block of code graciiusly lifted from Stack Overflow!
+	private byte[] imageToByte(Bitmap bitmap){
+		using (var stream = new MemoryStream())
+		{
+			bitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+			return stream.ToArray();
+		}
 	}
 }

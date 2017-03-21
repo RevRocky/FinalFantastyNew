@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +8,7 @@ using UnityEngine.UI;
  * for a player's submission to the judges. This will be
  * created at the completion of a player's turn.
  */
-public struct PlayerSubmission {
+public struct PlayerSubmissions {
 	public string owner;				// Whose card is this
 	public string cardTitle;			// Name of submitted card
 	public byte[] stats;				// Card stats
@@ -16,7 +16,7 @@ public struct PlayerSubmission {
 	public Sprite cardImage;			// Incase you want a picture
 
 	// Fairly Straight Forward Constructor
-	public PlayerSubmission(string owner, string cardTitle, byte[] stats, byte[] overpoweringMods, Sprite image) {
+	public PlayerSubmissions(string owner, string cardTitle, byte[] stats, byte[] overpoweringMods, Sprite image) {
 		this.owner = owner;
 		this.cardTitle = cardTitle;
 		this.stats = stats;
