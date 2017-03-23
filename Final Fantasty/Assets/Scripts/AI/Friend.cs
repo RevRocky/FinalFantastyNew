@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
+using System.Linq;
 
 /*
  * Friend Is Modern AI
@@ -29,7 +29,20 @@ public class Friend : MonoBehaviour {
 	private float[] decisionMatrix = {1, 1, 1, 1, 1, 1};	// The weights the AI will use to determine the best meal to make.
 
 	private PlayerSubmission aiSubmission;					// The submission the AI will make 
-	Random RNG;						
+	Random RNG;					
+
+	public static Friend instance							// Tracks present instance of Friend! Now we can use friend from everywhere
+	{
+		get    
+		{
+			//If _instance hasn't been set yet, we grab it from the scene!
+			//This will only happen the first time this reference is used.
+
+			if(_instance == null)
+				_instance = GameObject.FindObjectOfType<Friend>();
+			return _instance;
+		}
+	}	
 
 	// This method must run after the Judges have been initialised and added to the scene
 	void Start () {
@@ -49,24 +62,24 @@ public class Friend : MonoBehaviour {
 	 */
 	private void modifyDecisionWeights() {
 		int stat;
-		float biasArray[] = generateRandomFloats(NUM_STATS, BIAS_MIN, BIAS_MAX);
-		float judgeOneStats[] = judgeOne.getStatModifiers();
-		float judgeTwoStats[] = judgeTwo.getStatModifiers();
+		float[] biasArray = generateRandomFloats(NUM_STATS, BIAS_MIN, BIAS_MAX);
+		float[] judgeOneStats = judgeOne.getStatModifiers();
+		float[] judgeTwoStats = judgeTwo.getStatModifiers();
 
 		// Loop through. Each position is 1 * Judge A mod * Judge 2 mod * bias!
 		for (stat = 0; stat < NUM_STATS; stat++) {
-			decisionMatrix[i] *= (judgeOneStats[i] * judgeTwoStats[i] * biasArray);		// Updating weights
+			decisionMatrix[stat] *= (judgeOneStats[stat] * judgeTwoStats[stat] * biasArray);		// Updating weights
 		}
 	}
 
 	// Generates n random floats. Returns it in an array
 	// TODO put in utilities class!
-	private generateRandomFloats(int numFloats, float min, float max) {
+	private float[] generateRandomFloats(int numFloats, float min, float max) {
 		float[] randomFloats = new float[numFloats];
 	
 		// Loop through and generate dem puppies
 		for (int i = 0; i < numFloats; i++) {
-			randomFloats[i] = (float) RNG.NextDouble() * (max - min) + min
+			randomFloats [i] = (float)RNG.value * (max - min) + min;
 		}
 		return randomFloats;
 	}
@@ -113,16 +126,18 @@ public class Friend : MonoBehaviour {
 	 * Creates a Submission with this meal and a random
 	 * chance of overpowering flavour
 	 */
-	private PlayerSubmission constructMeal(optimalMeal) {
+	private PlayerSubmission constructMeal(DatabaseEntry optimalMeal) {
 		byte[] finalStats = addIngredients(optimalMeal);
 		byte[] overpoweringMods;
 
 		// Assuming a uniform distrobution of random floats between 0-1
-		if (RNG.NextDouble >= OVERPOWERING_FLAVOUR_THRESHOLD) {
+		if (RNG.value >= OVERPOWERING_FLAVOUR_THRESHOLD) {
 			overpoweringMods = OverpoweringFlavour.generateModifiers();		// If we pass the check, include overpowering flavour
 		}
 		else {
-			overpoweringMods = {0, 0, 0, 0, 0, 0};							// Else no modifiers!
+			for (int i = 0; i < 6; i++) {
+				overpoweringMods[i] = 0;	// Else no modifiers!
+			}
 		}
 
 		// Construct a new Player Submission!
@@ -136,7 +151,7 @@ public class Friend : MonoBehaviour {
 		DatabaseEntry ingredient;	// Reference to the current ingredient we are looking at
 
 		string ingredientList = meal.tag.Split(";");	// ';' seperates each ingredient
-		byte statSum[] = meal.stats.Clone();			// Get clone of the meal's stats!
+		byte[] statSum = meal.stats.Clone();			// Get clone of the meal's stats!
 
 		// Loop through adding each ingredient
 		foreach (string ingredientTag in ingredientList) {
@@ -145,10 +160,12 @@ public class Friend : MonoBehaviour {
 
 				//TODO Implement Step Up Attribute. Same as tag of one step up!
 				// If a step up exists, and the check passes, use it!
-				if (!ingredient.stepUp.Equals("N/A") && RNG.NextDouble() > PREMIUM_INGREDIENT_THRESHOLD) {
+				if (!ingredient.stepUp.Equals("N/A") && RNG.value > PREMIUM_INGREDIENT_THRESHOLD) {
 					ingredient = Database.instance.searchByTag(ingredient.stepUp);
 				}
-				statSum = statSum.Zip(ingredient.stats, (x, y) => x + y).ToArray();		// So Functional! Adding ingredients stats. Wao!
+				for (int i = 0; i < NUM_STATS; i++){
+					statSum[i] = statSum[i] + ingredient.stats[i];
+				}
 			}
 			catch (ItemNotFound e) {
 				Debug.Log("Ingredient unable to be found");		// TODO Reference name of the ingredient
@@ -158,4 +175,8 @@ public class Friend : MonoBehaviour {
 		return statSum;		// Returning the sum of our stats!
 	}
 
+	// Returns a copy of the AI's submission
+	public PlayerSubmission	getSubmission() {
+		return aiSubmission;
+	}
 }

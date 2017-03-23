@@ -66,4 +66,17 @@ def construct_XML_entry(card_info):
 
 # Creates a long string of every meal
 def create_meal_list(card_list):
-	pass	# TODO Write on Tuesday!
+	meal_list = ""
+	for card in card_list:
+		if card["Type"] == "Meal":
+			meal_list += card["Tag"] + "\n"	# Add tag plus a new line
+		# end if
+	# end for
+	new = list(meal_list)	# Slow but I do it once on build
+	new[-1] = ''
+	return ''.join(new)
+
+# Writes the meal list to the disk
+def write_meal_list(meal_list, out_file):
+	with open(out_file, "w") as f:
+		f.write(meal_list)		# Writing the list of meals to the desk!
