@@ -66,7 +66,7 @@ public class DatabaseEntry {
 				case "Tag":
 					tag = data.InnerText;
 				break;
-				case "Step Up":
+				case "Step-Up":
 					stepUp = data.InnerText;
 				break;
 			}

@@ -33,7 +33,7 @@ def readExcelFile(inFile):
 		card["Tag"] = rowValues[12]							# Tag must be a unique value
 		card["Art"] = rowValues[13]
 		card["PictureLocation"] = rowValues[14]
-		card["Step Up"] = rowValues[15]						# Tag of superior card in same "class"
+		card["Step-Up"] = rowValues[15]						# Tag of superior card in same "class"
 		cardList.append(card)
 
 	return cardList

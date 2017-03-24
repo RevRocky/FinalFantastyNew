@@ -9,7 +9,7 @@
 		<Tag>tomato</Tag>
 		<Art>Tomato.png</Art>
 		<PictureLocation>ING001</PictureLocation>
-		<Step Up>tomato, heirloom</Step Up>
+		<Step-Up>tomato, heirloom</Step-Up>
 	</Card>
 	<Card>
 		<Type>Ingredient</Type>
@@ -21,7 +21,7 @@
 		<Tag>tomato, heirloom</Tag>
 		<Art>HeirloomTomato.jpg</Art>
 		<PictureLocation>ING002</PictureLocation>
-		<Step Up>N/A</Step Up>
+		<Step-Up>N/A</Step-Up>
 	</Card>
 	<Card>
 		<Type>Ingredient</Type>
@@ -33,7 +33,7 @@
 		<Tag>spaghetti</Tag>
 		<Art>Spaghetti.jpg</Art>
 		<PictureLocation>ING003</PictureLocation>
-		<Step Up>spaghetti, moms</Step Up>
+		<Step-Up>spaghetti, moms</Step-Up>
 	</Card>
 	<Card>
 		<Type>Ingredient</Type>
@@ -45,7 +45,7 @@
 		<Tag>spaghetti, moms</Tag>
 		<Art>Spaghetti.jpg</Art>
 		<PictureLocation>ING004</PictureLocation>
-		<Step Up>N/A</Step Up>
+		<Step-Up>N/A</Step-Up>
 	</Card>
 	<Card>
 		<Type>Meal</Type>
@@ -57,7 +57,7 @@
 		<Tag>spaghetti;tomato</Tag>
 		<Art>Marinara.jpg</Art>
 		<PictureLocation>MEA001</PictureLocation>
-		<Step Up>N/A</Step Up>
+		<Step-Up>N/A</Step-Up>
 	</Card>
 	<Card>
 		<Type>Ingredient</Type>
@@ -69,7 +69,7 @@
 		<Tag>salmon</Tag>
 		<Art>Salmon.jpg</Art>
 		<PictureLocation>ING005</PictureLocation>
-		<Step Up>N/A</Step Up>
+		<Step-Up>N/A</Step-Up>
 	</Card>
 	<Card>
 		<Type>Ingredient</Type>
@@ -81,6 +81,6 @@
 		<Tag>yak, milk</Tag>
 		<Art>Milk.jpg</Art>
 		<PictureLocation>ING006</PictureLocation>
-		<Step Up>N/A</Step Up>
+		<Step-Up>N/A</Step-Up>
 	</Card>
 </Database>

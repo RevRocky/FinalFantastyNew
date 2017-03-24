@@ -100,6 +100,9 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 		return;
 	}
 
+	// Fetch method for the card's type
+	public string getType() {return type;}
+
 	// Returns a list of the card's mechanics!
 	public List<Mechanic> getMechanics() {
 		return mechanics;
