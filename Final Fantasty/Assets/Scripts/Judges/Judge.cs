@@ -46,8 +46,8 @@ public abstract class Judge : MonoBehaviour {
 	}
 
 	public void Talk() {
-		dHolder.theName = nameJudge;
 		nameJudge = "Sweet";
+		dHolder.theName = nameJudge;
 		dHolder.theSum = sumStats;
 
 
