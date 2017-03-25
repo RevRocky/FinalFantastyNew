@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
@@ -28,7 +28,7 @@ public class Deck : MonoBehaviour {
 		cardArray = deckList.text.Split(delimiters);
 
 		foreach (string cardTag in cardArray) {
-			newCard = Database.instance.searchByTag (cardTag.TrimEnd());					// Getting a copy of it's DB entry
+			newCard = Database.instance.searchByTag (cardTag.TrimEnd());		// Getting a copy of it's DB entry
 			addCard(newCard);													// Adding it to the deck
 		}
 		shuffle ();																// Shuffle the deck

@@ -15,6 +15,7 @@ public class DatabaseEntry {
 	public string spriteLocation;					// For a completed sprite. Null if a meal card!
 	public string ingredientTag;					// Null if not an ingredient
 	public string tag;
+	public string stepUp;							// One step up from present card!
 	public List<string> mechanics;				
 	public bool multiItems;							// We may want to have this kind of check at the GUI level
 	public byte[] stats;						    // Take note of the fact I'm storing this in a byte!
@@ -64,6 +65,9 @@ public class DatabaseEntry {
 				break;
 				case "Tag":
 					tag = data.InnerText;
+				break;
+				case "Step-Up":
+					stepUp = data.InnerText;
 				break;
 			}
 		}

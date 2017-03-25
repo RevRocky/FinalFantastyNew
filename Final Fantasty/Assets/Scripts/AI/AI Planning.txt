@@ -1,0 +1,12 @@
+Some Notes about the AI System:
+
+1) I think we need to give it a set list of meals it can make. The AI will need to know what the two known judges are and it will have to calculate the "Score" of each meal.
+	Add a little bit of percentage of fuckup and roll to add some optional things. 
+
+
+	So AI Calculation will be something like
+
+	(Weighted Sum(Stats) - Possible Overpowering Mods) * Random Weight (in range .5-1) with weights encouraging the things the judges like. Meal with highest stat will be chosen by the AI. Stats for each meal
+
+	The game will then roll a D20. If lower than 2, the meal will fail and some junk will be returned. 
+	Optional ingredients will be picked from a list!
