@@ -22,6 +22,16 @@ public class IngredientStack {
 	// Adds a card to our stack
 	public void addCard(Card newCard) {
 		theCards.Add(newCard);
+		executeMechanics (newCard);
+	}
+
+	// Small method that will call the mechanics of the card added to the stack
+	private void executeMechanics(Card newCard) {
+		foreach (Mechanic mechanic in newCard.getMechanics()) {
+			// Mechanics will only do anything if they have not been activated
+			mechanic.onStack ();
+			mechanic.onPlayEnter ();
+		}
 	}
 
 	// Removes a card from our list of cards

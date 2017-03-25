@@ -50,12 +50,13 @@ public class Database : MonoBehaviour {
 	}
 
 	// Returns a clone of a given card's database entry
+	// Known issue is that exception will be thrown if theres an extra new line in the decklist. Does not affect gameplay
 	public DatabaseEntry searchByTag(string tag) {
 		if (itemsDict.ContainsKey(tag)) {
 			return itemsDict[tag].clone();
 		}
 		else {
-			throw new ItemNotFound("The card you are trying to dind can not be found");
+			throw new ItemNotFound("The card you are trying to find can not be found");
 		}
 	}
 }

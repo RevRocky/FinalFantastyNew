@@ -11,7 +11,6 @@ using UnityEngine.UI;
 
 
 	public void Start() {
-		print ("x");
 	}
  	/*
  	 * Treat this as a constructor. If you want to create a button, call this

@@ -74,7 +74,7 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 		List<Mechanic> mechanicList = new List<Mechanic>(mechanicStrings.Count);
 		foreach(string mechanic in mechanicStrings) {
 			try {
-				Mechanic.instantiateByName(mechanic, this);							// Instantiates the mechanic by name
+				mechanicList.Add(Mechanic.instantiateByName(mechanic, this));							// Instantiates the mechanic by name
 			}
 			catch (System.Exception e) {
 				Debug.Log("Mechanic is not implemented. Double check database");	// If the mechanic doesn't exist print to debug log and move on
