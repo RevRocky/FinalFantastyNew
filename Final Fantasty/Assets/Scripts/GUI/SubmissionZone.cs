@@ -9,21 +9,32 @@ using System.Collections.Generic;
  * will be submitted for judging. 
  * Author: Rocky Raccoon
  */
-public class SubmissionZone : DropZone {
+public class SubmissionZone : CardCollection {
 
-	private Card submissionCard;	// The card to be submitted
+	private static SubmissionZone _instance;											// Private copy of instance	
+	public static SubmissionZone instance												// Tracks present instance of the this zone!
+	{
+		get    
+		{
+			//If _instance hasn't been set yet, we grab it from the scene!
+			//This will only happen the first time this reference is used.
+			if(_instance == null)
+				_instance = GameObject.FindObjectOfType<SubmissionZone>();
+			return _instance;
+		}
+	}
 
 	// This formally adds a card to the SubmissionZone
 	public void addCard(Card newMeal) {
-		if (submissionCard != null) {
-			ReserveMealManager.instance.addCard(submissionCard);	// Move the card to the reserves
+		if (getCollectionSize() != 0) {
+			ReserveMealManager.instance.addCard(popFirstCard());	// Move the card to the reserves
 		}
-		submissionCard = newMeal;	// TODO Handle Location?
+		addToCollection (newMeal);
 	}
 
 	// Handles a meal card being dropped in this area!
 	// TODO Ensure this works correctly because I'm not explicitly overriding it
-	public void OnDrop(PointerEventData eventData) {
+	void OnDrop(PointerEventData eventData) {
 		Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
 		Card droppedCard;
 
@@ -41,6 +52,6 @@ public class SubmissionZone : DropZone {
 
 	// A Fetch Method for the card being submitted
 	public Card getCard() {
-		return submissionCard;	
+		return getFirstCard();	
 	}
 }

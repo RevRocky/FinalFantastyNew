@@ -11,7 +11,7 @@ using UnityEngine;
  * be sent to compost
  * Author: Rocky Petkov
  */
-public class ReserveMealManager : DropZone {
+public class ReserveMealManager : CardCollection {
 
 	public int CAPACITY;				// How many meals can be in the reserve zone
 	private List<Card> compostQueue;	// I'm not precisely sure what would be the best way to do this
@@ -28,6 +28,11 @@ public class ReserveMealManager : DropZone {
 				_instance = GameObject.FindObjectOfType<ReserveMealManager>();
 			return _instance;
 		}
+	}
+
+	// Just set up the list o cards!
+	void Start() {
+		compostQueue = new List<Card> (CAPACITY);
 	}
 
 	// This method adds the supplied card to the reserve meal queue.
@@ -60,35 +65,13 @@ public class ReserveMealManager : DropZone {
 	}
 
 	// Ensures that a card is correctly removed from the queue when dragged out of this zone!
-	public void OnPointerExit(PointerEventData eventData) {
-
-		// If the data is nill return
-		if (eventData.pointerDrag == null) {
-			return;
-		}
-
-		Draggable d = eventData.pointerDrag.GetComponent<Draggable> ();
-		if (d == null) {
-			return;		// If there's no draggable return
-		}
-
-		Card removedCard = d.gameObject.GetComponent<Card> ();	// Acquiring reference to the card
-		removeSpecificCard (removedCard);
-		if (compostQueue.Count < CAPACITY) {
-			// TODO UNMARK CARD
-			;
-		}
+	public override void OnPointerExit(PointerEventData eventData) {
+		base.OnPointerExit (eventData);
+		// Mark card for deletion
 	}
 
 	// Removes the a reference to the supplied card from the queue on Dragout
 	private void removeSpecificCard(Card specificCard) {
 		compostQueue.Remove (specificCard);		// Removes the card
 	}
-		
-
-
-
-
-
-
 }

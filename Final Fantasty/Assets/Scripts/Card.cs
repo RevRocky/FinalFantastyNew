@@ -17,6 +17,7 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 	private static string cardArtLocation = "Art" + Path.DirectorySeparatorChar + "Cards" + Path.DirectorySeparatorChar;
 	private string name;
 	private string type;
+	private string dbTag;
 	private List<Mechanic> mechanics;
 	private byte[] stats;
 	public string ingredientTag;
@@ -50,6 +51,7 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 		name = cardInfo.name;
 		type = cardInfo.type;
 		stats = cardInfo.stats;
+		dbTag = cardInfo.tag;
 		mechanics = instantiateMechanics(cardInfo.mechanics);
 		ingredientTag = cardInfo.ingredientTag;
 		overpoweringMods = new byte[6];	// Initialise overpowering flavour modifications to be an empty array
@@ -109,6 +111,12 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 	public List<Mechanic> getMechanics() {
 		return mechanics;
 	}
+
+	// Returns the card's tag
+	public string getTag(){return dbTag;}
+
+	//Returns the card's name
+	public string getName(){return name;}
 
 	// Setter for the card's overpowering flavour mods.
 	public void setOverpoweringMods(byte[] modifiers){
