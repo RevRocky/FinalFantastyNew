@@ -19,7 +19,7 @@ public class GenerateJudges : MonoBehaviour {
 		judgeOne.transform.parent = this.gameObject.transform;
 		judgeOne.AddComponent<SpriteRenderer>();
 		SpriteRenderer SR1 = judgeOne.GetComponent<SpriteRenderer>();
-        SR1.sprite = sprite;
+        	SR1.sprite = sprite;
 		judgeOne.transform.position = new Vector2(-350,-188);//change vector later
 
 		//create judge 2
@@ -28,7 +28,7 @@ public class GenerateJudges : MonoBehaviour {
 		judgeTwo.transform.parent = this.gameObject.transform;
 		judgeTwo.AddComponent<SpriteRenderer>();
 		SpriteRenderer SR2 = judgeTwo.GetComponent<SpriteRenderer>();
-        SR2.sprite = sprite;
+        	SR2.sprite = sprite;
 		judgeTwo.transform.position = new Vector2(-14,14);//chang vector later
 
 		//create judge 3
@@ -37,7 +37,7 @@ public class GenerateJudges : MonoBehaviour {
 		judgeThree.transform.parent = this.gameObject.transform;
 		judgeThree.AddComponent<SpriteRenderer>();
 		SpriteRenderer SR3 = judgeThree.GetComponent<SpriteRenderer>();
-        SR3.sprite = sprite;
+        	SR3.sprite = sprite;
 		judgeThree.transform.position = new Vector2(0,14);//change vector later
 
 
