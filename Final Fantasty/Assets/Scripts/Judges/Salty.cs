@@ -12,7 +12,7 @@ public class Salty : Judge {
 		private static float SUM;
 		
 		// Passes some values up to the judge constructor
-		public void init() {
+		public override void init() {
 			base.init(STAT_MODS, NAME, SUM); 	// Pass up the food chain
 		}
 		

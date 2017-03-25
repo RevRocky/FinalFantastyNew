@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 /*
  * A Script Containing a Series of Methods which are intended
@@ -40,7 +41,7 @@ public class GameOver : MonoBehaviour {
 		catch (ItemNotFound e) {
 			artLocation = "Ramsay.png";
 		}
-		artSprite = IMG2Sprite.instance.LoadNewSprite(cardArtLocation + artSprite);
+		artSprite = IMG2Sprite.instance.LoadNewSprite(cardArtLocation + artLocation);
 
 		// Fire the ongame over mechanics
 		foreach (Mechanic mechanic in userMeal.getMechanics()) {

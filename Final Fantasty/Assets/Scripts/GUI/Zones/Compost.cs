@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Compost : MonoBehaviour, IDropHandler {
 
 	// When you drop something into compost, we simply remove the card from play
-	void OnDrop(){
+	public void OnDrop(PointerEventData eventData){
 
 		Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
 		if(d != null) {

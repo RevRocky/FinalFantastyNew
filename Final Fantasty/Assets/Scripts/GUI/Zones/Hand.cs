@@ -36,7 +36,7 @@ public class Hand : CardCollection {
 
 	// On drop we only want to allow the card to join if it is both not a meal
 	// and if there is enough capacity to allow the card to display
-	public override void OnDrop(Card newCard) {
+	public override void OnDrop(PointerEventData eventData) {
 		Draggable d = eventData.pointerDrag.GetComponent<Draggable> ();
 		Card droppedCard;
 

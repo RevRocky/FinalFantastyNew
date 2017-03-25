@@ -41,7 +41,7 @@ public class ReserveMealManager : CardCollection {
 	}
 
 	// Handles a card being dropped in this zone!
-	public void OnDrop(PointerEventData eventData){
+	public override void OnDrop(PointerEventData eventData){
 		Draggable d = eventData.pointerDrag.GetComponent<Draggable> ();
 		Card droppedCard;
 

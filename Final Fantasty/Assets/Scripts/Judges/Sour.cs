@@ -11,7 +11,7 @@ public class Sour : Judge {
 		private static float[] STAT_MODS = {1.0f, 2.0f, .25f, 1.0f, 1.0f, 1.0f};	// Stat modifiers for the judge, sour is the second index
 		private static float SUM;
 		// Passes some values up to the judge constructor
-		public void init() {
+		public override void init() {
 			base.init(STAT_MODS, NAME,SUM); 	// Pass up the food chain
 		}
 		

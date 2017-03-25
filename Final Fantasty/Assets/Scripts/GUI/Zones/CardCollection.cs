@@ -30,7 +30,7 @@ using System.Collections.Generic;
 
 
  	// What happens when we drop a card
- 	public abstract void OnDrop(Card newCard);
+ 	public abstract void OnDrop(PointerEventData eventData);
 
  	// How do we go about adding a card
  	public abstract void addCard(Card newCard);
@@ -39,7 +39,7 @@ using System.Collections.Generic;
  	 * When we drop a new card into the zone, we want to do some
  	 * updating of it's draggable object
  	 */
- 	void onPointerEnter(PointerEventData eventData) {
+ 	public void OnPointerEnter(PointerEventData eventData) {
  		//Debug.Log("OnPointerEnter");
 		if(eventData.pointerDrag == null)
 			return;

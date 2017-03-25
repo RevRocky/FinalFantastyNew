@@ -10,7 +10,7 @@ public class Sweet : Judge {
 		private static float[] STAT_MODS = {2.0f, 1.25f, .25f, 1.0f, 1.0f, .9f};	// Stat modifiers for the judge
 		private static float SUM;
 		// Passes some values up to the judge constructor
-		public void init() {
+		public override void init() {
 			base.init(STAT_MODS, NAME,SUM); 	// Pass up the food chain
 		}
 		

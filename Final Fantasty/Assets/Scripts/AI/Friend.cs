@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
+using System.IO;
 
 /*
  * Friend Is Modern AI
@@ -13,7 +13,7 @@ using System.Linq;
 public class Friend : MonoBehaviour {
 
 	// Reference to meal art directory
-	private const string MEALS_DIR = "Art" + Path.DirectorySeparatorChar + "Meal" + Path.DirectorySeparatorChar;
+	private string MEALS_DIR = "Art" + Path.DirectorySeparatorChar + "Meal" + Path.DirectorySeparatorChar;
 
 	// The Min and Max of bias. Set in editor!
 	public float BIAS_MIN;
@@ -28,9 +28,9 @@ public class Friend : MonoBehaviour {
 	private Judge judgeTwo;
 	private float[] decisionMatrix = {1, 1, 1, 1, 1, 1};	// The weights the AI will use to determine the best meal to make.
 
-	private PlayerSubmission aiSubmission;					// The submission the AI will make 
-	Random RNG;					
+	private PlayerSubmission aiSubmission;					// The submission the AI will make 			
 
+	private static Friend _instance;
 	public static Friend instance							// Tracks present instance of Friend! Now we can use friend from everywhere
 	{
 		get    
@@ -46,10 +46,12 @@ public class Friend : MonoBehaviour {
 
 	// This method must run after the Judges have been initialised and added to the scene
 	void Start () {
-		RNG = new Random();
 		DatabaseEntry optimalMeal;
-
-		getJudgeInfo();
+		Judge[] judges = JudgeManager.instance.getPublicJudges();
+		judgeOne = judges [0];
+		judgeTwo = judges [1];
+		judges = null;
+			
 		modifyDecisionWeights();							// Read in the judges preferences + Random AI Bias
 		optimalMeal = findOptimalMeal();									// It shall be optimal. Or that's what the AI thinks.
 		aiSubmission = constructMeal(optimalMeal);
@@ -68,7 +70,7 @@ public class Friend : MonoBehaviour {
 
 		// Loop through. Each position is 1 * Judge A mod * Judge 2 mod * bias!
 		for (stat = 0; stat < NUM_STATS; stat++) {
-			decisionMatrix[stat] *= (judgeOneStats[stat] * judgeTwoStats[stat] * biasArray);		// Updating weights
+			decisionMatrix[stat] *= (judgeOneStats[stat] * judgeTwoStats[stat] * biasArray[stat]);		// Updating weights
 		}
 	}
 
@@ -79,7 +81,7 @@ public class Friend : MonoBehaviour {
 	
 		// Loop through and generate dem puppies
 		for (int i = 0; i < numFloats; i++) {
-			randomFloats [i] = (float)RNG.value * (max - min) + min;
+			randomFloats [i] = Random.value * (max - min) + min;
 		}
 		return randomFloats;
 	}
@@ -87,9 +89,9 @@ public class Friend : MonoBehaviour {
 	// Searches through All Meals in the Game. Returns copy of database entry with highest weighted score
 	private DatabaseEntry findOptimalMeal() {
 		float score;		// Current score of the meal we're looking at
-		DatabaseEntry optimalMeal;	// Best meal we've found so far!
+		DatabaseEntry optimalMeal = null;	// Best meal we've found so far!
 		DatabaseEntry mealEntry;	// Current meal we're looking at
-		string[] textFileDelimiters = {'\n'};
+		char[] textFileDelimiters = {'\n'};
 
 		string[] meals = MEAL_LIST_FILE.text.Split(textFileDelimiters);
 		float maxScore = 0;		// Largest score we've found so far
@@ -128,11 +130,11 @@ public class Friend : MonoBehaviour {
 	 */
 	private PlayerSubmission constructMeal(DatabaseEntry optimalMeal) {
 		byte[] finalStats = addIngredients(optimalMeal);
-		byte[] overpoweringMods;
+		byte[] overpoweringMods = new byte[6];
 
 		// Assuming a uniform distrobution of random floats between 0-1
-		if (RNG.value >= OVERPOWERING_FLAVOUR_THRESHOLD) {
-			overpoweringMods = OverpoweringFlavour.generateModifiers();		// If we pass the check, include overpowering flavour
+		if (Random.value >= OVERPOWERING_FLAVOUR_THRESHOLD) {
+			overpoweringMods = OverpoweringFlavour.generateModifiers(finalStats);		// If we pass the check, include overpowering flavour
 		}
 		else {
 			for (int i = 0; i < 6; i++) {
@@ -150,8 +152,8 @@ public class Friend : MonoBehaviour {
 	private byte[] addIngredients(DatabaseEntry meal) {
 		DatabaseEntry ingredient;	// Reference to the current ingredient we are looking at
 
-		string ingredientList = meal.tag.Split(";");	// ';' seperates each ingredient
-		byte[] statSum = meal.stats.Clone();			// Get clone of the meal's stats!
+		string[] ingredientList = meal.tag.Split(';');	// ';' seperates each ingredient
+		byte[] statSum = (byte[]) meal.stats.Clone();			// Get clone of the meal's stats!
 
 		// Loop through adding each ingredient
 		foreach (string ingredientTag in ingredientList) {
@@ -160,11 +162,11 @@ public class Friend : MonoBehaviour {
 
 				//TODO Implement Step Up Attribute. Same as tag of one step up!
 				// If a step up exists, and the check passes, use it!
-				if (!ingredient.stepUp.Equals("N/A") && RNG.value > PREMIUM_INGREDIENT_THRESHOLD) {
+				if (!ingredient.stepUp.Equals("N/A") && Random.value > PREMIUM_INGREDIENT_THRESHOLD) {
 					ingredient = Database.instance.searchByTag(ingredient.stepUp);
 				}
 				for (int i = 0; i < NUM_STATS; i++){
-					statSum[i] = statSum[i] + ingredient.stats[i];
+					statSum[i] = (byte) (statSum[i] + ingredient.stats[i]);	// For some reason Unity thought this wasn't a byte
 				}
 			}
 			catch (ItemNotFound e) {

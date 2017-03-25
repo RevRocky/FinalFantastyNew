@@ -34,7 +34,7 @@ public class SubmissionZone : CardCollection {
 
 	// Handles a meal card being dropped in this area!
 	// TODO Ensure this works correctly because I'm not explicitly overriding it
-	void OnDrop(PointerEventData eventData) {
+	public override void OnDrop(PointerEventData eventData) {
 		Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
 		Card droppedCard;
 
