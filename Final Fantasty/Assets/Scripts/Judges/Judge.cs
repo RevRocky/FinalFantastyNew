@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public abstract class Judge : MonoBehaviour {
+	public string nameJudge;
 	
 	public CookTimer timer;
 
@@ -15,7 +16,12 @@ public abstract class Judge : MonoBehaviour {
 	public const int NUM_STATS = 6;
 	public string name;
 	public float[] statModifiers;
-	
+	private DialogueHolder dHolder;
+	public float sumStats;
+
+	void Start(){
+		dHolder = FindObjectOfType<DialogueHolder>();
+	}
 	// Initialisation Function
 	public void init(float[] statModifiers, string name) {
 		this.statModifiers = statModifiers;	// Assigning a judges stat mods
@@ -29,15 +35,22 @@ public abstract class Judge : MonoBehaviour {
 		// Initialise i and sum
 		int i = 0;
 		float sum = 0;
+
 		
 		for(; i < NUM_STATS; i++) {
 			sum += statModifiers[i] * (cardStats[i] + modifiers[i]);
 		}
-		return sum;
+
+		sumStats = sum;
+		return sumStats;
 	}
 
 	public void Talk() {
-		
+		dHolder.theName = nameJudge;
+		nameJudge = "Sweet";
+		dHolder.theSum = sumStats;
+
+
 	}
 	
 	// Update is called once per frame

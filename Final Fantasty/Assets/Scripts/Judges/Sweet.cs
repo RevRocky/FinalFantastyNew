@@ -6,12 +6,6 @@ public class Sweet : Judge {
 
 		public CookTimer timer;
 
-		public enum State {
-			CALCULATE,
-			TALK
-		}
-
-		public State state;
 		public static string NAME = "Sweetums";
 		private static float[] STAT_MODS = {2.0f, 1.25f, .25f, 1.0f, 1.0f, .9f};	// Stat modifiers for the judge
 		
@@ -20,7 +14,10 @@ public class Sweet : Judge {
 			base.init(STAT_MODS, NAME); 	// Pass up the food chain
 		}
 		
-		
+		public void talk(){
+			nameJudge = "Sweet";
+
+		}
 
 		// Use this for initialization
 		void Start () {

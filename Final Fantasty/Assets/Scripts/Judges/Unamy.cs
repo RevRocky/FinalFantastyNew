@@ -5,12 +5,7 @@ using UnityEngine;
 public class Unamy : Judge {
 		public CookTimer timer;
 
-		public enum State {
-			CALCULATE,
-			TALK
-		}
 
-		public State state;
 		public static string NAME = "Unami";
 		private static float[] STAT_MODS = {1.0f, 1.05f, 1.25f, 1.0f, 1.0f, 2.0f};	// Stat modifiers for the judge
 		
@@ -18,7 +13,11 @@ public class Unamy : Judge {
 		public void init() {
 			base.init(STAT_MODS, NAME); 	// Pass up the food chain
 		}
-		
+
+		public void talk(){
+			nameJudge = "Unami";
+
+		}
 		
 
 		// Use this for initialization

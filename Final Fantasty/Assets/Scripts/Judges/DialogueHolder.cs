@@ -7,6 +7,8 @@ public class DialogueHolder : MonoBehaviour {
 	public string dialogue;
 	private DialogueManager dMan;
 	public string[] dialogueLines;
+	public string theName;
+	public float theSum;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +24,15 @@ public class DialogueHolder : MonoBehaviour {
 			{
 				dMan.dialogLines = dialogueLines;
 				dMan.ShowDialogues();
+			}
+			else
+			{
+				if(dMan.currentLine == 2){
+					dMan.dText.text= "I'm judge" + theName;
+				}
+				else if (dMan.currentLine == 3){
+					dMan.dText.text= "Your score is" + theSum;
+				}
 			}
 		}
 		
