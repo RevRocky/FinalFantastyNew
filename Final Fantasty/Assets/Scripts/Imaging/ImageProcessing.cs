@@ -46,6 +46,12 @@ public class ImageProcessing{
 	// Some stuff that will mainly be used on OS based branching
 	private static bool WINDOWS = Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer;
 
+	// Some Font Thangs!
+	private static string FONT_REG_NAME = "Bitter-Regular.otf";
+	private static string FONT_BOLD_NAME = "Bitter-Bold.otf";
+	private static string FONT_ITAL_NAME = "Bitter-Italic.otf";
+
+
 	/*
 	 * Combines various card arts into one hybrid image.
 	 * saves image to disk and returns the location of the
@@ -64,22 +70,26 @@ public class ImageProcessing{
 		Bitmap cardBase;		// The template card image
 		Bitmap cardArt;			// The card art!
 
-		System.Drawing.Font Bitter = new System.Drawing.Font ("Bitter", 32);
-		System.Drawing.Font Bitter_Bold = new System.Drawing.Font ("Bitter", 50, System.Drawing.FontStyle.Bold);
-		System.Drawing.Font Bitter_Italic = new System.Drawing.Font ("Bitter", 30, System.Drawing.FontStyle.Italic);
-
 		SolidBrush blackBrush = new SolidBrush (System.Drawing.Color.Black);	// Black like my... erm... python. Rex.
 
+		// TODO Investigate further why Unity crashes using custom fonts
+		var Bitter = new System.Drawing.Font("Bitter", 32);
+		var Bitter_Bold = new System.Drawing.Font("Bitter", 50, System.Drawing.FontStyle.Bold);
+		var Bitter_Italic = new System.Drawing.Font("Bitte", 32, System.Drawing.FontStyle.Italic);
+
+		// Loading pictures and fonts
+		string applicationPath = Application.dataPath;	// Avoiding repeated getter calls
 		if (WINDOWS) {
-			string properWindowsPath = Application.dataPath.Replace ('/', '\\');		// Correct operator!
+			string properWindowsPath = applicationPath.Replace ('/', '\\');		// Correct operator!
 			cardBase = (Bitmap)Bitmap.FromFile (properWindowsPath + Path.DirectorySeparatorChar + CARD_BASE_DIRECTORY + "CardBase.png");
 			cardArt = (Bitmap)Bitmap.FromFile (properWindowsPath + Path.DirectorySeparatorChar + CARD_IMAGE_DRECTORY + cardInfo.artLocation);
+			// Adding some fonts
 		}
 		else {		// Running on OSX or Linux
-			cardBase = (Bitmap)Bitmap.FromFile (Application.dataPath + Path.DirectorySeparatorChar + CARD_BASE_DIRECTORY + "CardBase.png");
-			cardArt = (Bitmap)Bitmap.FromFile (Application.dataPath + Path.DirectorySeparatorChar + CARD_IMAGE_DRECTORY + "CardBase.png");
+			cardBase = (Bitmap)Bitmap.FromFile (applicationPath + Path.DirectorySeparatorChar + CARD_BASE_DIRECTORY + "CardBase.png");
+			cardArt = (Bitmap)Bitmap.FromFile (applicationPath + Path.DirectorySeparatorChar + CARD_IMAGE_DRECTORY + "CardBase.png");	
 		}
-
+			
 		// Ensure the card art is the correct size
 		cardArt = resizeImage (cardArt, PICTURE_SIZE.X, PICTURE_SIZE.Y);
 

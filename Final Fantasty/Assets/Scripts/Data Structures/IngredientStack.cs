@@ -8,6 +8,7 @@ using System.IO;
 
 /* This is a class that contains some static methods that will permit the
  * generation of meal card images based upon the stats of the generated card.
+ * Author: Rocky Petkov
 */
 public class IngredientStack {
 
@@ -72,8 +73,9 @@ public class IngredientStack {
 		}
 		Array.Sort(tags, StringComparer.InvariantCulture);				// Sort dem tags
 		foreach (string tag in tags) {
-			searchTag += tag; 											// Combine those tags
+			searchTag += (tag + ";"); 									// Combine those tags. Meal ingredients are separated by semicolons
 		}
+		searchTag = searchTag.TrimEnd(';');				// Trim the final semicolon
 		try {
 			mealEntry = Database.instance.searchByTag(searchTag);		// Returns a clone of the database entry
 			mealEntry.stats = combineStatsGood(mealEntry.stats, sumStats);
@@ -84,7 +86,7 @@ public class IngredientStack {
 			byte[] mealStats = combineStatsBad(sumStats);				// Combines the stats and adds heavy penalty to the stats
 			mechanicList = addBadMechanic(mechanicList);				// Adding a negative side effect to our cards
 			string type = "Meal";										// Don't want it being passed in as a "Magic number"
-			string name = searchTag;									// TODO Think of a better way to procedrually name this!
+			string name = "Mystery Creation";							// Opting for a straight forward naming mechanism. Otherwise I'd have to do NLP on the tags. Gross!
 			mealEntry = new DatabaseEntry(name, type, artLocation,
 							mechanicList, mealStats);					// Create a database entry for this card					
 		}	
