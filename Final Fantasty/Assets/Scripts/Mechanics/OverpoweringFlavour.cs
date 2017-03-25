@@ -62,8 +62,8 @@ public class OverpoweringFlavour : Mechanic {
 	// TODO: If this is the only type of mechanic that works on game over it may behoove us
 	// to simply return the byte array from this method.
 	public override void onGameOver() {
-		byte[] modifiers;
-		modifiers = generateModifiers();
+		getParent.setOverpoweringMods(generateModifiers());	// Set the modifiers of the parent to be those generated
+
 	}
 
 	// Generates the Modifiers 

@@ -10,8 +10,10 @@ using UnityEngine;
 
 public class GameOver : MonoBehaviour {
 
-	PlayerSubmission AISubmission;		// AI's card
-	PlayerSubmission userSubmission;	// Player's Card
+	private static string cardArtLocation = "Art" + Path.DirectorySeparatorChar + "Meals" + Path.DirectorySeparatorChar;
+
+	private PlayerSubmission AISubmission;		// AI's card
+	private PlayerSubmission userSubmission;	// Player's Card
 
 	// The script will "Start" once the Game is Over.
 	void Start () {
@@ -27,7 +29,24 @@ public class GameOver : MonoBehaviour {
 	 * Modifications
 	 */
 	private PlayerSubmission collectPlayersCard() {
-		
+		Card userMeal = SubmissionZone.instance.getCard();	// Getting reference to the card
+		string artLocation;
+		Sprite artSprite;
+
+		// Getting a reference to the "Food Porn" shot!
+		try {
+			artLocation = Database.instance.searchByTag(userMeal.tag).artLocation;
+		}
+		catch (ItemNotFound e) {
+			artLocation = "Ramsay.png";
+		}
+		artSprite = IMG2Sprite.instance.LoadNewSprite(cardArtLocation + artSprite);
+
+		// Fire the ongame over mechanics
+		foreach (Mechanic mechanic in userMeal.mechanicsList()) {
+			mechanic.onGameOver();		// Fire the Game Over mechanics
+		}
+		return new PlayerSubmission("User", userMeal.getName(), userMeal.getStats(), userMeal.getOverpoweringMods(), artSprite);	// Return a player submission!
 	}
 		
 }
