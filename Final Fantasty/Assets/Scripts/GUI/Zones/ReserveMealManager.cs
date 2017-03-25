@@ -13,9 +13,6 @@ using UnityEngine;
  */
 public class ReserveMealManager : CardCollection {
 
-	public int CAPACITY;				// How many meals can be in the reserve zone
-	private List<Card> compostQueue;	// I'm not precisely sure what would be the best way to do this
-
 	private static ReserveMealManager _instance;											// Private copy of instance	
 	public static ReserveMealManager instance												// Tracks present instance of the RMM. Now we can use it everywhere
 	{
@@ -31,18 +28,14 @@ public class ReserveMealManager : CardCollection {
 	}
 
 	// Just set up the list o cards!
-	void Start() {
-		compostQueue = new List<Card> (CAPACITY);
-	}
 
 	// This method adds the supplied card to the reserve meal queue.
-	public void addCard(Card newCard){
-		compostQueue.Add (newCard);
-		// TODO Look at how to visually indicate the card scheduled for deletion
+	public override void addCard(Card newCard){
+		addToCollection(newCard);
 
 		// If the queue is at it's limit, remove oldest card!
-		if (compostQueue.Count == CAPACITY) {
-			Card removedCard = compostQueue [0];
+		if (getCollectionSize() == CAPACITY) {
+			Card removedCard = popFirstCard();
 			GameObject.Destroy (removedCard.gameObject);	// Destroy the game object associated iwth the top card
 		}
 	}
@@ -69,9 +62,6 @@ public class ReserveMealManager : CardCollection {
 		base.OnPointerExit (eventData);
 		// Mark card for deletion
 	}
-
-	// Removes the a reference to the supplied card from the queue on Dragout
-	private void removeSpecificCard(Card specificCard) {
-		compostQueue.Remove (specificCard);		// Removes the card
-	}
 }
+
+

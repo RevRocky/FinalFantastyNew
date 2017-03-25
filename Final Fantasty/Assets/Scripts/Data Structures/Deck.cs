@@ -11,7 +11,7 @@ public class Deck : MonoBehaviour {
 	private List<DatabaseEntry> cardList;
 
 	public int length;
-	public GameObject hand;
+	public GameObject handZone;
 
 	// Constructs an empty deck
 	public void Start() {
@@ -55,9 +55,12 @@ public class Deck : MonoBehaviour {
 
 	// Returns the a game object containing the top card of the deck.
 	public GameObject drawCard() {
-		if (length > 0) {
+		int handSize = Hand.instance.getCollectionSize ();
+
+		// Check to make sure we CAN draw a card.
+		if (length > 0 && (2 < handSize || handSize >= 5)) {
 			DatabaseEntry drawnCardInfo = cardList [0];	
-			Card drawnCard = Card.instantiateCard (drawnCardInfo, hand);		// Read card from DB
+			Card drawnCard = Card.instantiateCard (drawnCardInfo, handZone);		// Read card from DB
 			GameObject newObject = drawnCard.gameObject;				// Get the associated game object
 			cardList.RemoveAt (0);
 			length--;

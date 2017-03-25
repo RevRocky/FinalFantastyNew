@@ -39,7 +39,7 @@ using System.Collections.Generic;
  	 * When we drop a new card into the zone, we want to do some
  	 * updating of it's draggable object
  	 */
- 	void onPointerEnter(PoiterEventData eventData) {
+ 	void onPointerEnter(PointerEventData eventData) {
  		//Debug.Log("OnPointerEnter");
 		if(eventData.pointerDrag == null)
 			return;
