@@ -23,9 +23,10 @@ public abstract class Judge : MonoBehaviour {
 		dHolder = FindObjectOfType<DialogueHolder>();
 	}
 	// Initialisation Function
-	public void init(float[] statModifiers, string name) {
+	public void init(float[] statModifiers, string name, float sumStats) {
 		this.statModifiers = statModifiers;	// Assigning a judges stat mods
 		this.name = name;
+		this.sumStats = sumStats;
 	}
 	
 	// Computes a weighted sum of stats. Card stats is the a given players'
