@@ -35,7 +35,7 @@ public class GameOver : MonoBehaviour {
 
 		// Getting a reference to the "Food Porn" shot!
 		try {
-			artLocation = Database.instance.searchByTag(userMeal.tag).artLocation;
+			artLocation = Database.instance.searchByTag(userMeal.getTag()).artLocation;
 		}
 		catch (ItemNotFound e) {
 			artLocation = "Ramsay.png";
@@ -43,7 +43,7 @@ public class GameOver : MonoBehaviour {
 		artSprite = IMG2Sprite.instance.LoadNewSprite(cardArtLocation + artSprite);
 
 		// Fire the ongame over mechanics
-		foreach (Mechanic mechanic in userMeal.mechanicsList()) {
+		foreach (Mechanic mechanic in userMeal.getMechanics()) {
 			mechanic.onGameOver();		// Fire the Game Over mechanics
 		}
 		return new PlayerSubmission("User", userMeal.getName(), userMeal.getStats(), userMeal.getOverpoweringMods(), artSprite);	// Return a player submission!
