@@ -1,13 +1,22 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: a134305ecd9142c47ab01887247fa54d
 timeCreated: 1490556680
+=======
+guid: e8db9686c4ec6814296eb983c74c9bfe
+timeCreated: 1490465697
+>>>>>>> origin/Andrew's-Branch
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
+<<<<<<< HEAD
     enableMipMap: 1
+=======
+    enableMipMap: 0
+>>>>>>> origin/Andrew's-Branch
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -30,11 +39,19 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -1
+<<<<<<< HEAD
     wrapMode: -1
   nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
   spriteMode: 0
+=======
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+>>>>>>> origin/Andrew's-Branch
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -42,9 +59,15 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaUsage: 1
+<<<<<<< HEAD
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
   textureType: 0
+=======
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+>>>>>>> origin/Andrew's-Branch
   textureShape: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
