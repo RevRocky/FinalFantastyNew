@@ -62,15 +62,27 @@ public class OverpoweringFlavour : Mechanic {
 	// TODO: If this is the only type of mechanic that works on game over it may behoove us
 	// to simply return the byte array from this method.
 	public override void onGameOver() {
-		byte[] modifiers;
-		modifiers = generateModifiers();
+		getParent().setOverpoweringMods(generateModifiers());	// Set the modifiers of the parent to be those generated
+
 	}
 
 	// Generates the Modifiers 
 	private byte[] generateModifiers(){
 		byte[] cardStats = getParent().getStats();	// Obtaining reference to the card's stats
 		byte[] modifiers = {0, 0, 0, 0, 0, 0};
-		int[] statsToModify = biggestTwoIndices(cardStats);
+		int[] statsToModify = OverpoweringFlavour.biggestTwoIndices(cardStats);
+
+		// Adjust the stats
+		foreach(int stat in statsToModify) {
+			modifiers[stat] -= cardStats[stat];		// Naive approach. Gives the player double advantage in their best stat (MAY DIV 2)
+		}
+		return modifiers;
+	}
+
+	// Static Version of Modifier Generation for the AI
+	public static byte[] generateModifiers(byte [] cardStats){
+		byte[] modifiers = {0, 0, 0, 0, 0, 0};
+		int[] statsToModify = OverpoweringFlavour.biggestTwoIndices(cardStats);
 
 		// Adjust the stats
 		foreach(int stat in statsToModify) {
@@ -83,7 +95,7 @@ public class OverpoweringFlavour : Mechanic {
 	 * Returns the index of an array of bytes with the largest value. 
 	 * Takes a naive approach as it will only be called with small arrays
 	 */
-	private int[] biggestTwoIndices(byte[] anArray) {
+	private static int[] biggestTwoIndices(byte[] anArray) {
 		int[] indexMax = { 0, 0 };		// Position Zero is largest. Position One is second largest
 		int i;
 		for (i = 0; i < anArray.Length ; i++) {

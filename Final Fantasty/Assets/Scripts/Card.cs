@@ -17,9 +17,11 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 	private static string cardArtLocation = "Art" + Path.DirectorySeparatorChar + "Cards" + Path.DirectorySeparatorChar;
 	private string name;
 	private string type;
+	private string dbTag;
 	private List<Mechanic> mechanics;
 	private byte[] stats;
 	public string ingredientTag;
+	private byte[] overpoweringMods;	// The overpowering flavour mods attached to this card. By default initiailised to an array of 0s for each card
 
 	// Use this for initialization
 	void Awake () {
@@ -49,8 +51,10 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 		name = cardInfo.name;
 		type = cardInfo.type;
 		stats = cardInfo.stats;
+		dbTag = cardInfo.tag;
 		mechanics = instantiateMechanics(cardInfo.mechanics);
 		ingredientTag = cardInfo.ingredientTag;
+		overpoweringMods = new byte[6];	// Initialise overpowering flavour modifications to be an empty array
 		
 		if (type == "Meal") {
 			string spriteLocation = ImageProcessing.createMealCard(cardInfo);		//  Creating meal card and getting its location on disk
@@ -100,10 +104,31 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 		return;
 	}
 
+	// Fetch method for the card's type
+	public string getType() {return type;}
+
 	// Returns a list of the card's mechanics!
 	public List<Mechanic> getMechanics() {
 		return mechanics;
 	}
+
+	// Returns the card's tag
+	public string getTag(){return dbTag;}
+
+	//Returns the card's name
+	public string getName(){return name;}
+
+	// Setter for the card's overpowering flavour mods.
+	public void setOverpoweringMods(byte[] modifiers){
+		// We only want to change if this card is a meal AND the modifiers is of the right length
+		if (type == "Meal" && modifiers.Length == NUM_STATS) {
+			overpoweringMods = modifiers;	// Update the modifiers
+		}
+		return;	// I don't mind failing silently!
+	}
+
+	// Getter for the overPowering Flavour Mods
+	public byte[] getOverpoweringMods() { return overpoweringMods;}
 
 
 	public void OnPointerEnter(PointerEventData eventData)

@@ -29,8 +29,6 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 		if(d != null && d.placeholderParent==this.transform) {
 			d.placeholderParent = d.parentToReturnTo;
 		}
-
-
 	}
 
 	public void OnDrop(PointerEventData eventData) {
