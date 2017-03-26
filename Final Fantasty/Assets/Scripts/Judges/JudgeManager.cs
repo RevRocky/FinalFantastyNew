@@ -36,6 +36,7 @@ public class JudgeManager : MonoBehaviour {
 	// NOTE: Sprite will be loaded in the OnGameOver method
 	void Start() {
 		Sprite sprite = Resources.Load<Sprite>("chief") as Sprite;	// TODO depreciate with better art
+		judgeList = new Judge[3];
 		selectJudges();
 
 		Vector2 renderPosition = new Vector2(-28, 14);
@@ -47,6 +48,13 @@ public class JudgeManager : MonoBehaviour {
 			renderPosition.x += 14;
 		}
 		//TODO How do I know when the beginning of the game is done
+	}
+
+	// Handles Final Judging and everything associated with it
+	void onGameOver(PlayerSubmission playerSubmission, PlayerSubmission friendSubmission) {
+		// Play EndJudge Scene
+		// Show playerSubmission + AI submission meals
+		// Some intro text
 	}
 
 	// Generates two judges with informed pallette and one which is a wildcard!
@@ -95,5 +103,11 @@ public class JudgeManager : MonoBehaviour {
 		publicJudges[0] = judgeList[0];
 		publicJudges[1] = judgeList[1];
 		return publicJudges;
+	}
+
+	// Please dont call anywhere inappropriate.
+	// This gets reference to all of the judges
+	public Judge[] getAllJudges() {
+		return judgeList;
 	}
 }

@@ -1,0 +1,34 @@
+SCENE ORDER
+
+X Logo - Show the Logo
+X Main Menu	- Needs size rejiggering
+X Deck Selection - Needs cool background
+X Loading Screen	-- Needs tying together
+	Load Database
+	Load Judge Manager
+
+ Judges 	- Need Final Art, Need Scene Management Script
+ 	Order of OPS
+ 		1. Read Judges
+ 		for each judge:
+ 			load srite (For now just load temp but in final will load judgeList[i].Sprite)
+ 			play dialogue (judgeList[i].PregameTalk())
+ 			wait for user input
+
+ 		3. Treat mystery judge as a special case?
+ 		4. On last space bar, load MAIN
+ Layout 	- Needs final Layout, Final Art
+ 	Load Deck
+ 	Load Friend
+ 	At Timer == 0, GameOver
+
+ End Judging - Everything about it
+ 	Order of OPS
+ 		Read judges
+ 		byte[2] playerAIScore;
+ 		for (i = 0; i < 3; i++) {
+
+ 		} 
+
+ 	Winner / Loser Screen?
+ 		Sends it back to main menu

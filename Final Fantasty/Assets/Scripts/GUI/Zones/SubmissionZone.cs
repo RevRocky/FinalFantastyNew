@@ -27,7 +27,11 @@ public class SubmissionZone : CardCollection {
 	// This formally adds a card to the SubmissionZone
 	public override void addCard(Card newMeal) {
 		if (getCollectionSize() != 0) {
-			ReserveMealManager.instance.addCard(popFirstCard());	// Move the card to the reserves
+			Card oldCard = popFirstCard ();
+			Destroy (oldCard.gameObject);	// TODO REMOVE
+			//oldCard.gameObject.transform.parent = ReserveMealManager.instance.gameObject;	// Change the parent of our current card
+			//ReserveMealManager.instance.addCard(oldCard);	// Move the card to the reserves
+
 		}
 		addToCollection (newMeal);
 	}

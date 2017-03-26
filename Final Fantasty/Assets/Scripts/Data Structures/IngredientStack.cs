@@ -91,13 +91,15 @@ public class IngredientStack {
 							mechanicList, mealStats);					// Create a database entry for this card					
 		}	
 		finally {
-			Card.instantiateCard(mealEntry);							// Instantiate the card prefab (or what ever it is called)
+			Card mealCard = Card.instantiateCard(mealEntry);							// Instantiate the card prefab (or what ever it is called)
+			SubmissionZone.instance.addCard(mealCard);									// Add it to the submission zone!
 			int loopMax = theCards.Count;
 			for (i = 0; i < loopMax; i++) {
 				Card card = theCards[0];
 				theCards.RemoveAt (0);
 				GameObject.Destroy (card.gameObject);
 			}
+
 		}
 	}
 

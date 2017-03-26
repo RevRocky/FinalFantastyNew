@@ -37,6 +37,7 @@ public abstract class Judge : MonoBehaviour {
 	}
 
 	// Generate's a mystery judge with randomised stats and attaches it to the supplied parent
+	// TODO Move to it's own class
 	public static Judge generateMysteryJudge(GameObject parent) {
 		Judge magicMysteryJudge = parent.AddComponent<Judge>() as Judge;
 		magicMysteryJudge.name = "Mysterious Man";
@@ -49,6 +50,15 @@ public abstract class Judge : MonoBehaviour {
 
 		return magicMysteryJudge;	
 	}
+
+	// This handles a judges dialogue before the game
+	public abstract string preGameTalk();
+
+	// Handles judge dialogue as they are evaluating food
+	public abstract string judgeComments(float mealscore, string mealName);
+
+	// Handles the judge giving a point to their favoured meal (the dialogue side of it anyway
+	public abstract string andTheWinnerIs(string chefName, string mealName, float mealScore);
 
 
 	
