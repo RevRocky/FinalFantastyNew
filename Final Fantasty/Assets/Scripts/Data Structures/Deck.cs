@@ -58,7 +58,7 @@ public class Deck : MonoBehaviour {
 		int handSize = Hand.instance.getCollectionSize ();
 
 		// Check to make sure we CAN draw a card.
-		if (length > 0 && (2 < handSize || handSize >= 5)) {
+		if (length > 0 && (2 > handSize || handSize >= 5)) {
 			DatabaseEntry drawnCardInfo = cardList [0];	
 			Card drawnCard = Card.instantiateCard (drawnCardInfo, handZone);		// Read card from DB
 			GameObject newObject = drawnCard.gameObject;				// Get the associated game object
