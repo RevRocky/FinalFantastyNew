@@ -11,10 +11,7 @@ using UnityEngine;
  * be sent to compost
  * Author: Rocky Petkov
  */
-public class ReserveMealManager : DropZone {
-
-	public int CAPACITY;				// How many meals can be in the reserve zone
-	private List<Card> compostQueue;	// I'm not precisely sure what would be the best way to do this
+public class ReserveMealManager : CardCollection {
 
 	private static ReserveMealManager _instance;											// Private copy of instance	
 	public static ReserveMealManager instance												// Tracks present instance of the RMM. Now we can use it everywhere
@@ -30,20 +27,21 @@ public class ReserveMealManager : DropZone {
 		}
 	}
 
+	// Just set up the list o cards!
+
 	// This method adds the supplied card to the reserve meal queue.
-	public void addCard(Card newCard){
-		compostQueue.Add (newCard);
-		// TODO Look at how to visually indicate the card scheduled for deletion
+	public override void addCard(Card newCard){
+		addToCollection(newCard);
 
 		// If the queue is at it's limit, remove oldest card!
-		if (compostQueue.Count == CAPACITY) {
-			Card removedCard = compostQueue [0];
+		if (getCollectionSize() == CAPACITY) {
+			Card removedCard = popFirstCard();
 			GameObject.Destroy (removedCard.gameObject);	// Destroy the game object associated iwth the top card
 		}
 	}
 
 	// Handles a card being dropped in this zone!
-	public void OnDrop(PointerEventData eventData){
+	public override void OnDrop(PointerEventData eventData){
 		Draggable d = eventData.pointerDrag.GetComponent<Draggable> ();
 		Card droppedCard;
 
@@ -60,35 +58,10 @@ public class ReserveMealManager : DropZone {
 	}
 
 	// Ensures that a card is correctly removed from the queue when dragged out of this zone!
-	public void OnPointerExit(PointerEventData eventData) {
-
-		// If the data is nill return
-		if (eventData.pointerDrag == null) {
-			return;
-		}
-
-		Draggable d = eventData.pointerDrag.GetComponent<Draggable> ();
-		if (d == null) {
-			return;		// If there's no draggable return
-		}
-
-		Card removedCard = d.gameObject.GetComponent<Card> ();	// Acquiring reference to the card
-		removeSpecificCard (removedCard);
-		if (compostQueue.Count < CAPACITY) {
-			// TODO UNMARK CARD
-			;
-		}
+	public override void OnPointerExit(PointerEventData eventData) {
+		base.OnPointerExit (eventData);
+		// Mark card for deletion
 	}
-
-	// Removes the a reference to the supplied card from the queue on Dragout
-	private void removeSpecificCard(Card specificCard) {
-		compostQueue.Remove (specificCard);		// Removes the card
-	}
-		
-
-
-
-
-
-
 }
+
+
