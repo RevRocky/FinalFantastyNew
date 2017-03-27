@@ -94,7 +94,7 @@ public class JudgeManager : MonoBehaviour {
 					break;
 			}
 		}
-		judgeList[i] = Judge.generateMysteryJudge(this.gameObject);
+		judgeList[i] = MysteryJudge.generateMysteryJudge(this.gameObject);
 	}
 
 	// Returns a reference to the two judges who have publicly known tastes!
