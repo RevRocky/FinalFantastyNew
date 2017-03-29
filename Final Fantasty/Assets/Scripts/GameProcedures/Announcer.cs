@@ -20,6 +20,10 @@ public class Announcer : MonoBehaviour
 		}
 	}
 
+	public string judgeRevealText() {
+		return "Welcome to Final Fantasty."; //need revision
+	}
+
 	// The text that will display before any judging begins
 	public string preJudgingText() {
 		return "Long has man pondered who would come out on top in a battle of culinary wits. Would it be man... or machine. Today we find out!";

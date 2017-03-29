@@ -5,11 +5,6 @@ using UnityEngine.UI;
 
 public abstract class Judge : MonoBehaviour {
 	public string nameJudge;
-	
-	public enum State {
-		CALCULATE,
-		TALK
-	}
 		
 	private string spriteLocation;
 	public const int NUM_STATS = 6;
