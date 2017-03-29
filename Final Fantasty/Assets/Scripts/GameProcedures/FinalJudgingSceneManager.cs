@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System.IO;
+using System;
 using UnityEngine;
 
 /*
@@ -11,25 +12,18 @@ using UnityEngine;
  * player submissions as well as the three judges.
  * Author: Rocky Petkov
  */
-public class FinalJudgingSceneManager : MonoBehaviour {
+public class FinalJudgingSceneManager : DialogueManager {
 
-
-	public Image judgeSprite;	// Handles the rendering of the judge images
-	public Text nameBox;				// The name box.
-	public Text mainTextBox;			// This is where the talking goes!
-
-	private string SPRITE_DIR = Path.DirectorySeparatorChar + "Art" + Path.DirectorySeparatorChar + "Judge" + Path.DirectorySeparatorChar;
-	private Announcer announcerDude;
-	private JudgeManager judgeStable;	// Reference to our stable of judges.
 	private MealSubmissionHolder submissions;	// Our submissions. For safekeeping!
 	private Vector2 points;						// X value for player, Y value for AI
 	private const int NUM_JUDGES = 3;
+	bool waiting = false;								// Waiting for something?
 
 	// The start method will act as the brains for the entire operation!
-	void Start () {
-		judgeStable = judgeManager.instance;	// Grabbing reference to our Judge Manager
+	// Not actually... an init. Only for testing
+	public override void init () {
+		base.init ();
 		submissions = MealSubmissionHolder.instance;
-		announcerDude = AnnouncerDude.instance;
 		points = new Vector2 (0, 0);
 		preJudging (); // Handles the procedrual announcements away from judging
 		mainJudging ();
@@ -38,56 +32,51 @@ public class FinalJudgingSceneManager : MonoBehaviour {
 
 	// Displays the announcer with a few pre judging announcements
 	void preJudging() {
-		judgeSprite = IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + announcerDude.spriteLocation);
-		nameBox.text = announcerDude.name;
-		mainTextBox.text = announcerDude.preJudgingText ();
-		// TODO WAIT FOR INPUT;
+ 		dialogueQueue.Enqueue (new DialogueTriple (IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + announcerDude.spriteLocation), announcerDude.name, announcerDude.preJudgingText()));
 	}
 
 
 	// Handles all of the judging!
 	void mainJudging() {
-		int i;
 		Judge[] judgeList = judgeStable.getAllJudges();
-		Judge currentJudge;
 		float playerScore;
 		float aiScore;
+		string playerResponseText;
+		string aiResponseText;
+		string winnerText;
 
-		for (i = 0; i < 3; i++) {
-			judgeSprite = IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + announcerDude.spriteLocation);
-			nameBox.text = announcerDude.name;
-			mainTextBox.text = announcerDude.midJudgingText (points);
+		// Ugly ugly ugly
+		foreach (Judge currentJudge in judgeList) {
+			dialogueQueue.Enqueue (new DialogueTriple(IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + announcerDude.spriteLocation), announcerDude.name, announcerDude.midJudgingText (points)));
 
-			// Display name and judge
-			judgeSprite = IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + judge.getSpriteLocation ());	// Load Sprite		
-
+			// Judge player and queue dialogue
 			playerScore = currentJudge.evaluateCard (submissions.player.stats, submissions.ai.overpoweringMods);	// Score player's dish
-			mainTextBox.text = currentJudge.judgeComments(playerScore, submissions.player.cardTitle);	// Give comment
+			playerResponseText = currentJudge.judgeComments(playerScore, submissions.player.cardTitle);
+			dialogueQueue.Enqueue (new DialogueTriple(IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + currentJudge.getSpriteLocation()), currentJudge.name, playerResponseText));
 
-			// TODO WAIT FOR PLAYER INPUT
-			aiscore = currentJudge.evaluateCard (submissions.ai.stats, submissions.player.overpoweringMods);	// Score friend's dish
-			mainTextBox.text = currentJudge.judgeComments(aiScore, submissions.ai.cardTitle);					// Give comment on friend's dish
+			// Judge ai and queue dialogue
+			aiScore = currentJudge.evaluateCard (submissions.ai.stats, submissions.player.overpoweringMods);	// Score friend's dish
+			aiResponseText = currentJudge.judgeComments(aiScore, submissions.ai.cardTitle);					// Give comment on friend's dish
+			dialogueQueue.Enqueue (new DialogueTriple(IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + currentJudge.getSpriteLocation()), currentJudge.name, aiResponseText));
 
-			// TODO WAIT FOR PLAYER INPUT
+			// Who won?
 			if (playerScore > aiScore) {
 				points.x += 1;	// Add a point
-				mainTextBox.text = currentJudge.andTheWinnerIs (submissions.player.owner, submissions.player.cardTitle, playerScore); // Let the player know
+				winnerText = currentJudge.andTheWinnerIs (submissions.player.owner, submissions.player.cardTitle, playerScore); // Let the player know
 			}
 			else {
 				// AI has earned the point
 				points.y += 1;	// Add a point
-				mainTextBox.text = currentJudge.andTheWinnerIs (submissions.ai.owner, submissions.ai.cardTitle, aiScore); // Let the player know
+				winnerText = currentJudge.andTheWinnerIs (submissions.ai.owner, submissions.ai.cardTitle, aiScore); // Let the player know
 			}
-			// TODO WAIT FOR PLAYER INPUT
+			dialogueQueue.Enqueue (new DialogueTriple(IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + currentJudge.getSpriteLocation()), currentJudge.name, winnerText));
 		}
 	}
 
 	// Handles the sprites and everything after judging is complete!
 	void postJudging() {
-		judgeSprite = IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + announcerDude.spriteLocation);
-		nameBox.text = announcerDude.name;
-		mainTextBox.text = announcerDude.postJudgingText (points);
-		// TEAR DOWN AND GO TO NEW SCENE
+		dialogueQueue.Enqueue (new DialogueTriple(IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + announcerDude.spriteLocation), announcerDude.name, announcerDude.postJudgingText (points)));
+		StartCoroutine (manageDialogue ());
 		Debug.Log ("Need to go to new scene");
 	}
 }

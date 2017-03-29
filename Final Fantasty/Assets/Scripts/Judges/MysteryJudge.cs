@@ -10,17 +10,18 @@ public class MysteryJudge : Judge {
 	private static float MYSTERY_STAT_MAX = 1.75f;
 	public static float[] STAT_MODS = { 0, 0, 0, 0, 0, 0 };	//
 
+	public static string IMAGE_NAME = "Mystery_Sprite";
 	public static string NAME = "???";
 
 	// Passes some values up to the judge constructor
 	// This constructor will never be called
 	public override void init() {
-		base.init(STAT_MODS, NAME); 	// Pass up the food chain
+		base.init(STAT_MODS, NAME, IMAGE_NAME); 	// Pass up the food chain
 	}
 
 	// An init function that passes up the supplied stat modifiers
 	public void init(float[] statMods){
-		base.init (statMods, NAME);
+		base.init (statMods, NAME, IMAGE_NAME);
 	}
 		
 

@@ -5,12 +5,13 @@ using UnityEngine;
 public class Spicy : Judge {
 	public CookTimer timer;
 
-	public static string NAME = "Gustavo Fernando Montoya";
+	public static string IMAGE_NAME = "Spicy_Sprite";
+	public static string NAME = "Gustavo";
 	private static float[] STAT_MODS = {2.0f, 1.05f, 2.25f, 1.0f, 1.0f, 1.0f};	// Stat modifiers for the judge
 
 	// Passes some values up to the judge constructor
 	public override void init() {
-			base.init(STAT_MODS, NAME); 	// Pass up the food chain
+			base.init(STAT_MODS, NAME, IMAGE_NAME); 	// Pass up the food chain
 		}
 		
 

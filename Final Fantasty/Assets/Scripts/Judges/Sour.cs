@@ -6,14 +6,14 @@ public class Sour : Judge {
 
 	public CookTimer timer;
 
-
+	public static string IMAGE_NAME = "Sour_Sprite";
 	public static string NAME = "Sour";	// TODO We need a better name
 	private static float[] statMods;	// Stat modifiers for the judge, sour is the second index
 
 
 	// Passes some values up to the judge constructor
 	public override void init() {
-		base.init(statMods, NAME); 	// Pass up the food chain
+		base.init(statMods, NAME, IMAGE_NAME); 	// Pass up the food chain
 	}
 
 	// This is the judges pregame talk. The idea here is to take a phrase randomly from a phrasebook
