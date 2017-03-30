@@ -11,8 +11,6 @@ public class EndGameTest : MonoBehaviour {
 		byte[] aiStats = { 0, 1, 2, 1, 2, 1 };
 		byte[] aiOverpower = { 0, 0, 0, 1, 0, 0 };
 
-		JudgeManager jManage = this.gameObject.AddComponent<JudgeManager>();
-		jManage.init ();
 		PlayerSubmission playerSub = new PlayerSubmission("User", "Spaghetti Marinara", playerStats, playerOverpower, null);
 		PlayerSubmission aiSub = new PlayerSubmission("Friend", "Rigatoni alla Vodka", aiStats, aiOverpower, null);
 		MealSubmissionHolder holder = this.gameObject.AddComponent<MealSubmissionHolder>();

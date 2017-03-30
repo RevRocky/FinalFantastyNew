@@ -58,9 +58,11 @@ public class OverpoweringFlavour : Mechanic {
 		;	// Code Here
 	}
 
-	// Contains any effects that will happen when play is over
-	// TODO: If this is the only type of mechanic that works on game over it may behoove us
-	// to simply return the byte array from this method.
+	/*
+	 * Sets the card's overpowering flavour modifiers to a 
+	 * Set of modifiers based upon the card's strongest
+	 * stats
+	 */
 	public override void onGameOver() {
 		getParent().setOverpoweringMods(generateModifiers());	// Set the modifiers of the parent to be those generated
 

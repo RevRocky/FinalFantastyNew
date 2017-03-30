@@ -74,9 +74,9 @@ public class loadingBarScript : MonoBehaviour {
 		}
 
 		while(progBar.value == 1f){
-			loadingText.text = "Press F to show respect";
-			if(Input.GetKeyDown(KeyCode.F)){
-				SceneManager.LoadScene(2);
+			loadingText.text = "Press Space to Show Respect";
+			if(Input.GetKeyDown(KeyCode.Space)){
+				SceneManager.LoadScene("layout");
 			}
 
 			yield return null;

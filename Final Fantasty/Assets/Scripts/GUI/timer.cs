@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class timer : MonoBehaviour {
 
 	public double timeRemaining = 5;
@@ -15,6 +16,10 @@ public class timer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timeRemaining -= Time.deltaTime;
+		if (timeRemaining <= 0.0f) {
+			this.gameObject.AddComponent<GameOver> ();	// Trigger game over!
+			Destroy(this);	// And go away!
+		}
 	}
 
 

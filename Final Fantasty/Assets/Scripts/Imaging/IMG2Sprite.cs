@@ -56,7 +56,7 @@ public class IMG2Sprite : MonoBehaviour {
 	}
 
 	// This little block of code graciiusly lifted from Stack Overflow!
-	private byte[] imageToByte(Bitmap bitmap){
+	public byte[] imageToByte(Bitmap bitmap){
 		using (var stream = new MemoryStream())
 		{
 			bitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);

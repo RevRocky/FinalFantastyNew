@@ -66,7 +66,7 @@ public class ImageProcessing{
 	 * to the Python Scripts. Saves image to disk and returns
 	 * the location of the file on DISK
 	 */
-	 public static string createMealCard(DatabaseEntry cardInfo) {
+	 public static Sprite createMealCard(DatabaseEntry cardInfo) {
 		Bitmap cardBase;		// The template card image
 		Bitmap cardArt;			// The card art!
 
@@ -209,19 +209,11 @@ public class ImageProcessing{
 		return messageTopLeft;
 	}
 
-	// Saves an image to a temporary directory, increments the imageCounter and returns
-	// an absolute path to the image on disk.
-	private static string saveImage(Bitmap image) {
-		string relativePath = TEMP_DIRECTORY + "TMPML_" + imageNumber.ToString () + ".png";	// A relative path to the image
-		string absolutePath = Application.dataPath + Path.DirectorySeparatorChar + RESOURCES + relativePath.Clone();
-
-		// Handling Windows file separators
-		if (WINDOWS) {
-			absolutePath.Replace ('/', '\\');		// Replacing UNIX file separators. The "relative path" portion of the string is already set up correctly
-		}
-		image.Save (absolutePath);
-		imageNumber++;
-		return absolutePath;	// Return a path to the file
+	// Saves the image to a byte stream which we can then use to create a sprite which we return
+	private static Sprite saveImage(Bitmap image) {
+		Texture2D newCard = new Texture2D(2, 2);
+		newCard.LoadImage (IMG2Sprite.instance.imageToByte (image));
+		return Sprite.Create (newCard, new Rect (0, 0, newCard.width, newCard.height), new Vector2 (0, 0), 100.0f);	// 100.0f is Pixels per unit
 	}
 
 }

@@ -34,8 +34,8 @@ public class JudgeManager : MonoBehaviour {
 
 	// Upon Initialisation, Load up the judges... then sit and wait
 	// NOTE: Sprite will be loaded in the OnGameOver method
-	// TODO NOT AN INIT FOR TESTING PORPOSES ONLY!
-	public void init() {
+	public void Start() {
+		DontDestroyOnLoad (this.gameObject);
 		Sprite sprite = Resources.Load<Sprite>("chief") as Sprite;	// TODO depreciate with better art
 		judgeList = new Judge[3];
 		selectJudges();

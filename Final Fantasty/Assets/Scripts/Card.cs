@@ -57,8 +57,8 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 		overpoweringMods = new byte[6];	// Initialise overpowering flavour modifications to be an empty array
 		
 		if (type == "Meal") {
-			string spriteLocation = ImageProcessing.createMealCard(cardInfo);		//  Creating meal card and getting its location on disk
-			spriteDrawer.sprite = IMG2Sprite.instance.LoadNewSprite(spriteLocation);			
+			Sprite newSprite = ImageProcessing.createMealCard(cardInfo);		// Aww heck, get the sprite
+			spriteDrawer.sprite = newSprite;									// Attach it! 
 			// TODO Place card appropriately
 		}
 		else {
