@@ -16,11 +16,11 @@ public class Friend : MonoBehaviour {
 	private string MEALS_DIR = "Art" + Path.DirectorySeparatorChar + "Meal" + Path.DirectorySeparatorChar;
 
 	// The Min and Max of bias. Set in editor!
-	public float BIAS_MIN;
-	public float BIAS_MAX;
+	public float BIAS_MIN = .5f;
+	public float BIAS_MAX = 1.5f;
 	public TextAsset MEAL_LIST_FILE;		// A text file created at build time with the tags each of the meals listed
-	public float OVERPOWERING_FLAVOUR_THRESHOLD;
-	public float PREMIUM_INGREDIENT_THRESHOLD;
+	public float OVERPOWERING_FLAVOUR_THRESHOLD = .8f;
+	public float PREMIUM_INGREDIENT_THRESHOLD = .8f;
 
 	private static int NUM_STATS = 6;
 	// References to the two known judges
@@ -46,6 +46,7 @@ public class Friend : MonoBehaviour {
 
 	// This method must run after the Judges have been initialised and added to the scene
 	void Start () {
+		MEAL_LIST_FILE = (TextAsset) Resources.Load ("DB" + Path.DirectorySeparatorChar + "Meals");
 		DatabaseEntry optimalMeal;
 		Judge[] judges = JudgeManager.instance.getPublicJudges();
 		judgeOne = judges [0];
@@ -143,7 +144,7 @@ public class Friend : MonoBehaviour {
 		}
 
 		// Construct a new Player Submission!
-		return new PlayerSubmission("FRIEND", optimalMeal.name, finalStats, overpoweringMods, IMG2Sprite.instance.LoadNewSprite(MEALS_DIR + optimalMeal.artLocation));
+		return new PlayerSubmission("FRIEND", optimalMeal.name, finalStats, overpoweringMods, null);
 	}
 
 	// Adds each ingedient's stats on to the final meal.

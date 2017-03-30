@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 /*
  * A Script Containing a Series of Methods which are intended
@@ -20,8 +21,9 @@ public class GameOver : MonoBehaviour {
 	void Start () {
 		userSubmission = collectPlayersCard ();	// This will also call any on Game Over Attributes on mechanics
 		AISubmission = Friend.instance.getSubmission();	// Look at the AI. He just has his shit together. You, you human do not.
-		//TODO  Pass this information to the judge manager
-		// This means I need a fully implemented Judge manager
+		var submissions = GameObject.FindWithTag("GameOver").AddComponent<MealSubmissionHolder>();	// Create our submissions holder
+		submissions.init (userSubmission, AISubmission);	// Add the player's submissions
+		SceneManager.LoadScene("FinalJudgement");	// Load the next scene
 	}
 
 	/*
@@ -41,7 +43,8 @@ public class GameOver : MonoBehaviour {
 		catch (ItemNotFound e) {
 			artLocation = "Ramsay.png";
 		}
-		artSprite = IMG2Sprite.instance.LoadNewSprite(cardArtLocation + artLocation);
+		artLocation = artLocation.Split ('.') [0];
+		artSprite = null;
 
 		// Fire the ongame over mechanics
 		foreach (Mechanic mechanic in userMeal.getMechanics()) {

@@ -5,29 +5,24 @@ using UnityEngine.UI;
 
 public abstract class Judge : MonoBehaviour {
 	public string nameJudge;
-	
-	public enum State {
-		CALCULATE,
-		TALK
-	}
-	
+		
+	private string spriteLocation;
 	public const int NUM_STATS = 6;
 	public string name;
 	private float[] statModifiers;
-	private DialogueHolder dHolder;
 	public float sumStats = 0;
 
 	void Start(){
-		dHolder = FindObjectOfType<DialogueHolder>();
 	}
 
 	// Needed so the override works properly in the child classes.
 	public abstract void init();
 	
 	// Initialisation Function
-	public void init(float[] statModifiers, string name) {
+	public void init(float[] statModifiers, string name, string spriteLocation) {
 		this.statModifiers = statModifiers;	// Assigning a judges stat mods
 		this.name = name;
+		this.spriteLocation = spriteLocation;
 	}
 
 	// This handles a judges dialogue before the game
@@ -40,11 +35,11 @@ public abstract class Judge : MonoBehaviour {
 	public abstract string andTheWinnerIs(string chefName, string mealName, float mealScore);
 
 
-	
+
 	// Computes a weighted sum of stats. Card stats is the a given players'
 	// card while modifiers is the overpowering flavour modifiers from
 	// their opponents submission;
-	public float CalculateStats(byte[] cardStats, float[] modifiers){
+	public float evaluateCard(byte[] cardStats, byte[] modifiers){
 		// Initialise i and sum
 		int i = 0;
 		float sum = 0;
@@ -53,14 +48,6 @@ public abstract class Judge : MonoBehaviour {
 		}
 		sumStats = sum;
 		return sumStats;
-	}
-
-	public void Talk() {
-		nameJudge = "Sweet";
-		dHolder.theName = nameJudge;
-		dHolder.theSum = sumStats;
-
-
 	}
 	
 	// Update is called once per frame
@@ -73,4 +60,7 @@ public abstract class Judge : MonoBehaviour {
 	public float[] getStatModifiers(){
 		return statModifiers;
 	}
+
+	// Returns the locaion of the card's sprite
+	public string getSpriteLocation() {return spriteLocation;}
 }

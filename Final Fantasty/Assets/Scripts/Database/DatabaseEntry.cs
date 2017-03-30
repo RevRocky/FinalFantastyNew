@@ -104,12 +104,12 @@ public class DatabaseEntry {
 	// Returns a deep copy of this database entry
 	public DatabaseEntry clone() {
 		return new DatabaseEntry(name, description, type, artLocation, 
-			spriteLocation, ingredientTag, mechanics, multiItems, stats);	// Return a brand new DB entry with same type of info
+			spriteLocation, ingredientTag, mechanics, multiItems, stats, tag, stepUp);	// Return a brand new DB entry with same type of info
 	}
 
 	// This constructor takes each and every bit of information individually. It is only called by the clone method and the 
 	public DatabaseEntry(string name, string description, string type, string artLocation, string spriteLocation,
-		string ingredientTag, List<string> mechanics, bool multiItems, byte[] stats) {
+		string ingredientTag, List<string> mechanics, bool multiItems, byte[] stats, string tag, string stepUp) {
 
 		// Check if the stats array is of the correct size
 		if (stats.Length != 6) {
@@ -123,7 +123,9 @@ public class DatabaseEntry {
 		this.ingredientTag	= ingredientTag;					// Null if not an ingredient
 		this.mechanics	    = mechanics;			
 		this.multiItems		= multiItems;
-		this.stats			= stats;							// Take note of the fact I'm storing this in a byte!\
+		this.stats			= stats;							// Take note of the fact I'm storing this in a byte!
+		this.tag 			= tag;
+		this.stepUp 		= stepUp;
 	}
 
 }
