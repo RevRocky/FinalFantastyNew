@@ -20,7 +20,7 @@ public class Sweet : Judge {
 		string[] phraseBook = {"Oh... Hi *giggle*. I'm Sugar Belle *tee hee*. I LOOOOOOOOVE a good cake! Oh... I do hope one of you makes me something... delectible",
 			"*annoyed* I'm Sugar Belle. I think you know what I want."
 		};
-		return (phraseBook [(int)Random.Range (0, (float)(phraseBook.Length + 1))]);
+		return phraseBook [Random.Range (0, phraseBook.Length)];
 		}
 
 	// This method handles the judge giving comments while they evaluate each meal.

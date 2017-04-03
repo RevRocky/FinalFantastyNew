@@ -20,7 +20,7 @@ public class Umami : Judge {
 		string[] phraseBook = {"The secret to deliciousness lies in the hidden, fifth flavour.\n" +
 			"Unlike these other judges, I wont be cryptic. It's umami. It surrounds us but,\n" +
 			"to use it well... well that is another challenge entirely"};
-		return (phraseBook [(int)Random.Range (0, (float)(phraseBook.Length + 1))]);
+		return phraseBook [Random.Range (0, phraseBook.Length)];
 	}
 
 	// This method handles the judge giving comments while they evaluate each meal.

@@ -76,13 +76,10 @@ public class loadingBarScript : MonoBehaviour {
 		while(progBar.value == 1f){
 			loadingText.text = "Press Space to Show Respect";
 			if(Input.GetKeyDown(KeyCode.Space)){
-				SceneManager.LoadScene("layout");
+				SceneManager.LoadScene("BigReveal");
 			}
 
 			yield return null;
 		}
-
-
-
 	}
 }

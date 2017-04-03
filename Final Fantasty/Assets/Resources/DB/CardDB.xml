@@ -61,26 +61,2318 @@
 	</Card>
 	<Card>
 		<Type>Ingredient</Type>
-		<Name>Salmon</Name>
-		<Description></Description>
-		<Stats>(0, 0, 0, 0, 2, 1)</Stats>
+		<Name>Parmigiano Reggiano</Name>
+		<Description>“...there was a mountain made entirely of grated Parmesan cheese, on which lived people who did nothing but make macaroni and ravioli and cook them in capon broth”</Description>
+		<Stats>(0, 1, 1, 0, 1, 1)</Stats>
 		<Mechanics>('', '')</Mechanics>
-		<IngredientTag>salmon</IngredientTag>
-		<Tag>salmon</Tag>
-		<Art>Salmon.jpg</Art>
+		<IngredientTag>parmesan</IngredientTag>
+		<Tag>parmesan</Tag>
+		<Art>Parmesan.jpg</Art>
 		<PictureLocation>ING005</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Olive Oil</Name>
+		<Description>“Extra Virgin” tee hee. This is an optional addition to most meals.</Description>
+		<Stats>(1, 0, 1, 0, 0, 3)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>oil</IngredientTag>
+		<Tag>oil, olive</Tag>
+		<Art>OliveOil.jpg</Art>
+		<PictureLocation>ING006</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Garlic</Name>
+		<Description>There is no such thing as too much garlic</Description>
+		<Stats>(2, 0, 0, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>garlic</IngredientTag>
+		<Tag>garlic</Tag>
+		<Art>GarlicClove.jpg</Art>
+		<PictureLocation>ING007</PictureLocation>
+		<Step-Up>garlic, pungent</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Pungent Garlic</Name>
+		<Description>Okay, perhaps there is!</Description>
+		<Stats>(2, 0, 0, 2, 0, 2)</Stats>
+		<Mechanics>('Overpowering Flavour', '')</Mechanics>
+		<IngredientTag>garlic</IngredientTag>
+		<Tag>garlic, pungent</Tag>
+		<Art>GarlicClove.jpg</Art>
+		<PictureLocation>ING008</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Onion</Name>
+		<Description>Loved by All</Description>
+		<Stats>(1, 0, 0, 2, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>onion</IngredientTag>
+		<Tag>onion</Tag>
+		<Art>Onion.jpg</Art>
+		<PictureLocation>ING009</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Butter</Name>
+		<Description>“Butter Y’all” - Paula Deen</Description>
+		<Stats>(3, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>butter</IngredientTag>
+		<Tag>butter</Tag>
+		<Art>Butter.jpg</Art>
+		<PictureLocation>ING010</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Basil</Name>
+		<Description>“”</Description>
+		<Stats>(1, 0, 1, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>basil</IngredientTag>
+		<Tag>basil</Tag>
+		<Art>Basil.png</Art>
+		<PictureLocation>ING011</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Eggs</Name>
+		<Description>Regular Chicken Eggs</Description>
+		<Stats>(0, 0, 0, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>egg</IngredientTag>
+		<Tag>egg</Tag>
+		<Art>Egg.png</Art>
+		<PictureLocation>ING012</PictureLocation>
+		<Step-Up>egg, free range</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Free Range Egg</Name>
+		<Description>Free Range, Cruelty Free. This Egg doesn’t just taste good. IT IS GOOD</Description>
+		<Stats>(0, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>egg</IngredientTag>
+		<Tag>egg, free range</Tag>
+		<Art>Hippie.png</Art>
+		<PictureLocation>ING013</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Parsley</Name>
+		<Description>Sage, Rosemary and Thyme</Description>
+		<Stats>(0, 0, 1, 0, 0, 0)</Stats>
+		<Mechanics>('Flavour Enhancer', '')</Mechanics>
+		<IngredientTag>parsley</IngredientTag>
+		<Tag>parsley</Tag>
+		<Art>Parsley.jpg</Art>
+		<PictureLocation>ING014</PictureLocation>
 		<Step-Up>N/A</Step-Up>
 	</Card>
 	<Card>
 		<Type>Ingredient</Type>
-		<Name>Yak Milk</Name>
-		<Description>Yak Milk, Best Milk</Description>
-		<Stats>(1, 0, 0, 0, 0, 0)</Stats>
+		<Name>Red Pepper</Name>
+		<Description>Oh, Yeah Baby!</Description>
+		<Stats>(0, 0, 0, 4, 0, 0)</Stats>
 		<Mechanics>('', '')</Mechanics>
-		<IngredientTag>milk</IngredientTag>
-		<Tag>yak, milk</Tag>
-		<Art>Milk.jpg</Art>
-		<PictureLocation>ING006</PictureLocation>
+		<IngredientTag>redpepper</IngredientTag>
+		<Tag>redpepper</Tag>
+		<Art>RedPepper.jpg</Art>
+		<PictureLocation>ING015</PictureLocation>
+		<Step-Up>habanero</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Habanero Flakes</Name>
+		<Description>OH YEAH BABY</Description>
+		<Stats>(0, 0, 0, 7, 0, 0)</Stats>
+		<Mechanics>('Overpowering Flavour', '')</Mechanics>
+		<IngredientTag>redpepper</IngredientTag>
+		<Tag>habanero</Tag>
+		<Art>Habanero.jpg</Art>
+		<PictureLocation>ING015</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Stock</Name>
+		<Description>“”</Description>
+		<Stats>(0, 0, 0, 0, 2, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>stock</IngredientTag>
+		<Tag>stock</Tag>
+		<Art>Stock.jpg</Art>
+		<PictureLocation>ING016</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Wine</Name>
+		<Description>Ahem, It’s for COOKING with. Got it?</Description>
+		<Stats>(1, 0, 1, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>wine</IngredientTag>
+		<Tag>wine</Tag>
+		<Art>Wine.jpg</Art>
+		<PictureLocation>ING017</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Beef</Name>
+		<Description>Where’s the beef?</Description>
+		<Stats>(0, 0, 0, 0, 1, 3)</Stats>
+		<Mechanics>('Burn', '')</Mechanics>
+		<IngredientTag>beef</IngredientTag>
+		<Tag>beef</Tag>
+		<Art>Beef.jpg</Art>
+		<PictureLocation>ING018</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Black Pepper</Name>
+		<Description>I Don’t Like the way you said “Black”…</Description>
+		<Stats>(0, 0, 0, 1, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>blackpepper</IngredientTag>
+		<Tag>blackpepper</Tag>
+		<Art>BlackPepper.jpg</Art>
+		<PictureLocation>ING019</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Flour</Name>
+		<Description>Important, yet… Unseen</Description>
+		<Stats>(0, 0, 1, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>flour</IngredientTag>
+		<Tag>flour</Tag>
+		<Art>Flour.jpg</Art>
+		<PictureLocation>ING020</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Mozzarella</Name>
+		<Description>“A Lovely Evening of New Idioms and Fresh Mozzarella”</Description>
+		<Stats>(2, 1, 0, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>mozzarella</IngredientTag>
+		<Tag>mozzarella</Tag>
+		<Art>Mozzarella.jpg</Art>
+		<PictureLocation>ING021</PictureLocation>
+		<Step-Up>mozzarella, buffalo</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Mozzarella Bufala</Name>
+		<Description>“The good stuff”</Description>
+		<Stats>(3, 0, 0, 0, 0, 3)</Stats>
+		<Mechanics>('Overpowering Flavour', '')</Mechanics>
+		<IngredientTag>mozzarella</IngredientTag>
+		<Tag>mozzarella, buffalo</Tag>
+		<Art>Buffalo.jpg</Art>
+		<PictureLocation>ING022</PictureLocation>
 		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Chicken</Name>
+		<Description>...and Waffles</Description>
+		<Stats>(0, 0, 0, 0, 1, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>chicken</IngredientTag>
+		<Tag>chicken</Tag>
+		<Art>Chicken.jpg</Art>
+		<PictureLocation>ING023</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Arborio Rice</Name>
+		<Description>Good for a Risotto</Description>
+		<Stats>(0, 0, 1, 0, 0, 0)</Stats>
+		<Mechanics>('Al Dente', '')</Mechanics>
+		<IngredientTag>rice</IngredientTag>
+		<Tag>arborio</Tag>
+		<Art>Arborio.jpg</Art>
+		<PictureLocation>ING024</PictureLocation>
+		<Step-Up>carnaroli</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Carnaroli Rice</Name>
+		<Description>Excellent for a Risotto</Description>
+		<Stats>(1, 0, 1, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>rice</IngredientTag>
+		<Tag>carnaroli</Tag>
+		<Art>Carnaroli.jpg</Art>
+		<PictureLocation>ING025</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Sugar</Name>
+		<Description>We conquered continents for this stuff!</Description>
+		<Stats>(4, 0, 0, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>sugar</IngredientTag>
+		<Tag>sugar</Tag>
+		<Art>Sugar.jpg</Art>
+		<PictureLocation>ING026</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Ricotta</Name>
+		<Description>“Ricotta and Honey, eat them often”</Description>
+		<Stats>(2, 0, 0, 0, 1, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>ricotta</IngredientTag>
+		<Tag>ricotta</Tag>
+		<Art>Ricotta.jpg</Art>
+		<PictureLocation>ING027</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Bread</Name>
+		<Description>Can also be used as a Pizza Crust!</Description>
+		<Stats>(1, 0, 0, 0, 1, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>bread</IngredientTag>
+		<Tag>bread</Tag>
+		<Art>Bread.jpg</Art>
+		<PictureLocation>ING028</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Peccorino Romano</Name>
+		<Description>“”</Description>
+		<Stats>(0, 1, 0, 0, 2, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>peccorino</IngredientTag>
+		<Tag>peccorino</Tag>
+		<Art>Peccorino.png</Art>
+		<PictureLocation>ING029</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Mushrooms</Name>
+		<Description>Sadly, not those kind of mushrooms</Description>
+		<Stats>(0, 0, 1, 0, 0, 3)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>mushrooms</IngredientTag>
+		<Tag>mushrooms</Tag>
+		<Art>Cremini.jpg</Art>
+		<PictureLocation>ING030</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Linguine</Name>
+		<Description>Pairs well with oil based sauces</Description>
+		<Stats>(0, 0, 1, 0, 0, 0)</Stats>
+		<Mechanics>('Al Dente', '')</Mechanics>
+		<IngredientTag>linguine</IngredientTag>
+		<Tag>linguine</Tag>
+		<Art>Linguine.jpg</Art>
+		<PictureLocation>ING031</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Pine Nuts</Name>
+		<Description>Fun Fact: Not actual tree nuts`</Description>
+		<Stats>(1, 0, 1, 0, 0, 0)</Stats>
+		<Mechanics>('Overpowering Flavour', '')</Mechanics>
+		<IngredientTag>pinenuts</IngredientTag>
+		<Tag>pinenuts</Tag>
+		<Art>Pine.jpg</Art>
+		<PictureLocation>ING032</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Cream</Name>
+		<Description></Description>
+		<Stats>(1, 0, 0, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>cream</IngredientTag>
+		<Tag>cream</Tag>
+		<Art>Cream.jpg</Art>
+		<PictureLocation>ING033</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Vinaigrette</Name>
+		<Description>One Part Oil, One Part Vinegar 5 Parts Yum</Description>
+		<Stats>(1, 2, 0, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>vinaigrette</IngredientTag>
+		<Tag>vinaigrette</Tag>
+		<Art>Vinaigrette.jpg</Art>
+		<PictureLocation>ING034</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Lemons</Name>
+		<Description>Juice Em, Scrape Em, Lem em!</Description>
+		<Stats>(1, 3, 0, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>lemon</IngredientTag>
+		<Tag>lemon</Tag>
+		<Art>Lemon.jpg</Art>
+		<PictureLocation>ING035</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Cannelini Beans</Name>
+		<Description>“”</Description>
+		<Stats>(1, 0, 2, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>beans</IngredientTag>
+		<Tag>beans</Tag>
+		<Art>Beans.jpg</Art>
+		<PictureLocation>ING036</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Salt Cod</Name>
+		<Description> </Description>
+		<Stats>(0, 0, 0, 0, 3, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>cod</IngredientTag>
+		<Tag>cod</Tag>
+		<Art>Cod.jpg</Art>
+		<PictureLocation>ING037</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Capers</Name>
+		<Description>“”</Description>
+		<Stats>(0, 0, 0, 0, 2, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>caper</IngredientTag>
+		<Tag>caper</Tag>
+		<Art>Caper.jpg</Art>
+		<PictureLocation>ING038</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Anchovies</Name>
+		<Description>“If I was potato chips I could go more places”</Description>
+		<Stats>(0, 0, 0, 0, 2, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>anchovy</IngredientTag>
+		<Tag>anchovy</Tag>
+		<Art>Anchovy.jpg</Art>
+		<PictureLocation>ING039</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Italian Sausage</Name>
+		<Description>A Party. A Real Party</Description>
+		<Stats>(1, 0, 0, 3, 0, 3)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>sausage</IngredientTag>
+		<Tag>sausage</Tag>
+		<Art>Sausage.jpg</Art>
+		<PictureLocation>ING040</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Lasagne</Name>
+		<Description>“”</Description>
+		<Stats>(0, 0, 1, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>lasagne</IngredientTag>
+		<Tag>lasagne</Tag>
+		<Art>Lasagne.jpg</Art>
+		<PictureLocation>ING041</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Bell Peppers</Name>
+		<Description>Mild.</Description>
+		<Stats>(2, 0, 1, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>pepper</IngredientTag>
+		<Tag>pepper</Tag>
+		<Art>BellPepper.jpg</Art>
+		<PictureLocation>ING042</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Fettucine</Name>
+		<Description>Pairs well with rich, creamy sauces</Description>
+		<Stats>(0, 0, 1, 0, 0, 0)</Stats>
+		<Mechanics>('Al Dente', '')</Mechanics>
+		<IngredientTag>fettucine</IngredientTag>
+		<Tag>fettucine</Tag>
+		<Art>Fettucine.jpg</Art>
+		<PictureLocation>ING043</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Gauanciale</Name>
+		<Description>“”</Description>
+		<Stats>(1, 0, 0, 1, 0, 2)</Stats>
+		<Mechanics>('Burn', '')</Mechanics>
+		<IngredientTag>guanciale</IngredientTag>
+		<Tag>guanciale</Tag>
+		<Art>Guanciale.jpg</Art>
+		<PictureLocation>ING044</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Oregano</Name>
+		<Description>Alternate Use: Sell to middle schoolers!</Description>
+		<Stats>(1, 0, 2, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>oregano</IngredientTag>
+		<Tag>oregano</Tag>
+		<Art>Oregano.jpg</Art>
+		<PictureLocation>ING045</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Bread Crumbs</Name>
+		<Description></Description>
+		<Stats>(0, 0, 1, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>crumbs</IngredientTag>
+		<Tag>crumbs</Tag>
+		<Art>Crumbs.jpg</Art>
+		<PictureLocation>ING046</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Eggplant</Name>
+		<Description>Why we don’t call this… Nightshade…. Beyond me!</Description>
+		<Stats>(0, 0, 1, 0, 0, 3)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>eggplant</IngredientTag>
+		<Tag>eggplant</Tag>
+		<Art>Eggplant.jpg</Art>
+		<PictureLocation>ING047</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Almonds</Name>
+		<Description>Good in Biscotti!</Description>
+		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>almond</IngredientTag>
+		<Tag>almond</Tag>
+		<Art>Almond.jpg</Art>
+		<PictureLocation>ING048</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Gelatin</Name>
+		<Description>WOBBLE WOBBLE WOBBLE</Description>
+		<Stats>(1, 0, 0, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>gelatin</IngredientTag>
+		<Tag>gelatin</Tag>
+		<Art>Gelatin.jpg</Art>
+		<PictureLocation>ING049</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Vanilla</Name>
+		<Description>Safe, unoffensive, white.</Description>
+		<Stats>(2, 0, 0, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>vanilla</IngredientTag>
+		<Tag>vanilla</Tag>
+		<Art>Vanilla.jpg</Art>
+		<PictureLocation>ING050</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Spinach</Name>
+		<Description>The original PED.</Description>
+		<Stats>(0, 0, 3, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>spinach</IngredientTag>
+		<Tag>spinach</Tag>
+		<Art>Spinach.png</Art>
+		<PictureLocation>ING051</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Shallots</Name>
+		<Description>Sha-la-la-la-la-lots</Description>
+		<Stats>(2, 0, 0, 1, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>shallots</IngredientTag>
+		<Tag>shallots</Tag>
+		<Art>Shallots.jpg</Art>
+		<PictureLocation>ING052</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Gorgonzola</Name>
+		<Description>Sounds like Gonzaga</Description>
+		<Stats>(0, 2, 0, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>gorgonzola</IngredientTag>
+		<Tag>gorgonzola</Tag>
+		<Art>Gorgonzola.png</Art>
+		<PictureLocation>ING053</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Squash</Name>
+		<Description>May be good for a risotto</Description>
+		<Stats>(2, 0, 0, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>squash</IngredientTag>
+		<Tag>squash</Tag>
+		<Art>Squash.jpg</Art>
+		<PictureLocation>ING054</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Asparagus</Name>
+		<Description>“”</Description>
+		<Stats>(0, 0, 0, 2, 0, 0)</Stats>
+		<Mechanics>('Overpowering Flavour', '')</Mechanics>
+		<IngredientTag>asparagus</IngredientTag>
+		<Tag>asparagus</Tag>
+		<Art>Asparagus.jpg</Art>
+		<PictureLocation>ING055</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Olives</Name>
+		<Description>From the creators of olive oil…</Description>
+		<Stats>(1, 0, 0, 0, 1, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag>olive</IngredientTag>
+		<Tag>olive</Tag>
+		<Art>Olive.jpg</Art>
+		<PictureLocation>ING056</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Ingredient</Type>
+		<Name>Gnocchi</Name>
+		<Description>Soft, Pillowy, Delicious</Description>
+		<Stats>(1, 0, 0, 0, 0, 1)</Stats>
+		<Mechanics>('Burn', '')</Mechanics>
+		<IngredientTag>gnocchi</IngredientTag>
+		<Tag>gnocchi</Tag>
+		<Art>Gnocchi.jpg</Art>
+		<PictureLocation>ING057</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Cannoli</Name>
+		<Description>The holy dessert hailing from Sicily</Description>
+		<Stats>(2, 0, 0, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>butter;egg;flour;ricotta;sugar</Tag>
+		<Art>Cannoli.jpg</Art>
+		<PictureLocation>MEA002</PictureLocation>
+		<Step-Up>N/A</Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Biscotti</Name>
+		<Description>Pairs well with Tea and Coffee</Description>
+		<Stats>(1, 0, 1, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>almond;egg;flour;pinenuts;sugar</Tag>
+		<Art>Biscotti.jpg</Art>
+		<PictureLocation>MEA003</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Panna Cotta</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>cream;gelatin;sugar;vanilla </Tag>
+		<Art>PannaCotta.jpg</Art>
+		<PictureLocation>MEA004</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Aglio e Olio</Name>
+		<Description>Deceptively Simple</Description>
+		<Stats>(1, 0, 0, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>garlic;oil;spaghetti</Tag>
+		<Art>AglioEOlio.jpg</Art>
+		<PictureLocation>MEA005</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Aglio e Olio</Name>
+		<Description>Deceptively Simple</Description>
+		<Stats>(1, 0, 0, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>garlic;linguine;oil</Tag>
+		<Art>AglioEOlio.jpg</Art>
+		<PictureLocation>MEA005</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Aglio e Olio</Name>
+		<Description>Deceptively Simple</Description>
+		<Stats>(1, 0, 0, 2, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>garlic;oil;redpepper;spaghetti</Tag>
+		<Art>AglioEOlio.jpg</Art>
+		<PictureLocation>MEA005</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Aglio e Olio</Name>
+		<Description>Deceptively Simple</Description>
+		<Stats>(1, 0, 0, 2, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>garlic;linguine;oil;redpepper</Tag>
+		<Art>AglioEOlio.jpg</Art>
+		<PictureLocation>MEA005</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Insalata Caprese</Name>
+		<Description>Subtly Patriotic</Description>
+		<Stats>(1, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;mozzarella;tomato</Tag>
+		<Art>Caprese.jpg</Art>
+		<PictureLocation>MEA006</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Insalata Caprese</Name>
+		<Description>Subtly Patriotic</Description>
+		<Stats>(1, 1, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;mozzarella;tomato;vinaigrette</Tag>
+		<Art>Caprese.jpg</Art>
+		<PictureLocation>MEA007</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Insalata Caprese con Pesto</Name>
+		<Description>True to the theme</Description>
+		<Stats>(2, 1, 1, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;lemon;mozzarella;oil;parmesan;pinenuts;tomato;vinaigrette</Tag>
+		<Art>CapreseconPesto.jpg</Art>
+		<PictureLocation>MEA008</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bruschetta</Name>
+		<Description>Refreshing. I Guarantee It!</Description>
+		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;bread;garlic;tomato</Tag>
+		<Art>Bruschetta.jpg</Art>
+		<PictureLocation>MEA009</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bruschetta</Name>
+		<Description>Refreshing. I Guarantee It!</Description>
+		<Stats>(1, 0, 1, 1, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;bread;garlic;onion;tomato</Tag>
+		<Art>Bruschetta.jpg</Art>
+		<PictureLocation>MEA009</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bruschetta</Name>
+		<Description>Refreshing. I Guarantee It!</Description>
+		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;bread;garlic;tomato</Tag>
+		<Art>Bruschetta.jpg</Art>
+		<PictureLocation>MEA009</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bruschetta</Name>
+		<Description>Refreshing. I Guarantee It!</Description>
+		<Stats>(1, 0, 1, 1, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;bread;garlic;mozzarella;onion;tomato</Tag>
+		<Art>Bruschetta.jpg</Art>
+		<PictureLocation>MEA009</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bruschetta</Name>
+		<Description>Refreshing. I Guarantee It!</Description>
+		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;bread;garlic;mozzarella;tomato</Tag>
+		<Art>Bruschetta.jpg</Art>
+		<PictureLocation>MEA009</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bruschetta</Name>
+		<Description>Refreshing. I Guarantee It!</Description>
+		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;beans;bread;garlic;tomato</Tag>
+		<Art>Bruschetta.jpg</Art>
+		<PictureLocation>MEA009</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bruschetta</Name>
+		<Description>Refreshing. I Guarantee It!</Description>
+		<Stats>(1, 0, 1, 1, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;beans;bread;garlic;onion;tomato</Tag>
+		<Art>Bruschetta.jpg</Art>
+		<PictureLocation>MEA009</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bruschetta</Name>
+		<Description>Refreshing. I Guarantee It!</Description>
+		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;beans;bread;garlic;tomato</Tag>
+		<Art>Bruschetta.jpg</Art>
+		<PictureLocation>MEA009</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bruschetta</Name>
+		<Description>Refreshing. I Guarantee It!</Description>
+		<Stats>(1, 0, 1, 1, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;beans;bread;garlic;mozzarella;onion;tomato</Tag>
+		<Art>Bruschetta.jpg</Art>
+		<PictureLocation>MEA009</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bruschetta</Name>
+		<Description>Refreshing. I Guarantee It!</Description>
+		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;beans;bread;garlic;mozzarella;tomato</Tag>
+		<Art>Bruschetta.jpg</Art>
+		<PictureLocation>MEA009</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bruschette Guanciale</Name>
+		<Description>Who says spice can’t also cool you down?</Description>
+		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;bread;garlic;guanciale;tomato</Tag>
+		<Art>BruschettaGuanciale.jpg</Art>
+		<PictureLocation>MEA010</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bruschette Guanciale</Name>
+		<Description>Who says spice can’t also cool you down?</Description>
+		<Stats>(1, 0, 1, 1, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;bread;garlic;guanciale;onion;tomato</Tag>
+		<Art>BruschettaGuanciale.jpg</Art>
+		<PictureLocation>MEA010</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bruschette Guanciale</Name>
+		<Description>Who says spice can’t also cool you down?</Description>
+		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;bread;garlic;guanciale;tomato</Tag>
+		<Art>BruschettaGuanciale.jpg</Art>
+		<PictureLocation>MEA010</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bruschette Guanciale</Name>
+		<Description>Who says spice can’t also cool you down?</Description>
+		<Stats>(1, 0, 1, 1, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;bread;garlic;guanciale;mozzarella;onion;tomato</Tag>
+		<Art>BruschettaGuanciale.jpg</Art>
+		<PictureLocation>MEA010</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bruschette Guanciale</Name>
+		<Description>Who says spice can’t also cool you down?</Description>
+		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;bread;garlic;guanciale;mozzarella;tomato</Tag>
+		<Art>BruschettaGuanciale.jpg</Art>
+		<PictureLocation>MEA010</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Carbonara</Name>
+		<Description>Rich, meaty.</Description>
+		<Stats>(1, 0, 0, 0, 1, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beef;egg;parmesan;spaghetti</Tag>
+		<Art>Carbonara.jpg</Art>
+		<PictureLocation>MEA011</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Carbonara</Name>
+		<Description>Rich, meaty.</Description>
+		<Stats>(1, 0, 0, 0, 1, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beef;blackpepper;egg;parmesan;spaghetti</Tag>
+		<Art>Carbonara.jpg</Art>
+		<PictureLocation>MEA011</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Carbonara</Name>
+		<Description>Rich, meaty.</Description>
+		<Stats>(1, 0, 0, 0, 1, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beef;blackpepper;egg;oil;parmesan;spaghetti</Tag>
+		<Art>Carbonara.jpg</Art>
+		<PictureLocation>MEA011</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Carbonara</Name>
+		<Description>Rich, meaty.</Description>
+		<Stats>(1, 0, 0, 0, 1, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beef;egg;parmesan;oil;spaghetti</Tag>
+		<Art>Carbonara.jpg</Art>
+		<PictureLocation>MEA011</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Carbonara</Name>
+		<Description>Rich, meaty.</Description>
+		<Stats>(1, 0, 0, 0, 1, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beef;egg;peccorino;spaghetti</Tag>
+		<Art>Carbonara.jpg</Art>
+		<PictureLocation>MEA011</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Carbonara</Name>
+		<Description>Rich, meaty.</Description>
+		<Stats>(1, 0, 0, 0, 1, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beef;blackpepper;egg;peccorino;spaghetti</Tag>
+		<Art>Carbonara.jpg</Art>
+		<PictureLocation>MEA011</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Carbonara</Name>
+		<Description>Rich, meaty.</Description>
+		<Stats>(1, 0, 0, 0, 1, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beef;blackpepper;egg;oil;peccorino;spaghetti</Tag>
+		<Art>Carbonara.jpg</Art>
+		<PictureLocation>MEA011</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Carbonara</Name>
+		<Description>Rich, meaty.</Description>
+		<Stats>(1, 0, 0, 0, 1, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beef;egg;peccorino;oil;spaghetti</Tag>
+		<Art>Carbonara.jpg</Art>
+		<PictureLocation>MEA011</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Baccala alla Vesuviana</Name>
+		<Description></Description>
+		<Stats>(0, 0, 0, 0, 2, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>caper;cod;onion;redpepper;tomatoe</Tag>
+		<Art>BaccalaVesu.jpg</Art>
+		<PictureLocation>MEA012</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Baccala alla Vesuviana</Name>
+		<Description></Description>
+		<Stats>(0, 0, 0, 0, 2, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>caper;cod;oil;onion;redpepper;tomato</Tag>
+		<Art>BaccalaVesu.jpg</Art>
+		<PictureLocation>MEA012</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Baccala alla Vesuviana</Name>
+		<Description></Description>
+		<Stats>(0, 0, 0, 0, 2, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>caper;cod;onion;parsley;redpepper;tomato</Tag>
+		<Art>BaccalaVesu.jpg</Art>
+		<PictureLocation>MEA012</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Baccala alla Vesuviana</Name>
+		<Description></Description>
+		<Stats>(0, 0, 0, 0, 2, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>caper;cod;oil;onion;parsley;redpepper;tomato</Tag>
+		<Art>BaccalaVesu.jpg</Art>
+		<PictureLocation>MEA012</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Baccala alla Vicentina</Name>
+		<Description></Description>
+		<Stats>(0, 0, 0, 0, 3, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>anchovy;cod;cream;flour;onion;parsley</Tag>
+		<Art>BaccalaVicentina.jpg</Art>
+		<PictureLocation>MEA013</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Baccala alla Vesuviana</Name>
+		<Description></Description>
+		<Stats>(0, 0, 0, 0, 3, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>anchovy;cod;cream;flour;oil;onion;parsley</Tag>
+		<Art>BaccalaVicentina.jpg</Art>
+		<PictureLocation>MEA013</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Chicken Scarpeliello</Name>
+		<Description></Description>
+		<Stats>(0, 2, 0, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>chicken;onion;stock;sugar;wine</Tag>
+		<Art>ChickenScarpel.jpg</Art>
+		<PictureLocation>MEA014</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Lasagne</Name>
+		<Description></Description>
+		<Stats>(1, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beef;egg;lasagne;parmesan;ricotta;tomato</Tag>
+		<Art>LasagneCook.jpg</Art>
+		<PictureLocation>MEA015</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Lasagne</Name>
+		<Description></Description>
+		<Stats>(1, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>egg;lasagne;parmesan;ricotta;tomato</Tag>
+		<Art>LasagneCook.jpg</Art>
+		<PictureLocation>MEA015</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Lasagne</Name>
+		<Description></Description>
+		<Stats>(1, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>egg;lasagne;mushroom;parmesan;ricotta;tomato</Tag>
+		<Art>LasagneCook.jpg</Art>
+		<PictureLocation>MEA015</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Fettucine Alfredo</Name>
+		<Description>Fun Fact: This picture is of a vegan fettucine alfredo!</Description>
+		<Stats>(1, 1, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>butter;cream;fettucine;parmesan;parsley</Tag>
+		<Art>Alfredo.jpg</Art>
+		<PictureLocation>MEA016</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Fettucine Alfredo</Name>
+		<Description>Fun Fact: This picture is of a vegan fettucine alfredo!</Description>
+		<Stats>(1, 1, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>butter;cream;fettucine;mushroom;parmesan;parsley</Tag>
+		<Art>Alfredo.jpg</Art>
+		<PictureLocation>MEA016</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Fettucine Alfredo</Name>
+		<Description></Description>
+		<Stats>(1, 1, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>butter;chicken;cream;fettucine;parmesan;parsley</Tag>
+		<Art>Alfredo.jpg</Art>
+		<PictureLocation>MEA016</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Marinara</Name>
+		<Description>A Seaside Classic</Description>
+		<Stats>(1, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;spaghetti;tomato</Tag>
+		<Art>Marinara.jpg</Art>
+		<PictureLocation>MEA001</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Marinara</Name>
+		<Description>A Seaside Classic</Description>
+		<Stats>(1, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>parmesan;spaghetti;tomato</Tag>
+		<Art>Marinara.jpg</Art>
+		<PictureLocation>MEA001</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Marinara</Name>
+		<Description>A Seaside Classic</Description>
+		<Stats>(1, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>mushroom;spaghetti;tomato</Tag>
+		<Art>Marinara.jpg</Art>
+		<PictureLocation>MEA001</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Marinara</Name>
+		<Description>A Seaside Classic</Description>
+		<Stats>(1, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>garlic;spaghetti;tomato</Tag>
+		<Art>Marinara.jpg</Art>
+		<PictureLocation>MEA001</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Marinara</Name>
+		<Description>A Seaside Classic</Description>
+		<Stats>(1, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>mozzarella;spaghetti;tomato</Tag>
+		<Art>Marinara.jpg</Art>
+		<PictureLocation>MEA001</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Marinara</Name>
+		<Description>A Seaside Classic</Description>
+		<Stats>(1, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;mushroom;spaghetti;tomato</Tag>
+		<Art>Marinara.jpg</Art>
+		<PictureLocation>MEA001</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Marinara</Name>
+		<Description>A Seaside Classic</Description>
+		<Stats>(1, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;garlic;spaghetti;tomato</Tag>
+		<Art>Marinara.jpg</Art>
+		<PictureLocation>MEA001</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Marinara</Name>
+		<Description>A Seaside Classic</Description>
+		<Stats>(1, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;mozzarella;spaghetti;tomato</Tag>
+		<Art>Marinara.jpg</Art>
+		<PictureLocation>MEA001</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Marinara</Name>
+		<Description>A Seaside Classic</Description>
+		<Stats>(1, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;parmesan;spaghetti;tomato</Tag>
+		<Art>Marinara.jpg</Art>
+		<PictureLocation>MEA001</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Marinara</Name>
+		<Description>A Seaside Classic</Description>
+		<Stats>(1, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>mozzarella;parmesan;;spaghetti;tomato</Tag>
+		<Art>Marinara.jpg</Art>
+		<PictureLocation>MEA001</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Marinara</Name>
+		<Description>A Seaside Classic</Description>
+		<Stats>(1, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>onion;spaghetti;tomato</Tag>
+		<Art>Marinara.jpg</Art>
+		<PictureLocation>MEA001</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Linguine Pesto Genoese</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;garlic;linguine;oil;parmesan;pinenuts</Tag>
+		<Art>PestoLinguine.jpg</Art>
+		<PictureLocation>MEA017</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Linguine Pesto Genoese</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;garlic;linguine;oil;parmesan;peccorino;pinenuts</Tag>
+		<Art>PestoLinguine.jpg</Art>
+		<PictureLocation>MEA017</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Linguine Pesto Genoese</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;garlic;linguine;oil;peccorino;pinenuts</Tag>
+		<Art>PestoLinguine.jpg</Art>
+		<PictureLocation>MEA017</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Linguine Pesto Genoese</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;chicken;garlic;linguine;oil;parmesan;pinenuts</Tag>
+		<Art>PestoLinguine.jpg</Art>
+		<PictureLocation>MEA017</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Linguine Pesto Genoese</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;chicken;garlic;linguine;oil;parmesan;peccorino;pinenuts</Tag>
+		<Art>PestoLinguine.jpg</Art>
+		<PictureLocation>MEA017</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Linguine Pesto Genoese</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;chicken;garlic;linguine;oil;peccorino;pinenuts</Tag>
+		<Art>PestoLinguine.jpg</Art>
+		<PictureLocation>MEA017</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Alla Gricia</Name>
+		<Description></Description>
+		<Stats>(0, 1, 0, 1, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>guanciale;pecorino;spaghetti</Tag>
+		<Art>Gricia.jpg</Art>
+		<PictureLocation>MEA018</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Eggplant Rollatini</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>egg;eggplant;mozzarella;parmesan;ricotta;tomato</Tag>
+		<Art>Rollatini.jpg</Art>
+		<PictureLocation>MEA019</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Eggplant Rollatini</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>egg;eggplant;mozzarella;oil;parmesan;ricotta;tomato</Tag>
+		<Art>Rollatini.jpg</Art>
+		<PictureLocation>MEA019</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Eggplant Rollatini</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>egg;eggplant;mozzarella;oil;parmesan;parsley;ricotta;tomato</Tag>
+		<Art>Rollatini.jpg</Art>
+		<PictureLocation>MEA019</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Eggplant Rollatini</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>egg;eggplant;mozzarella;oil;parsley;ricotta;tomato</Tag>
+		<Art>Rollatini.jpg</Art>
+		<PictureLocation>MEA019</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Mushroom Risotto</Name>
+		<Description></Description>
+		<Stats>(2, 0, 1, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>butter;mushrooms;onion;parmesan;rice;stock;wine</Tag>
+		<Art>MushroomRisotto.jpg</Art>
+		<PictureLocation>MEA020</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Mushroom Risotto</Name>
+		<Description></Description>
+		<Stats>(2, 0, 1, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>butter;mushrooms;onion;parmesan;parsley;rice;stock;wine</Tag>
+		<Art>MushroomRisotto.jpg</Art>
+		<PictureLocation>MEA020</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Mushroom Risotto</Name>
+		<Description></Description>
+		<Stats>(2, 0, 1, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>butter;mushrooms;onion;parmesan;pepper;rice;stock;wine</Tag>
+		<Art>MushroomRisotto.jpg</Art>
+		<PictureLocation>MEA020</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Mushroom Risotto</Name>
+		<Description></Description>
+		<Stats>(2, 0, 1, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>butter;mushrooms;onion;parmesan;parsley;pepper;rice;stock;wine</Tag>
+		<Art>MushroomRisotto.jpg</Art>
+		<PictureLocation>MEA020</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Risotto alla Gorgonzola</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>butter;gorgonzola;parmesan;rice;shallots;stock;wine</Tag>
+		<Art>RisottoGorgonzola.jpg</Art>
+		<PictureLocation>MEA021</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Risotto alla Gorgonzola</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>Blackpepper;butter;gorgonzola;parmesan;rice;shallots;stock;wine</Tag>
+		<Art>RisottoGorgonzola.jpg</Art>
+		<PictureLocation>MEA021</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Risotto alla Milanese</Name>
+		<Description></Description>
+		<Stats>(1, 0, 0, 1, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>butter;onion;rice;stock;wine</Tag>
+		<Art>RisottoMilan.jpg</Art>
+		<PictureLocation>MEA022</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Risotto alla Milanese</Name>
+		<Description></Description>
+		<Stats>(0, 0, 0, 1, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>butter;onion;parmesan;rice;stock;wine</Tag>
+		<Art>RisottoMilan.jpg</Art>
+		<PictureLocation>MEA022</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Baby’s First Risotto</Name>
+		<Description></Description>
+		<Stats>(0, 0, 0, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>rice;stock;wine</Tag>
+		<Art>BabyRiso.jpg</Art>
+		<PictureLocation>MEA023</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Baby’s First Risotto</Name>
+		<Description></Description>
+		<Stats>(0, 0, 0, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>butter;rice;stock;wine</Tag>
+		<Art>BabyRiso.jpg</Art>
+		<PictureLocation>MEA023</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Baby’s First Risotto</Name>
+		<Description></Description>
+		<Stats>(0, 0, 0, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>onion;rice;stock;wine</Tag>
+		<Art>BabyRiso.jpg</Art>
+		<PictureLocation>MEA023</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Baby’s First Risotto</Name>
+		<Description></Description>
+		<Stats>(0, 0, 1, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>butter;onion;rice;stock;wine</Tag>
+		<Art>BabyRiso.jpg</Art>
+		<PictureLocation>MEA023</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Fettucine con La Ricotta</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>fettucine;parmesan;ricotta;tomato</Tag>
+		<Art>FettucineRicotta.jpg</Art>
+		<PictureLocation>MEA024</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Fettucine con La Ricotta</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;fettucine;parmesan;ricotta;tomato</Tag>
+		<Art>FettucineRicotta.jpg</Art>
+		<PictureLocation>MEA024</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Fettucine con La Ricotta</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>fettucine;garlic;parmesan;ricotta;tomato</Tag>
+		<Art>FettucineRicotta.jpg</Art>
+		<PictureLocation>MEA024</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Fettucine con La Ricotta</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>fettucine;oil;parmesan;ricotta;tomato</Tag>
+		<Art>FettucineRicotta.jpg</Art>
+		<PictureLocation>MEA024</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Fettucine con La Ricotta</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;fettucine;oil;parmesan;ricotta;tomato</Tag>
+		<Art>FettucineRicotta.jpg</Art>
+		<PictureLocation>MEA024</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Fettucine con La Ricotta</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>fettucine;garlic;oil;parmesan;ricotta;tomato</Tag>
+		<Art>FettucineRicotta.jpg</Art>
+		<PictureLocation>MEA024</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Fettucine con La Ricotta</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;fettucine;garlic;parmesan;ricotta;tomato</Tag>
+		<Art>FettucineRicotta.jpg</Art>
+		<PictureLocation>MEA024</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Fettucine con La Ricotta</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;fettucine;garlic;oil;parmesan;ricotta;tomato</Tag>
+		<Art>FettucineRicotta.jpg</Art>
+		<PictureLocation>MEA024</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Lasagne agli Asparagi</Name>
+		<Description></Description>
+		<Stats>(0, 0, 2, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>asparagus;butter;cream;flour;lasagne;parmesan</Tag>
+		<Art>LasagneAspar.jpg</Art>
+		<PictureLocation>MEA025</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Lasagne agli Asparagi</Name>
+		<Description></Description>
+		<Stats>(0, 0, 2, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>asparagus;cream;flour;lasagne;parmesan</Tag>
+		<Art>LasagneAspar.jpg</Art>
+		<PictureLocation>MEA025</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Acquacotta</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>bread;onion;tomato</Tag>
+		<Art>Acquacotta.jpg</Art>
+		<PictureLocation>MEA026</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Acquacotta</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 0, 0, 0)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>bread;oil;onion;tomato</Tag>
+		<Art>Acquacotta.jpg</Art>
+		<PictureLocation>MEA026</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Acquacotta con Funghi</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>bread;egg;mushroom;parmesan;tomato</Tag>
+		<Art>AcquacottaFunghi.jpg</Art>
+		<PictureLocation>MEA027</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Acquacotta con Funghi</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>bread;egg;mushroom;oil;parmesan;tomato</Tag>
+		<Art>AcquacottaFunghi.jpg</Art>
+		<PictureLocation>MEA027</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti alla Puttanesca</Name>
+		<Description></Description>
+		<Stats>(1, 0, 0, 0, 2, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>caper;olive;spaghetti;tomato</Tag>
+		<Art>Puttanesca.png</Art>
+		<PictureLocation>MEA028</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti alla Puttanesca</Name>
+		<Description></Description>
+		<Stats>(1, 0, 0, 0, 2, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>anchovy;caper;olive;spaghetti;tomato</Tag>
+		<Art>Puttanesca.png</Art>
+		<PictureLocation>MEA028</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti alla Puttanesca</Name>
+		<Description></Description>
+		<Stats>(1, 0, 0, 0, 2, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;caper;olive;spaghetti;tomato</Tag>
+		<Art>Puttanesca.png</Art>
+		<PictureLocation>MEA028</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti alla Puttanesca</Name>
+		<Description></Description>
+		<Stats>(1, 0, 0, 0, 2, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>caper;olive;redpepper;spaghetti;tomato</Tag>
+		<Art>Puttanesca.png</Art>
+		<PictureLocation>MEA028</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti alla Puttanesca</Name>
+		<Description></Description>
+		<Stats>(1, 0, 0, 0, 2, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>anchovy;basil;caper;olive;spaghetti;tomato</Tag>
+		<Art>Puttanesca.png</Art>
+		<PictureLocation>MEA028</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti alla Puttanesca</Name>
+		<Description></Description>
+		<Stats>(1, 0, 0, 0, 2, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>anchovy;caper;olive;redpepper;spaghetti;tomato</Tag>
+		<Art>Puttanesca.png</Art>
+		<PictureLocation>MEA028</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti alla Puttanesca</Name>
+		<Description></Description>
+		<Stats>(1, 0, 0, 0, 2, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;caper;olive;redpepper;spaghetti;tomato</Tag>
+		<Art>Puttanesca.png</Art>
+		<PictureLocation>MEA028</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti alla Puttanesca</Name>
+		<Description></Description>
+		<Stats>(1, 0, 0, 0, 2, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>anchovy;basil;caper;olive;redpepper;spaghetti;tomato</Tag>
+		<Art>Puttanesca.png</Art>
+		<PictureLocation>MEA028</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Spaghetti Cacio e Pepe</Name>
+		<Description></Description>
+		<Stats>(0, 1, 0, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>blackpepper;oil;parmesan;peccorino;spaghetti</Tag>
+		<Art>CacioePepe.jpg</Art>
+		<PictureLocation>MEA029</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Linguine Cacio e Pepe</Name>
+		<Description></Description>
+		<Stats>(0, 1, 0, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>blackpepper;linguine;oil;parmesan;peccorino</Tag>
+		<Art>CacioePepe.jpg</Art>
+		<PictureLocation>MEA030</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Amatriciana</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 2, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;garlic;guanciale;oil;parmesan;parsley;redpepper;spaghetti;tomato</Tag>
+		<Art>Amatriciana.jpg</Art>
+		<PictureLocation>MEA031</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Amatriciana</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 2, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;garlic;guanciale;parmesan;parsley;redpepper;spaghetti;tomato</Tag>
+		<Art>Amatriciana.jpg</Art>
+		<PictureLocation>MEA031</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Amatriciana</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 2, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;garlic;guanciale;oil;parsley;redpepper;spaghetti;tomato</Tag>
+		<Art>Amatriciana.jpg</Art>
+		<PictureLocation>MEA031</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Amatriciana</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 2, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;garlic;guanciale;oil;parmesan;redpepper;spaghetti;tomato</Tag>
+		<Art>Amatriciana.jpg</Art>
+		<PictureLocation>MEA031</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Amatriciana</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 2, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;garlic;guanciale;parmesan;redpepper;spaghetti;tomato</Tag>
+		<Art>Amatriciana.jpg</Art>
+		<PictureLocation>MEA031</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Amatriciana</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 2, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;garlic;guanciale;parsley;redpepper;spaghetti;tomato</Tag>
+		<Art>Amatriciana.jpg</Art>
+		<PictureLocation>MEA031</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Amatriciana</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 2, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;garlic;guanciale;oil;redpepper;spaghetti;tomato</Tag>
+		<Art>Amatriciana.jpg</Art>
+		<PictureLocation>MEA031</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Amatriciana</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 2, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;garlic;guanciale;redpepper;spaghetti;tomato</Tag>
+		<Art>Amatriciana.jpg</Art>
+		<PictureLocation>MEA031</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bistecca</Name>
+		<Description>Who doesn’t love a good steak?</Description>
+		<Stats>(0, 1, 0, 0, 0, 3)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;beef;garlic;parsley;vinaigrette</Tag>
+		<Art>Bistecca.jpg</Art>
+		<PictureLocation>MEA032</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bistecca</Name>
+		<Description>Who doesn’t love a good steak?</Description>
+		<Stats>(0, 1, 0, 0, 0, 3)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beef;garlic;parsley;vinaigrette</Tag>
+		<Art>Bistecca.jpg</Art>
+		<PictureLocation>MEA032</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bistecca</Name>
+		<Description>Who doesn’t love a good steak?</Description>
+		<Stats>(0, 1, 0, 0, 0, 3)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beef;garlic;parsley;vinaigrette</Tag>
+		<Art>Bistecca.jpg</Art>
+		<PictureLocation>MEA032</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bistecca</Name>
+		<Description>Who doesn’t love a good steak?</Description>
+		<Stats>(0, 1, 0, 0, 0, 3)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beef;garlic;vinaigrette</Tag>
+		<Art>Bistecca.jpg</Art>
+		<PictureLocation>MEA032</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Tagliatta</Name>
+		<Description>A Florentine Classic!</Description>
+		<Stats>(0, 1, 0, 1, 1, 4)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beef;garlic;lemon;oil;parmesan</Tag>
+		<Art>Tagliatta.jpg</Art>
+		<PictureLocation>MEA033</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Tagliatta</Name>
+		<Description>A Florentine Classic!</Description>
+		<Stats>(0, 1, 0, 1, 1, 4)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beef;garlic;lemon;parmesan</Tag>
+		<Art>Tagliatta.jpg</Art>
+		<PictureLocation>MEA033</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Gnocchi con Spinaci</Name>
+		<Description></Description>
+		<Stats>(0, 0, 2, 1, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>blackpepper;garlic;gnocchi;oil;onion;spinach</Tag>
+		<Art>GnocchiSpinach.jpg</Art>
+		<PictureLocation>MEA034</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Gnocchi con Spinaci</Name>
+		<Description></Description>
+		<Stats>(0, 0, 2, 1, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>blackpepper;garlic;gnocchi;onion;spinach</Tag>
+		<Art>GnocchiSpinach.jpg</Art>
+		<PictureLocation>MEA034</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Gnocchi con Spinaci</Name>
+		<Description></Description>
+		<Stats>(0, 0, 2, 1, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>garlic;gnocchi;oil;onion;spinach</Tag>
+		<Art>GnocchiSpinach.jpg</Art>
+		<PictureLocation>MEA034</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Gnocchi con Spinaci</Name>
+		<Description></Description>
+		<Stats>(0, 0, 2, 1, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>garlic;gnocchi;onion;spinach</Tag>
+		<Art>GnocchiSpinach.jpg</Art>
+		<PictureLocation>MEA034</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Cotoletta alla Milanese</Name>
+		<Description></Description>
+		<Stats>(0, 0, 0, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beef;butter;crumbs;egg</Tag>
+		<Art>Cotoletta.jpg</Art>
+		<PictureLocation>MEA035</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Panzanella</Name>
+		<Description></Description>
+		<Stats>(1, 1, 1, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;bread;onion;tomato;vinaigrette</Tag>
+		<Art>Panzanella.jpg</Art>
+		<PictureLocation>MEA036</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Panzanella</Name>
+		<Description></Description>
+		<Stats>(1, 1, 1, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;bread;tomato;vinaigrette</Tag>
+		<Art>Panzanella.jpg</Art>
+		<PictureLocation>MEA036</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Panzanella</Name>
+		<Description></Description>
+		<Stats>(1, 1, 1, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>bread;onion;tomato;vinaigrette</Tag>
+		<Art>Panzanella.jpg</Art>
+		<PictureLocation>MEA036</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Panzanella</Name>
+		<Description></Description>
+		<Stats>(1, 1, 1, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>Bread;tomato;vinaigrette</Tag>
+		<Art>Panzanella.jpg</Art>
+		<PictureLocation>MEA036</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Chicken with Canellini and Tomato</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beans;chicken;oil;redpepper;tomato</Tag>
+		<Art>CanneliniChicken.jpg</Art>
+		<PictureLocation>MEA037</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Chicken with Canellini and Tomato</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beans;chicken;redpepper;tomato</Tag>
+		<Art>CanneliniChicken.jpg</Art>
+		<PictureLocation>MEA037</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Chicken with Canellini and Tomato</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beans;chicken;oil;tomato</Tag>
+		<Art>CanneliniChicken.jpg</Art>
+		<PictureLocation>MEA037</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Chicken with Canellini and Tomato</Name>
+		<Description></Description>
+		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>beans;chicken;tomato</Tag>
+		<Art>CanneliniChicken.jpg</Art>
+		<PictureLocation>MEA037</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Summer Seaside Linguine</Name>
+		<Description></Description>
+		<Stats>(1, 0, 0, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>garlic;linguine;oil;parsley;redpepper</Tag>
+		<Art>SeasideLinguine.jpg</Art>
+		<PictureLocation>MEA037</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Summer Seaside Linguine</Name>
+		<Description></Description>
+		<Stats>(1, 0, 0, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>garlic;linguine;oil;parsley</Tag>
+		<Art>SeasideLinguine.jpg</Art>
+		<PictureLocation>MEA037</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Summer Seaside Linguine</Name>
+		<Description></Description>
+		<Stats>(1, 0, 0, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>garlic;linguine;parsley;redpepper</Tag>
+		<Art>SeasideLinguine.jpg</Art>
+		<PictureLocation>MEA037</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Summer Seaside Linguine</Name>
+		<Description></Description>
+		<Stats>(1, 0, 0, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>garlic;linguine;parsley</Tag>
+		<Art>SeasideLinguine.jpg</Art>
+		<PictureLocation>MEA037</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Eggplant Parmesan</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 1, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>crumbs;egg;eggplant;flour;mozzarella;oil;parmesan;tomato</Tag>
+		<Art>EggplantParm.jpg</Art>
+		<PictureLocation>MEA038</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Eggplant Parmesan</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 1, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>crumbs;egg;eggplant;flour;mozzarella;parmesan;tomato</Tag>
+		<Art>EggplantParm.jpg</Art>
+		<PictureLocation>MEA038</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Chicken Parmesan</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 1, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>chicken;crumbs;egg;flour;mozzarella;oil;parmesan;tomato</Tag>
+		<Art>ChickenParm.jpg</Art>
+		<PictureLocation>MEA039</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Chicken Parmesan</Name>
+		<Description></Description>
+		<Stats>(2, 0, 0, 1, 0, 2)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>chicken;crumbs;egg;flour;mozzarella;parmesan;tomato</Tag>
+		<Art>ChickenParm.jpg</Art>
+		<PictureLocation>MEA039</PictureLocation>
+		<Step-Up></Step-Up>
 	</Card>
 </Database>

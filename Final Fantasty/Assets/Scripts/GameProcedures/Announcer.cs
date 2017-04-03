@@ -20,13 +20,65 @@ public class Announcer : MonoBehaviour
 		}
 	}
 
+	// Returns the text when the judge is revealed!
 	public string judgeRevealText() {
-		return "Welcome to Final Fantasty."; //need revision
+		return "Contestants, welcome to Final Fantasty, the lightning fast cookoff where each contestant willl have three minutes and" +
+			"only a limited ingredient pool to come up a meal that will wow our judges. First Let us meet our two contestants"; //need revision
 	}
 
 	// The text that will display before any judging begins
 	public string preJudgingText() {
 		return "Long has man pondered who would come out on top in a battle of culinary wits. Would it be man... or machine. Today we find out!";
+	}
+
+	// This is some text injected in the middle of each judge to keep the flow feeling right
+	public string judgeRevealBridgeText(string judgeName, int i){
+		string ordinal = numberToOrdinal(i);	// I want proper ordinal values
+
+		if (judgeName == "Cap'n Blondemane") {
+			return string.Format("Our {0} judge, a true daughter of the seas, Captain Blondemane!", ordinal);
+		}
+		else if (judgeName == "Sour") {
+			return string.Format("The {0} judge on the panel, an enigma in a sweater, Jan Van Hansen!", ordinal);
+		}
+		else if (judgeName == "Gustavo") {
+			return string.Format("The {0} judge on our panel, the Spanish wonder, Chef Gustavo!", ordinal);
+		}
+		else if (judgeName == "Sugar Belle") {
+			return string.Format("The {0} judge today, the master of baking herself, Sugar Belle!", ordinal);
+		}
+		else if (judgeName == "Hiroshi Tanaka") {
+			return string.Format("The {0} judge today, Hailing from Japan, Chef Tanaka!", ordinal);
+		}
+		else {
+			return string.Format("And finally, the Master Chef. With 39 Michelin Stars, he is the ultimate taste maker!");
+		}
+
+	}
+
+	/* Converts a number into a nice... ordinal value. So 1 becomes First!
+	 * Numbers above three will just append the correct suffix onto the
+	 * string representation of the number
+	 */
+	private string numberToOrdinal(int i) {
+		if (i == 1) {
+			return "first";
+		}
+		else if (i == 2) {
+			return "second";
+		}
+		else if(i == 3) {
+			return "third";
+		}
+		else if (i > 20 && (i % 10 == 1)) {
+			return i.ToString() + "st";
+		}
+		else if (i > 20 && (i % 10 == 2)) {
+			return i.ToString() + "nd";
+		}
+		else {
+			return i.ToString() + "th";
+		}
 	}
 
 	// Kind of gross but I have to make it respond to ALL OF the scenarios
@@ -35,11 +87,11 @@ public class Announcer : MonoBehaviour
 		if (points.x == 0 && points.y == 0) {
 			return "And now, the judges will weigh in!!";
 		} else if (points.x == 1 && points.y == 0) {
-			return "It looks like an early lead for man.";
+			return "It looks like an early lead for man. Perhaps the second of our two judges will see it differently?";
 		} else if (points.x == 1 && points.y == 1) {
 			return "Going into the mystery judge deadlocked. It could NOT be more exciting than this!";
 		} else if (points.x == 0 && points.y == 1) {
-			return "The machine looks to be out to an early lead here but will it stay that way?";
+			return "The machine looks to be out to an early lead here but will it stay that way? Perhaps the next judge will take to the human's dish a bit more";
 		} else if (points.x == 2 && points.y == 0) {
 			return "We know the winner here but, will our human chef beable to pull out the 3-0 victory?";
 		} else {
