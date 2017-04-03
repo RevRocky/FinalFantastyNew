@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.IO;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  * Perhaps a bit dirty and quick but this script will
@@ -21,7 +22,7 @@ public class FinalJudgingSceneManager : DialogueManager {
 
 	// The start method will act as the brains for the entire operation!
 	// Not actually... an init. Only for testing
-	public override void init () {
+	public void Start () {
 		base.init ();
 		submissions = MealSubmissionHolder.instance;
 		points = new Vector2 (0, 0);
@@ -79,4 +80,11 @@ public class FinalJudgingSceneManager : DialogueManager {
 		StartCoroutine (manageDialogue ());
 		Debug.Log ("Need to go to new scene");
 	}
+
+	// Go back to the main menu!
+	public override void nextScene() {
+		Destroy(GameObject.FindWithTag("GameOver"));
+		SceneManager.LoadScene(0);
+	}
+	
 }

@@ -22,7 +22,7 @@ public class Spicy : Judge {
 		string[] phraseBook = {"*A faint Spanish guitar riff plays.* Hola. Me nombre es Gustavo. I... I like my food like I like my romance. Hot! Passionate!",
 			"*Guitar Riff Plays* The only thing I expect to see today hotter than me... is your food"
 		};
-		return phraseBook [(int)Random.Range (0, (float)(phraseBook.Length + 1))];
+		return phraseBook [Random.Range (0, phraseBook.Length)];
 	}
 
 	// This method handles the judge giving comments while they evaluate each meal.

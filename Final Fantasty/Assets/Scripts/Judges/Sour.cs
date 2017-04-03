@@ -21,7 +21,7 @@ public class Sour : Judge {
 		string[] phraseBook = {"Finish this: Your knowledge, I hope you will scour\n" +
 			"For a meal that I will wish to devour.\nIf you don't use lemon or lime,\n You'll be wasting your time.\n" +
 			"For the food I like is rather..."};
-		return (phraseBook [(int)Random.Range (0, (float)(phraseBook.Length + 1))]);
+		return phraseBook [Random.Range(0, phraseBook.Length)];
 	}
 
 	// This method handles the judge giving comments while they evaluate each meal.

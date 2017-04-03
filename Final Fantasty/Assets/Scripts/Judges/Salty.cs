@@ -18,7 +18,7 @@ public class Salty : Judge {
 	// This is the judges pregame talk. The idea here is to take a phrase randomly from a phrasebook
 	public override string preGameTalk(){
 		string[] phraseBook = {"I've sailed the seaven seas. My home is out there, among the fish and the waves. Please, chefs, take me home!"};
-		return phraseBook [(int)Random.Range (0, (float)(phraseBook.Length + 1))];
+		return phraseBook [Random.Range (0, phraseBook.Length)];
 	}
 
 	// This method handles the judge giving comments while they evaluate each meal.

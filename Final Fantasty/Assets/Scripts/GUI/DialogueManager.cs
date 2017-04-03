@@ -14,6 +14,8 @@ using UnityEngine;
 public abstract class DialogueManager : MonoBehaviour
 {
 
+	public Sprite AI_SPRITE;
+	public Sprite UserSprite;
 	public Queue<DialogueTriple> dialogueQueue;	// Where upcomming dialogue is stored
 	public Image judgeSprite;	// Handles the rendering of the judge images
 	public Text nameBox;				// The name box.
@@ -36,6 +38,7 @@ public abstract class DialogueManager : MonoBehaviour
 		while (dialogueQueue.Count > 0) {
 			yield return speakDialogue (dialogueQueue.Dequeue ());
 		}
+		nextScene ();
 	}
 
 	// Unpacks the bundle and speaks it!
@@ -53,6 +56,9 @@ public abstract class DialogueManager : MonoBehaviour
 		}
 		yield return new WaitForFixedUpdate ();
 	}
+
+	// Plays the next scene
+	public abstract void nextScene();
 			
 }
 

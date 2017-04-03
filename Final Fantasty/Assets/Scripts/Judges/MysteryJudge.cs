@@ -44,7 +44,7 @@ public class MysteryJudge : Judge {
 
 		// IF WE COULD MAKE THIS HAPPEN I would be so happy!
 		string[] phraseBook = {"... Surprise me, as I will do to you!"};
-		return (phraseBook [(int)Random.Range (0, (float)(phraseBook.Length + 1))]);
+		return phraseBook [Random.Range (0, phraseBook.Length)];
 	}
 
 	// This method handles the judge giving comments while they evaluate each meal.
