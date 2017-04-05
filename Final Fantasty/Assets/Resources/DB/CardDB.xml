@@ -738,7 +738,7 @@
 		<Stats>(2, 0, 0, 0, 0, 1)</Stats>
 		<Mechanics>('', '')</Mechanics>
 		<IngredientTag></IngredientTag>
-		<Tag>cream;gelatin;sugar;vanilla </Tag>
+		<Tag>cream;gelatin;sugar;vanilla</Tag>
 		<Art>PannaCotta.jpg</Art>
 		<PictureLocation>MEA004</PictureLocation>
 		<Step-Up></Step-Up>
@@ -855,18 +855,6 @@
 		<Type>Meal</Type>
 		<Name>Bruschetta</Name>
 		<Description>Refreshing. I Guarantee It!</Description>
-		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
-		<Mechanics>('', '')</Mechanics>
-		<IngredientTag></IngredientTag>
-		<Tag>basil;bread;garlic;tomato</Tag>
-		<Art>Bruschetta.jpg</Art>
-		<PictureLocation>MEA009</PictureLocation>
-		<Step-Up></Step-Up>
-	</Card>
-	<Card>
-		<Type>Meal</Type>
-		<Name>Bruschetta</Name>
-		<Description>Refreshing. I Guarantee It!</Description>
 		<Stats>(1, 0, 1, 1, 0, 2)</Stats>
 		<Mechanics>('', '')</Mechanics>
 		<IngredientTag></IngredientTag>
@@ -907,18 +895,6 @@
 		<Mechanics>('', '')</Mechanics>
 		<IngredientTag></IngredientTag>
 		<Tag>basil;beans;bread;garlic;onion;tomato</Tag>
-		<Art>Bruschetta.jpg</Art>
-		<PictureLocation>MEA009</PictureLocation>
-		<Step-Up></Step-Up>
-	</Card>
-	<Card>
-		<Type>Meal</Type>
-		<Name>Bruschetta</Name>
-		<Description>Refreshing. I Guarantee It!</Description>
-		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
-		<Mechanics>('', '')</Mechanics>
-		<IngredientTag></IngredientTag>
-		<Tag>basil;beans;bread;garlic;tomato</Tag>
 		<Art>Bruschetta.jpg</Art>
 		<PictureLocation>MEA009</PictureLocation>
 		<Step-Up></Step-Up>
@@ -978,7 +954,7 @@
 		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
 		<Mechanics>('', '')</Mechanics>
 		<IngredientTag></IngredientTag>
-		<Tag>basil;bread;garlic;guanciale;tomato</Tag>
+		<Tag>basil;bread;garlicmozzarella;guanciale;tomato</Tag>
 		<Art>BruschettaGuanciale.jpg</Art>
 		<PictureLocation>MEA010</PictureLocation>
 		<Step-Up></Step-Up>
@@ -991,18 +967,6 @@
 		<Mechanics>('', '')</Mechanics>
 		<IngredientTag></IngredientTag>
 		<Tag>basil;bread;garlic;guanciale;mozzarella;onion;tomato</Tag>
-		<Art>BruschettaGuanciale.jpg</Art>
-		<PictureLocation>MEA010</PictureLocation>
-		<Step-Up></Step-Up>
-	</Card>
-	<Card>
-		<Type>Meal</Type>
-		<Name>Bruschette Guanciale</Name>
-		<Description>Who says spice can’t also cool you down?</Description>
-		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
-		<Mechanics>('', '')</Mechanics>
-		<IngredientTag></IngredientTag>
-		<Tag>basil;bread;garlic;guanciale;mozzarella;tomato</Tag>
 		<Art>BruschettaGuanciale.jpg</Art>
 		<PictureLocation>MEA010</PictureLocation>
 		<Step-Up></Step-Up>
@@ -1590,7 +1554,7 @@
 		<Stats>(1, 0, 1, 1, 0, 1)</Stats>
 		<Mechanics>('', '')</Mechanics>
 		<IngredientTag></IngredientTag>
-		<Tag>Blackpepper;butter;gorgonzola;parmesan;rice;shallots;stock;wine</Tag>
+		<Tag>blackpepper;butter;gorgonzola;parmesan;rice;shallots;stock;wine</Tag>
 		<Art>RisottoGorgonzola.jpg</Art>
 		<PictureLocation>MEA021</PictureLocation>
 		<Step-Up></Step-Up>
@@ -1651,18 +1615,6 @@
 		<Mechanics>('', '')</Mechanics>
 		<IngredientTag></IngredientTag>
 		<Tag>onion;rice;stock;wine</Tag>
-		<Art>BabyRiso.jpg</Art>
-		<PictureLocation>MEA023</PictureLocation>
-		<Step-Up></Step-Up>
-	</Card>
-	<Card>
-		<Type>Meal</Type>
-		<Name>Baby’s First Risotto</Name>
-		<Description></Description>
-		<Stats>(0, 0, 1, 0, 0, 1)</Stats>
-		<Mechanics>('', '')</Mechanics>
-		<IngredientTag></IngredientTag>
-		<Tag>butter;onion;rice;stock;wine</Tag>
 		<Art>BabyRiso.jpg</Art>
 		<PictureLocation>MEA023</PictureLocation>
 		<Step-Up></Step-Up>
@@ -2070,7 +2022,7 @@
 		<Stats>(0, 1, 0, 0, 0, 3)</Stats>
 		<Mechanics>('', '')</Mechanics>
 		<IngredientTag></IngredientTag>
-		<Tag>beef;garlic;parsley;vinaigrette</Tag>
+		<Tag>beef;basil;garlic;vinaigrette</Tag>
 		<Art>Bistecca.jpg</Art>
 		<PictureLocation>MEA032</PictureLocation>
 		<Step-Up></Step-Up>

@@ -8,7 +8,7 @@ public class Sour : Judge {
 
 	public static string IMAGE_NAME = "Sour_Sprite";
 	public static string NAME = "Sour";	// TODO We need a better name
-	private static float[] statMods;	// Stat modifiers for the judge, sour is the second index
+	private static float[] statMods  = {1.5f, 2.5f, 1.0f, 1.0f, 1.0f, .75f};	// Stat modifiers for the judge, sour is the second index
 
 
 	// Passes some values up to the judge constructor

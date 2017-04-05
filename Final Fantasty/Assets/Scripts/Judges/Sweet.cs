@@ -39,7 +39,7 @@ public class Sweet : Judge {
 		if (mealName == "tiramisu") {
 			return string.Format ("I LOOOOOOOOVE TIRAMISU. HOW COULD I NOT VOTE FOR IT!!! :3");
 		}
-		return string.Format ("I thinnnnk I like [0] and their lovely [1]", chefName, mealName);
+		return string.Format ("I thinnnnk I like {0} and their lovely {1}", chefName, mealName);
 	}
 
 }

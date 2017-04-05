@@ -13,11 +13,13 @@ using System.IO;
 public class IngredientStack {
 
 	private List<Card> theCards;
+	public GameObject entryZone;
 	public const int NUM_STATS=6;
 	public const string MEAL_IMAGE_DIRECTORY =  "..";
 
 	public IngredientStack() {
 		theCards = new List<Card>();
+		entryZone = GameObject.FindWithTag ("submission");
 	}
 
 	// Adds a card to our stack
@@ -92,7 +94,7 @@ public class IngredientStack {
 		}	
 		finally {
 			Card mealCard = Card.instantiateCard(mealEntry);							// Instantiate the card prefab (or what ever it is called)
-			SubmissionZone.instance.addCard(mealCard);									// Add it to the submission zone!
+			entryZone.GetComponent<SubmissionZone>().addCard(mealCard);
 			int loopMax = theCards.Count;
 			for (i = 0; i < loopMax; i++) {
 				Card card = theCards[0];

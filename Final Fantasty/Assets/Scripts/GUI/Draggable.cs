@@ -68,6 +68,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 		Destroy(placeholder);
 	}
 
-
-
+	// Gets reference to the placeholder object
+	public GameObject getPlaceholder() {return placeholder;}
 }

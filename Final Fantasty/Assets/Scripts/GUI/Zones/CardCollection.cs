@@ -24,7 +24,7 @@ using System.Collections.Generic;
  	public int CAPACITY;		// How many cards the collection can hold
  	private List<Card> collection;
 
-	void Start() {
+	public void init() {
 		collection = new List<Card> (CAPACITY);
 	}
 

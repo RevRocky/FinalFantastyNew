@@ -38,7 +38,7 @@ public class JudgeRevealSceneManager : DialogueManager {
 			dialogueQueue.Enqueue (new DialogueTriple(IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + currentJudge.getSpriteLocation()), currentJudge.name, preJudgeText));
 			i++;
 		}
-		dialogueQueue.Enqueue (new DialogueTriple(IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + announcerDude.spriteLocation), "CHEFS READY?!?!?!!!!", announcerDude.name));
+		dialogueQueue.Enqueue (new DialogueTriple(IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + announcerDude.spriteLocation), announcerDude.name, "CHEFS READY?!?!?!!!!"));
 	}
 
 	// Handles the sprites and everything after judging is complete!

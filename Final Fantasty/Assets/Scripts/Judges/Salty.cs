@@ -41,6 +41,6 @@ public class Salty : Judge {
 			return string.Format ("{0}, I think I know the name of a few ships who would love to put you on board. Sure, you will sometimes be cooking with\n" +
 				"old fish but, with your skills I don't think that'll be much of a hinderence. Anyway, let me know if you want me to put in a good word!", chefName);
 		}
-		return string.Format("It's tough but I think I'll have to give the edge to {0} with their {1}!", mealName, chefName);
+		return string.Format("It's tough but I think I'll have to give the edge to {1} with their {0}!", mealName, chefName);
 	}
 }

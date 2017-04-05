@@ -23,6 +23,7 @@ public class CardFactory : MonoBehaviour {
 		
 	// Creates a card prefab object and returns it.
 	public GameObject create(GameObject parent) {
+		Transform myT = parent.transform;
 		return Instantiate (CardPrefab, parent.transform);
 	}
 }

@@ -23,6 +23,11 @@ public class Hand : CardCollection {
 		}
 	}
 
+	// Initialise base class
+	public void Start() {
+		base.init();
+	}
+
 	/*
 	 * Adds a card to the User's Hand. It will throw an exception
 	 * if the hand has more than 5 cards
@@ -44,7 +49,7 @@ public class Hand : CardCollection {
 		if (d != null) {
 			droppedCard = d.gameObject.GetComponent<Card>();	// Obtain reference to the card
 
-			if (droppedCard.getType () != "Meal") {
+			if (droppedCard.getType () != "Meal" && getCollectionSize() < CAPACITY) {
 				try {
 				d.parentToReturnTo = this.transform;
 				addCard (droppedCard);
