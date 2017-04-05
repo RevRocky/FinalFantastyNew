@@ -63,8 +63,8 @@ public class MysteryJudge : Judge {
 	// This method handles the dialogue the judge gives once they have decided whom they will award points to
 	public override string andTheWinnerIs(string chefName, string mealName, float mealScore) {
 		if (mealScore > 30.0f) {
-			return string.Format ("I normally hate this part of the process, but you {0} have made giving you my favour" +
-				"quite easy!", chefName);
+			return string.Format ("I normally hate this part of the process, but your {0} have made giving you my favour" +
+				"quite easy!", mealName);
 		}
 		return string.Format("I suppose, I'll give {0} the nod... though, I can't say I'm terribly impressed", chefName);
 	}

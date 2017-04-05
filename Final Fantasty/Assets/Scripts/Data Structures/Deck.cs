@@ -28,45 +28,52 @@ public class Deck : MonoBehaviour {
 		cardArray = deckList.text.Split(delimiters);
 
 		foreach (string cardTag in cardArray) {
-			newCard = Database.instance.searchByTag (cardTag.TrimEnd());		// Getting a copy of it's DB entry
+			try {
+				newCard = Database.instance.searchByTag (cardTag.TrimEnd());	// Getting a copy of it's DB entry
 			addCard(newCard);													// Adding it to the deck
+			}
+			catch(ItemNotFound e) {
+				print ("Can't find item");
+			}
+
 		}
-		shuffle ();																// Shuffle the deck
+		cardList = shuffle ();																// Shuffle the deck
 	}
 		
 
 	// Implements Fisher - Yates Shuffle
-	public void shuffle() {
+	public List<DatabaseEntry> shuffle() {
 		DatabaseEntry temp;
 		int random;
 		for (int i = 0; i < cardList.Count; i++) {
 			random = Random.Range(i, cardList.Count);
 			temp = cardList[i];
 			cardList[i] = cardList[random];
-			cardList [random] = cardList [i];
+			cardList [random] = temp;
 		}
+		return cardList;
 	}
 
 	public void Update() {
-		if (Input.GetMouseButtonDown(0)) {
+		if (Input.GetMouseButtonDown(1)) {
 			drawCard ();						// Draw card if the right mouse button is down
 		}
 	}
 
 	// Returns the a game object containing the top card of the deck.
-	public GameObject drawCard() {
-		int handSize = Hand.instance.getCollectionSize ();
+	public void drawCard() {
+		int handSize = handZone.GetComponent<Hand> ().getCollectionSize ();
 
 		// Check to make sure we CAN draw a card.
-		if (length > 0 && (2 > handSize || handSize >= 5)) {
+		if (length > 0 && handSize < 5) {
 			DatabaseEntry drawnCardInfo = cardList [0];	
 			Card drawnCard = Card.instantiateCard (drawnCardInfo, handZone);		// Read card from DB
 			GameObject newObject = drawnCard.gameObject;				// Get the associated game object
 			cardList.RemoveAt (0);
 			length--;
-			return newObject;
+			return;
 		}
-		return null;
+		return;
 	}
 
 	// Adds a card to the bottom of the deck

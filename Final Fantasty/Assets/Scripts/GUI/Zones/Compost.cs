@@ -10,6 +10,7 @@ public class Compost : MonoBehaviour, IDropHandler {
 
 		Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
 		if(d != null) {
+			Destroy (d.getPlaceholder ());
 			Destroy (d.gameObject);
 		}
 	}

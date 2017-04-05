@@ -28,7 +28,7 @@ public class Friend : MonoBehaviour {
 	private Judge judgeTwo;
 	private float[] decisionMatrix = {1, 1, 1, 1, 1, 1};	// The weights the AI will use to determine the best meal to make.
 
-	private PlayerSubmission aiSubmission;					// The submission the AI will make 			
+	public PlayerSubmission aiSubmission;					// The submission the AI will make 			
 
 	private static Friend _instance;
 	public static Friend instance							// Tracks present instance of Friend! Now we can use friend from everywhere
@@ -45,7 +45,7 @@ public class Friend : MonoBehaviour {
 	}	
 
 	// This method must run after the Judges have been initialised and added to the scene
-	void Start () {
+	void Awake () {
 		MEAL_LIST_FILE = (TextAsset) Resources.Load ("DB" + Path.DirectorySeparatorChar + "Meals");
 		DatabaseEntry optimalMeal;
 		Judge[] judges = JudgeManager.instance.getPublicJudges();

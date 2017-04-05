@@ -42,6 +42,6 @@ public class Umami : Judge {
 			return string.Format ("{0}, You've done well. You've earned my favour but do not let this moment of pride blind you to all" +
 				"you still have to accomplish!", chefName);
 		}
-		return string.Format("In a battle of amateurs, I think I'll have to give it to {0} and their take on \"{0}\'.", chefName, mealName);
+		return string.Format("In a battle of amateurs, I think I'll have to give it to {0} and their take on \"{1}\'.", chefName, mealName);
 	}
 }

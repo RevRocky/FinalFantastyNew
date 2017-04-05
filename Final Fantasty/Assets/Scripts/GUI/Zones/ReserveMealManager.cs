@@ -28,13 +28,23 @@ public class ReserveMealManager : CardCollection {
 	}
 
 	// Just set up the list o cards!
+	public void Start() {
+		base.init();
+	}
+		
+	// Preps a card to be added properly to this collection
+	public void prepCard(Card newCard) {
+		Draggable drag = newCard.gameObject.GetComponent<Draggable> ();
+		drag.parentToReturnTo = this.transform;
+		addCard (newCard);
+	}
 
 	// This method adds the supplied card to the reserve meal queue.
 	public override void addCard(Card newCard){
 		addToCollection(newCard);
 
 		// If the queue is at it's limit, remove oldest card!
-		if (getCollectionSize() == CAPACITY) {
+		if (getCollectionSize() > CAPACITY) {
 			Card removedCard = popFirstCard();
 			GameObject.Destroy (removedCard.gameObject);	// Destroy the game object associated iwth the top card
 		}
@@ -51,6 +61,7 @@ public class ReserveMealManager : CardCollection {
 
 			if (droppedCard.getType () == "Meal") {
 				d.parentToReturnTo = this.transform;
+				Destroy (d.getPlaceholder());
 				addCard (droppedCard);		// Adds a card. Will automatically remove a card
 				// TODO Warn the player?
 			}

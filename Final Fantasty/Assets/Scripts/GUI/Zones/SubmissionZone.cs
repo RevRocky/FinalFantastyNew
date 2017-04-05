@@ -11,6 +11,8 @@ using System.Collections.Generic;
  */
 public class SubmissionZone : CardCollection {
 
+	public GameObject reserveZone;														// Reference to the reserve zone
+	private ReserveMealManager reserveManager;											// The actual manager
 	private static SubmissionZone _instance;											// Private copy of instance	
 	public static SubmissionZone instance												// Tracks present instance of the this zone!
 	{
@@ -24,16 +26,19 @@ public class SubmissionZone : CardCollection {
 		}
 	}
 
+	void Start() {
+		reserveManager = reserveZone.GetComponent<ReserveMealManager> ();
+		base.init ();
+	}
+
 	// This formally adds a card to the SubmissionZone
 	public override void addCard(Card newMeal) {
 		if (getCollectionSize() != 0) {
 			Card oldCard = popFirstCard ();
-			Destroy (oldCard.gameObject);	// TODO REMOVE
-			//oldCard.gameObject.transform.parent = ReserveMealManager.instance.gameObject;	// Change the parent of our current card
-			//ReserveMealManager.instance.addCard(oldCard);	// Move the card to the reserves
-
+			Destroy (oldCard.gameObject);
 		}
 		addToCollection (newMeal);
+		newMeal.gameObject.transform.localPosition = new Vector3 (0, 0, 0);	// I guess this works.
 	}
 
 	// Handles a meal card being dropped in this area!

@@ -28,6 +28,7 @@ public class Database : MonoBehaviour {
 	// TODO We need to ensure this persists across scenes, otherwise there will be a signifigant overhead on game start
 	void Awake (){
 		ReadItems ();		// We shouldn't need to do anything more. The database is a behind the scenes thing
+		DontDestroyOnLoad(this.gameObject);	// Never destroy!
 	}
 
 	/*
@@ -45,6 +46,9 @@ public class Database : MonoBehaviour {
 		foreach(XmlNode itemInfo in itemList) {
 			newEntry = new DatabaseEntry (itemInfo);
 			tag = newEntry.tag;
+			if (itemsDict.ContainsKey (tag)) {
+				print (tag);
+			}
 			itemsDict.Add(tag, newEntry);	// Associate the tag with a database entry read from the XML's node
 		}
 	}
@@ -56,7 +60,7 @@ public class Database : MonoBehaviour {
 			return itemsDict[tag].clone();
 		}
 		else {
-			throw new ItemNotFound("The card you are trying to find can not be found");
+ 			throw new ItemNotFound("The card you are trying to find can not be found");
 		}
 	}
 }

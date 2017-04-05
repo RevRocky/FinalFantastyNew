@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class timer : MonoBehaviour {
 
 	public double timeRemaining = 5;
+	public Text timeZone;
 
 
 	// Use this for initialization
@@ -25,10 +26,12 @@ public class timer : MonoBehaviour {
 
 	void OnGUI(){
 		if (timeRemaining > 0) {
-			GUI.Label (new Rect (100,100,100,30), "Time Remaining: " + (int)timeRemaining);
-
+			// Displaying time neatly
+			int seconds = ((int) timeRemaining) % 60;
+			int minutes = ((int) timeRemaining) / 60;
+			timeZone.text = string.Format ("{1}:{0}", seconds, minutes);
 		} else {
-			GUI.Label (new Rect (50,25,100,30), "Time's up");
+			timeZone.text = "Times Up";
 		}
 	}
 	/*

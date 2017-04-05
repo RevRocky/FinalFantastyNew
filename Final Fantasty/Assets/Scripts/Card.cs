@@ -42,6 +42,8 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 		GameObject newObj = CardFactory.instance.create(parent);					// TODO Ask the location manager where to put the card!			
 		Card newCard = newObj.GetComponent<Card>();
 		newCard.Init(cardInfo);	
+		Hand myHand = parent.gameObject.GetComponent<Hand> ();
+		myHand.addToCollection (newCard);
 		return newCard;
 	}
 
@@ -62,7 +64,6 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 			// TODO Place card appropriately
 		}
 		else {
-			
 			spriteDrawer.sprite = IMG2Sprite.instance.LoadNewSprite(cardArtLocation + cardInfo.spriteLocation);	// Creating a sprite from said meal card
 			// TODO Position card correctly
 		}
