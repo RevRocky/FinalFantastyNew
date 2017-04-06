@@ -26,19 +26,19 @@ public class JudgeRevealSceneManager : DialogueManager {
 		Judge[] judgeList = judgeStable.getAllJudges();
 		dialogueQueue.Enqueue (new DialogueTriple(IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + announcerDude.spriteLocation), announcerDude.name, announcerDude.judgeRevealText()));
 		dialogueQueue.Enqueue (new DialogueTriple(AI_SPRITE, "FRIEND", wittyAIText()));
-		dialogueQueue.Enqueue (new DialogueTriple(UserSprite, "YOU", "*remains silent, stoic and prepared!"));
+		dialogueQueue.Enqueue (new DialogueTriple(UserSprite, "YOU", "*remains silent, stoic and prepared!*"));
 		int i = 1;	// For some text generation!
 
 		// Ugly ugly ugly
 		foreach (Judge currentJudge in judgeList) {
-			dialogueQueue.Enqueue (new DialogueTriple(IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + announcerDude.spriteLocation), announcerDude.name, announcerDude.judgeRevealBridgeText(currentJudge.name, i)));
+			dialogueQueue.Enqueue (new DialogueTriple(IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + announcerDude.spriteLocation), announcerDude.name, announcerDude.judgeRevealBridgeText(currentJudge.judgeID, i)));
 			string preJudgeText;
 			preJudgeText = currentJudge.preGameTalk();
 			// Judge player and queue dialogue
 			dialogueQueue.Enqueue (new DialogueTriple(IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + currentJudge.getSpriteLocation()), currentJudge.name, preJudgeText));
 			i++;
 		}
-		dialogueQueue.Enqueue (new DialogueTriple(IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + announcerDude.spriteLocation), announcerDude.name, "CHEFS READY?!?!?!!!!"));
+		dialogueQueue.Enqueue (new DialogueTriple(IMG2Sprite.instance.LoadNewSprite (SPRITE_DIR + announcerDude.spriteLocation), announcerDude.name, "Ready, set, bake!"));
 	}
 
 	// Handles the sprites and everything after judging is complete!

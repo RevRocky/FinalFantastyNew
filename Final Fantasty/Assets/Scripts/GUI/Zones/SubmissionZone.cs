@@ -11,8 +11,6 @@ using System.Collections.Generic;
  */
 public class SubmissionZone : CardCollection {
 
-	public GameObject reserveZone;														// Reference to the reserve zone
-	private ReserveMealManager reserveManager;											// The actual manager
 	private static SubmissionZone _instance;											// Private copy of instance	
 	public static SubmissionZone instance												// Tracks present instance of the this zone!
 	{
@@ -26,14 +24,13 @@ public class SubmissionZone : CardCollection {
 		}
 	}
 
-	void Start() {
-		reserveManager = reserveZone.GetComponent<ReserveMealManager> ();
+	void Start(){
 		base.init ();
 	}
 
 	// This formally adds a card to the SubmissionZone
 	public override void addCard(Card newMeal) {
-		if (getCollectionSize() != 0) {
+		if (getCollectionSize() >= CAPACITY && getCollection()[0] != newMeal) {
 			Card oldCard = popFirstCard ();
 			Destroy (oldCard.gameObject);
 		}
@@ -53,6 +50,7 @@ public class SubmissionZone : CardCollection {
 
 			// Gross nested conditionals
 			if (droppedCard.getType () == "Meal") {
+				Destroy (d.getPlaceholder ().gameObject);	// Destroy the placeholder object created
 				d.parentToReturnTo = this.transform;	// I wish I could tell you what this did
 				addCard (droppedCard);					// Add the dropped card, only if it's a meal!
 			}

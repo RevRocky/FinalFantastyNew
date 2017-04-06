@@ -42,20 +42,20 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 
 		}
 
-		if (textBox == null)
-			return;
+		/*if (textBox == null)
+			return;*/
 		
-		if (messageRoutine != null) {
+		/*if (messageRoutine != null) {
 			StopCoroutine (messageRoutine);
 		}
 		messageRoutine = ShowMessage (message, 4);
-		StartCoroutine (messageRoutine);
+		StartCoroutine (messageRoutine);*/
 	}
 
-	IEnumerator ShowMessage(string text, float delay){
+	/*IEnumerator ShowMessage(string text, float delay){
 		textBox.text = text;
 		textBox.enabled = true;
 		yield return new WaitForSeconds (delay);
 		textBox.enabled = false;
-	}
+	}*/
 }

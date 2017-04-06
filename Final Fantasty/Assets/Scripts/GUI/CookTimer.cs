@@ -19,12 +19,20 @@ public class CookTimer : MonoBehaviour {
 	private double timeRemaining;				// The time remaining
 	private bool activated;						// Tracks whether the timer is activated
 
+	public Text timeZone;					// The text box with the countdown\
+ 
 
 	// Use this for initialization
 	void Start () {
 		activated = true;						// Start the timer
 	}
-	
+
+	// Where do I write to?
+	public void init(Text timeZone) {
+		this.timeZone = timeZone;
+		timeRemaining = START_TIME;
+	}
+
 	// If the timer is activated, decrement it!
 	void Update () {
 		if (activated){
@@ -45,11 +53,12 @@ public class CookTimer : MonoBehaviour {
 	// Look into putting this into more relative code
 	void OnGUI(){
 		if (timeRemaining > 0) {
-			GUI.Label (new Rect (100,100,100,30), "Time Remaining: " + (int)timeRemaining);
-
+			// Displaying time neatly
+			int seconds = ((int) timeRemaining) % 60;
+			int minutes = ((int) timeRemaining) / 60;
+			timeZone.text = string.Format ("{1}:{0}", seconds, minutes);
 		} else {
-			// When time is out we don't want to 
-			GUI.Label (new Rect (50,25,100,30), "Time's up");
+			timeZone.text = "";
 		}
 	}
 

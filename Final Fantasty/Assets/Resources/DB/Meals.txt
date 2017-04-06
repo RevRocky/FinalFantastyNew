@@ -1,7 +1,7 @@
 spaghetti;tomato
 butter;egg;flour;ricotta;sugar
 almond;egg;flour;pinenuts;sugar
-cream;gelatin;sugar;vanilla 
+cream;gelatin;sugar;vanilla
 garlic;oil;spaghetti
 garlic;linguine;oil
 garlic;oil;redpepper;spaghetti
@@ -19,7 +19,7 @@ basil;beans;bread;garlic;mozzarella;onion;tomato
 basil;beans;bread;garlic;mozzarella;tomato
 basil;bread;garlic;guanciale;tomato
 basil;bread;garlic;guanciale;onion;tomato
-basil;bread;garlicmozzarella;guanciale;tomato
+basil;bread;garlic;mozzarella;guanciale;tomato
 basil;bread;garlic;guanciale;mozzarella;onion;tomato
 beef;egg;parmesan;spaghetti
 beef;blackpepper;egg;parmesan;spaghetti
@@ -57,7 +57,6 @@ basil;garlic;linguine;oil;parmesan;pinenuts
 basil;garlic;linguine;oil;parmesan;peccorino;pinenuts
 basil;garlic;linguine;oil;peccorino;pinenuts
 basil;chicken;garlic;linguine;oil;parmesan;pinenuts
-basil;chicken;garlic;linguine;oil;parmesan;peccorino;pinenuts
 basil;chicken;garlic;linguine;oil;peccorino;pinenuts
 guanciale;pecorino;spaghetti
 egg;eggplant;mozzarella;parmesan;ricotta;tomato
@@ -67,9 +66,6 @@ egg;eggplant;mozzarella;oil;parsley;ricotta;tomato
 butter;mushrooms;onion;parmesan;rice;stock;wine
 butter;mushrooms;onion;parmesan;parsley;rice;stock;wine
 butter;mushrooms;onion;parmesan;pepper;rice;stock;wine
-butter;mushrooms;onion;parmesan;parsley;pepper;rice;stock;wine
-butter;gorgonzola;parmesan;rice;shallots;stock;wine
-blackpepper;butter;gorgonzola;parmesan;rice;shallots;stock;wine
 butter;onion;rice;stock;wine
 butter;onion;parmesan;rice;stock;wine
 rice;stock;wine
@@ -99,11 +95,6 @@ basil;caper;olive;redpepper;spaghetti;tomato
 anchovy;basil;caper;olive;redpepper;spaghetti;tomato
 blackpepper;oil;parmesan;peccorino;spaghetti
 blackpepper;linguine;oil;parmesan;peccorino
-basil;garlic;guanciale;oil;parmesan;parsley;redpepper;spaghetti;tomato
-basil;garlic;guanciale;parmesan;parsley;redpepper;spaghetti;tomato
-basil;garlic;guanciale;oil;parsley;redpepper;spaghetti;tomato
-basil;garlic;guanciale;oil;parmesan;redpepper;spaghetti;tomato
-basil;garlic;guanciale;parmesan;redpepper;spaghetti;tomato
 basil;garlic;guanciale;parsley;redpepper;spaghetti;tomato
 basil;garlic;guanciale;oil;redpepper;spaghetti;tomato
 basil;garlic;guanciale;redpepper;spaghetti;tomato
@@ -130,7 +121,16 @@ garlic;linguine;oil;parsley;redpepper
 garlic;linguine;oil;parsley
 garlic;linguine;parsley;redpepper
 garlic;linguine;parsley
-crumbs;egg;eggplant;flour;mozzarella;oil;parmesan;tomato
 crumbs;egg;eggplant;flour;mozzarella;parmesan;tomato
-chicken;crumbs;egg;flour;mozzarella;oil;parmesan;tomato
 chicken;crumbs;egg;flour;mozzarella;parmesan;tomato
+bread;butter
+bread;butter;garlic
+bread;garlic;oil
+bread;butter;garlic;redpepper
+bread;garlic;oil;redpepper
+basil;bread;butter;garlic
+basil;bread;garlic;oil
+basil;bread;butter;garlic;redpepper
+basil;bread;garlic;oil;redpepper
+bread;mozzarella;tomato
+basil;bread;mozzarella;tomato

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /*
  * This is intended to be a template for future mechanic
@@ -16,6 +17,8 @@ public class Burn : Mechanic {
 	public const string DESCRIPTION = "Finish before time is out or you'll have a charred husk!";
 	public const bool INHERITABLE = false;				// An inheritable mechanic is one that is meant to act on a meal card
 	public CookTimer timer;								// The timer that counts down on burn. It'll handle all the countdown stuff!
+	private Text timerText;								// Where we draw how much time remains
+
 
 	/*
 	 * Constructs a "NAME" mechanic
@@ -24,12 +27,13 @@ public class Burn : Mechanic {
 	 */
 	public void init(Card parentCard) {
 		base.init(NAME, parentCard, DESCRIPTION, INHERITABLE);		// Call the initialisation function of the parent class
+		timerText = (Text) GameObject.FindGameObjectWithTag("BURNTEXT").GetComponent<Text>();	// Find the text!
 	}
 
 	public void update() {
 		// Using that short circuit AND. Whooee!
 		if (getActivated() && timer.getTimeRemaining() <= 0.0) {
-			// Send card to graveyard
+			Destroy (getParent ().gameObject);
 			Debug.Log("The card has been sent to the graveyard");	// Debug print until grave yard is sorted out!
 		}
 	}
@@ -54,6 +58,7 @@ public class Burn : Mechanic {
 	// If there is still time left when the card is combined, we augment the stats of the parent
 	public override void onCombine () {
 		timer.stop();															// Stops the timer!
+		timerText.text = "";
 	}
 
 
@@ -63,6 +68,7 @@ public class Burn : Mechanic {
 			activate();															// Mechanic will activate the first time it is added to stack
 		}
 		timer = getParent().gameObject.AddComponent<CookTimer>() as CookTimer;	// Adding the timer.
+		timer.init(timerText);
 	}
 
 	// Contains any effects that will happen when play is over

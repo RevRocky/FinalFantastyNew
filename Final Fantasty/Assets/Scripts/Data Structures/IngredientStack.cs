@@ -116,6 +116,13 @@ public class IngredientStack {
 
 	// Adds some hefty negative stats to the meals created by the ingredients
 	private byte[] combineStatsBad(byte[] baseStats) {
+		// Heavily penalise meal dumps
+		byte penaltyThreshold = 5;
+		if ((byte) theCards.Count > penaltyThreshold) {
+			for (int i = 0; i < NUM_STATS; i++) {
+				baseStats [i] -= (byte) (baseStats [i] - penaltyThreshold);
+			}
+		}
 		return baseStats; 								// TODO What stat penalties should be applied
 	}
 

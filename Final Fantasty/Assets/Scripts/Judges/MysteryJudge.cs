@@ -9,6 +9,7 @@ public class MysteryJudge : Judge {
 	private static float MYSTERY_STAT_MIN = 0.66f;
 	private static float MYSTERY_STAT_MAX = 1.75f;
 	public static float[] STAT_MODS = { 0, 0, 0, 0, 0, 0 };	//
+	private static int JUDGE_ID = -1;
 
 	public static string IMAGE_NAME = "Mystery_Sprite";
 	public static string NAME = "???";
@@ -16,12 +17,12 @@ public class MysteryJudge : Judge {
 	// Passes some values up to the judge constructor
 	// This constructor will never be called
 	public override void init() {
-		base.init(STAT_MODS, NAME, IMAGE_NAME); 	// Pass up the food chain
+		base.init(STAT_MODS, NAME, IMAGE_NAME, JUDGE_ID); 	// Pass up the food chain
 	}
 
 	// An init function that passes up the supplied stat modifiers
 	public void init(float[] statMods){
-		base.init (statMods, NAME, IMAGE_NAME);
+		base.init (statMods, NAME, IMAGE_NAME, JUDGE_ID);
 	}
 		
 
@@ -43,16 +44,16 @@ public class MysteryJudge : Judge {
 	public override string preGameTalk(){
 
 		// IF WE COULD MAKE THIS HAPPEN I would be so happy!
-		string[] phraseBook = {"... Surprise me, as I will do to you!"};
+		string[] phraseBook = {"Hit me with your best shot!", "A true chef can have all flavours blend into a symphony", "..."};
 		return phraseBook [Random.Range (0, phraseBook.Length)];
 	}
 
 	// This method handles the judge giving comments while they evaluate each meal.
 	public override string judgeComments(float mealScore, string mealName) {
-		if (mealScore < 10f) {
+		if (mealScore < 20f) {
 			return string.Format("I did not intend to be surprised in this fashion. For shame!", mealName);
 		}
-		else if (mealScore <= 15f && mealScore <= 20f) {
+		else if (mealScore <= 20f && mealScore <= 45f) {
 			return string.Format("This {0} is decent. Nothing special. I've had better. Thoug, I've also had worse", mealName);
 		}
 		else {
@@ -62,7 +63,7 @@ public class MysteryJudge : Judge {
 
 	// This method handles the dialogue the judge gives once they have decided whom they will award points to
 	public override string andTheWinnerIs(string chefName, string mealName, float mealScore) {
-		if (mealScore > 30.0f) {
+		if (mealScore > 35f) {
 			return string.Format ("I normally hate this part of the process, but your {0} have made giving you my favour" +
 				"quite easy!", mealName);
 		}

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public abstract class Judge : MonoBehaviour {
 	public string nameJudge;
 		
+	public int judgeID;
 	private string spriteLocation;
 	public const int NUM_STATS = 6;
 	public string name;
@@ -19,10 +20,11 @@ public abstract class Judge : MonoBehaviour {
 	public abstract void init();
 	
 	// Initialisation Function
-	public void init(float[] statModifiers, string name, string spriteLocation) {
+	public void init(float[] statModifiers, string name, string spriteLocation, int judgeID) {
 		this.statModifiers = statModifiers;	// Assigning a judges stat mods
 		this.name = name;
 		this.spriteLocation = spriteLocation;
+		this.judgeID = judgeID;
 	}
 
 	// This handles a judges dialogue before the game

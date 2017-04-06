@@ -81,8 +81,7 @@ public class DatabaseEntry {
 	public DatabaseEntry(string name, string type, string artLocation, List<string> mechanics, byte[] stats) {
 
 		// TODO Find a bunch of quotes about exploration!
-		string mistakeDescription = "We shall not cease from exploration, and the end of all our exploring "  
-									+ "will be to arrive where we started and know the place for the first time. - T.S. Elliot";
+		string mistakeDescription = "We shall not cease from exploration.";
 
 		// Seriously doe, fuck it. I'd rather have code repition then twist to C#'s evil clutches.
 		if (stats.Length != 6) {

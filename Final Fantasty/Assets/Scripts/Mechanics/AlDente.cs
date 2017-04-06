@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /*
  * Implements the AlDente functionality
@@ -18,7 +19,8 @@ public class AlDente : Mechanic {
 	public const string NAME = "AlDente";
 	public const string DESCRIPTION = "Combine this card into a meal before time is up for Great Rewards";
 	public const bool INHERITABLE = false;
-	
+	private Text timerText;
+
 	private CookTimer timer; 
 
 
@@ -29,6 +31,7 @@ public class AlDente : Mechanic {
 	 */
 	public void init(Card parentCard) {
 		base.init(NAME, parentCard, DESCRIPTION, INHERITABLE);		// Call the initialisation function of the parent class
+		timerText = (Text) GameObject.FindGameObjectWithTag("ALDENTETEXT").GetComponent<Text>();	// Find the text!
 	}
 
 	// This method will contain any effects that happen when a card is drawn into a player's hand
@@ -46,7 +49,8 @@ public class AlDente : Mechanic {
 		if (!getActivated()){
 			activate();															// Mechanic will activate the first time it is added to stack
 		}
-		timer = getParent().gameObject.AddComponent<CookTimer>() as CookTimer;	// Adding the timer.														// Nothing happens if we stack a card!
+		timer = getParent().gameObject.AddComponent<CookTimer>() as CookTimer;	// Adding the timer. Nothing happens if we stack a card!
+		timer.init(timerText);
 	}
 
 	// If there is still time left when the card is combined, we augment the stats of the parent
@@ -54,7 +58,8 @@ public class AlDente : Mechanic {
 		timer.stop();											// Stop the timer
 		if (timer.getTimeRemaining() > 0.0) {
 			getParent().setStats(boostStats());					// Replace card stats with boosted ones
-		}		
+		}
+		timerText.text = "";
 	}
 	// Boosts the stats of the parent card by 1 each. 2 for the highest stat
 	// Accurate only for a test implementation

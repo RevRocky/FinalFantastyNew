@@ -171,8 +171,8 @@
 		<Type>Ingredient</Type>
 		<Name>Parsley</Name>
 		<Description>Sage, Rosemary and Thyme</Description>
-		<Stats>(0, 0, 1, 0, 0, 0)</Stats>
-		<Mechanics>('Flavour Enhancer', '')</Mechanics>
+		<Stats>(1, 1, 1, 1, 1, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
 		<IngredientTag>parsley</IngredientTag>
 		<Tag>parsley</Tag>
 		<Art>Parsley.jpg</Art>
@@ -954,7 +954,7 @@
 		<Stats>(1, 0, 1, 0, 0, 2)</Stats>
 		<Mechanics>('', '')</Mechanics>
 		<IngredientTag></IngredientTag>
-		<Tag>basil;bread;garlicmozzarella;guanciale;tomato</Tag>
+		<Tag>basil;bread;garlic;mozzarella;guanciale;tomato</Tag>
 		<Art>BruschettaGuanciale.jpg</Art>
 		<PictureLocation>MEA010</PictureLocation>
 		<Step-Up></Step-Up>
@@ -2325,6 +2325,138 @@
 		<Tag>chicken;crumbs;egg;flour;mozzarella;parmesan;tomato</Tag>
 		<Art>ChickenParm.jpg</Art>
 		<PictureLocation>MEA039</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Bread and Butter</Name>
+		<Description>A culinary master piece</Description>
+		<Stats>(0, 0, 1, 0, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>bread;butter</Tag>
+		<Art>BreadButter.jpg</Art>
+		<PictureLocation>MEA040</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Garlic Bread</Name>
+		<Description>Who doesn’t love garlic bread?</Description>
+		<Stats>(1, 0, 0, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>bread;butter;garlic</Tag>
+		<Art>GarlicBread.jpeg</Art>
+		<PictureLocation>MEA041</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Garlic Bread</Name>
+		<Description>Who doesn’t love garlic bread?</Description>
+		<Stats>(1, 0, 0, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>bread;garlic;oil</Tag>
+		<Art>GarlicBread.jpeg</Art>
+		<PictureLocation>MEA041</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Garlic Bread</Name>
+		<Description>Who doesn’t love garlic bread?</Description>
+		<Stats>(1, 0, 0, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>bread;butter;garlic;redpepper</Tag>
+		<Art>GarlicBread.jpeg</Art>
+		<PictureLocation>MEA041</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Garlic Bread</Name>
+		<Description>Who doesn’t love garlic bread?</Description>
+		<Stats>(1, 0, 0, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>bread;garlic;oil;redpepper</Tag>
+		<Art>GarlicBread.jpeg</Art>
+		<PictureLocation>MEA041</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Garlic Bread</Name>
+		<Description>Who doesn’t love garlic bread?</Description>
+		<Stats>(1, 0, 0, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;bread;butter;garlic</Tag>
+		<Art>GarlicBread.jpeg</Art>
+		<PictureLocation>MEA041</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Garlic Bread</Name>
+		<Description>Who doesn’t love garlic bread?</Description>
+		<Stats>(1, 0, 0, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;bread;garlic;oil</Tag>
+		<Art>GarlicBread.jpeg</Art>
+		<PictureLocation>MEA041</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Garlic Bread</Name>
+		<Description>Who doesn’t love garlic bread?</Description>
+		<Stats>(1, 0, 0, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;bread;butter;garlic;redpepper</Tag>
+		<Art>GarlicBread.jpeg</Art>
+		<PictureLocation>MEA041</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Garlic Bread</Name>
+		<Description>Who doesn’t love garlic bread?</Description>
+		<Stats>(1, 0, 0, 1, 0, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;bread;garlic;oil;redpepper</Tag>
+		<Art>GarlicBread.jpeg</Art>
+		<PictureLocation>MEA041</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Pizza Margherita</Name>
+		<Description>Hint: There’s no other pizzas!</Description>
+		<Stats>(2, 0, 0, 0, 1, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>bread;mozzarella;tomato</Tag>
+		<Art>Margharita.jpg</Art>
+		<PictureLocation>MEA042</PictureLocation>
+		<Step-Up></Step-Up>
+	</Card>
+	<Card>
+		<Type>Meal</Type>
+		<Name>Pizza Margherita</Name>
+		<Description>Hint: I sometimes lie</Description>
+		<Stats>(2, 0, 0, 0, 1, 1)</Stats>
+		<Mechanics>('', '')</Mechanics>
+		<IngredientTag></IngredientTag>
+		<Tag>basil;bread;mozzarella;tomato</Tag>
+		<Art>Margharita.jpg</Art>
+		<PictureLocation>MEA042</PictureLocation>
 		<Step-Up></Step-Up>
 	</Card>
 </Database>

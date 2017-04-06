@@ -49,7 +49,9 @@ public class JudgeManager : MonoBehaviour {
 
 		// We only generate the first two judges in the following manner
 		for (i = 0; i < NUM_JUDGES - 1; i++) {
-			randJudge = (int) Random.Range(0, 5);	// TODO: Change to 6 once the final judge is implemented
+			do {
+				randJudge = (int) Random.Range(0, 5);	// TODO: Change to 6 once the final judge is implemented
+			} while (i == 1 && judgeList[0].judgeID == randJudge);			//judge already exists
 			switch (randJudge) {
 				case(0):
 					newJudge = gameObject.AddComponent<Sweet> () as Sweet;

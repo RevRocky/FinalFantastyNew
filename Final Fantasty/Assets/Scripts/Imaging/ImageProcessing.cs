@@ -75,7 +75,7 @@ public class ImageProcessing{
 		// TODO Investigate further why Unity crashes using custom fonts
 		var Bitter = new System.Drawing.Font("Bitter", 32);
 		var Bitter_Bold = new System.Drawing.Font("Bitter", 50, System.Drawing.FontStyle.Bold);
-		var Bitter_Italic = new System.Drawing.Font("Bitte", 32, System.Drawing.FontStyle.Italic);
+		var Bitter_Italic = new System.Drawing.Font("Bitte", 27, System.Drawing.FontStyle.Italic);
 
 		// Loading pictures and fonts
 		string applicationPath = Application.dataPath;	// Avoiding repeated getter calls
@@ -144,41 +144,44 @@ public class ImageProcessing{
 
 	// Draws each stat pictogramme correctly formatted on the card!
 	private static Bitmap drawStats(Bitmap cardImage, byte[] stats) {
-		Point pictogrammeTopLeft = new Point((int) (PICTOGRAMME_CENTRE.X - ((arraySum(stats) * PICTOGRAMME_SIZE.X)/2)), PICTOGRAMME_CENTRE.Y);
+		Point pictogrammeTopLeft = new Point((int) (PICTOGRAMME_CENTRE.X - (((2*countNonZero(stats)) * PICTOGRAMME_SIZE.X)/2)), PICTOGRAMME_CENTRE.Y);
 		int stat;	// Tracking the current stat
 		Bitmap statImage;
 		var drawer = System.Drawing.Graphics.FromImage (cardImage);		// Allows us to draw on the image
-		byte statPoint;													// Tracks the cu
+		byte statPoint;													// Tracks the current stat
+		var statFont = new System.Drawing.Font("Bitter", 29, System.Drawing.FontStyle.Italic);	// Creating a new font!
+		SolidBrush blackBrush = new SolidBrush (System.Drawing.Color.Black);	// Black like my... erm... python. Rex.
 
-		// Loop through each stat, open and paste on it's picture
+		// Loop through each stat, open and paste on it's picture and it's value if there is any stat points there
 		for (stat = 0; stat < NUM_STATS; stat++){
-			if (WINDOWS) {
-				string properWindowsPath = Application.dataPath.Replace ('/', '\\');		// Correct operator!
-				statImage = (Bitmap)Bitmap.FromFile (properWindowsPath + Path.DirectorySeparatorChar
-				+ STAT_IMAGE_DIRECTORY + STAT_IMAGES [stat]);
-			}
-			else {		// We don't need windows file pathing!
-				statImage = (Bitmap)Bitmap.FromFile (Application.dataPath + Path.DirectorySeparatorChar
+			statPoint = stats [stat];
+			if (statPoint > 0) {
+				if (WINDOWS) {
+					string properWindowsPath = Application.dataPath.Replace ('/', '\\');		// Correct operator!
+					statImage = (Bitmap)Bitmap.FromFile (properWindowsPath + Path.DirectorySeparatorChar
 					+ STAT_IMAGE_DIRECTORY + STAT_IMAGES [stat]);
-			}
-			// Loop through each stat point and paste its picture!
-			for (statPoint = 0; statPoint < stats[stat]; statPoint ++) {
+				} else {		// We don't need windows file pathing!
+					statImage = (Bitmap)Bitmap.FromFile (Application.dataPath + Path.DirectorySeparatorChar
+					+ STAT_IMAGE_DIRECTORY + STAT_IMAGES [stat]);
+				}
 				drawer.DrawImage (statImage, pictogrammeTopLeft);	// Draw the pictogramme
 				pictogrammeTopLeft.X += PICTOGRAMME_SIZE.X;			// Move to where we draw the next pictogramme
+				drawer.DrawString(statPoint.ToString(), statFont, blackBrush, pictogrammeTopLeft);
+				pictogrammeTopLeft.X += PICTOGRAMME_SIZE.X;
 			}
 		}
 		return cardImage;
-
-				
 	}
 
 	// This really should be genericised
-	private static byte arraySum(byte[] array){
-		byte sum = 0;
+	private static byte countNonZero(byte[] array){
+		byte count = 0;
 		for (int i = 0; i<NUM_STATS; i++) {
-			sum += array [i];
+			if (array [i] != 0) {
+				count += 1;
+			}
 		}
-		return sum;
+		return count;
 	}
 				
 	// Scales down a font to fit a given text to a certain area

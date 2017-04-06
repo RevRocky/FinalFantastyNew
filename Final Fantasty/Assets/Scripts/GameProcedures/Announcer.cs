@@ -22,36 +22,33 @@ public class Announcer : MonoBehaviour
 
 	// Returns the text when the judge is revealed!
 	public string judgeRevealText() {
-		return "Contestants, welcome to Final Fantasty, the lightning fast cookoff where each contestant willl have three minutes and" +
-			"only a limited ingredient pool to come up a meal that will wow our judges. First Let us meet our two contestants"; //need revision
+		return "Contestants, welcome to Final Fantasty, the lightning-fast cookoff where each contestant will have three minutes and " +
+			"only a limited ingredient pool to come up a meal that will wow our judges. First, let us meet our two contestants..."; //need revision
 	}
 
 	// The text that will display before any judging begins
 	public string preJudgingText() {
-		return "Long has man pondered who would come out on top in a battle of culinary wits. Would it be man... or machine. Today we find out!";
+		return "Long has man pondered who would come out on top in a battle of culinary wits. Would it be man... or machine? Today we find out!";
 	}
 
 	// This is some text injected in the middle of each judge to keep the flow feeling right
-	public string judgeRevealBridgeText(string judgeName, int i){
+	public string judgeRevealBridgeText(int judgeID, int i){
 		string ordinal = numberToOrdinal(i);	// I want proper ordinal values
-
-		if (judgeName == "Cap'n Blondemane") {
-			return string.Format("Our {0} judge, a true daughter of the seas, Captain Blondemane!", ordinal);
-		}
-		else if (judgeName == "Sour") {
-			return string.Format("The {0} judge on the panel, an enigma in a sweater, Jan Van Hansen!", ordinal);
-		}
-		else if (judgeName == "Gustavo") {
-			return string.Format("The {0} judge on our panel, the Spanish wonder, Chef Gustavo!", ordinal);
-		}
-		else if (judgeName == "Sugar Belle") {
-			return string.Format("The {0} judge today, the master of baking herself, Sugar Belle!", ordinal);
-		}
-		else if (judgeName == "Hiroshi Tanaka") {
-			return string.Format("The {0} judge today, Hailing from Japan, Chef Tanaka!", ordinal);
-		}
-		else {
-			return string.Format("And finally, the Master Chef. With 39 Michelin Stars, he is the ultimate taste maker!");
+		switch(judgeID){
+			case 0: 
+				return string.Format ("Our {0} judge, the international heartthrob, everyone's bae, Tuzlu! ", ordinal);
+			case 1:
+				return string.Format ("The {0} judge on the panel, the French puzzle master Enigmelle", ordinal);
+			case 2:
+				return string.Format ("The {0} judge on our panel, the Spanish wonder, Chef Gustavo!", ordinal);
+			case 3:
+				return string.Format ("The {0} judge today, erm... it says here... Sweet Gustavo?", ordinal);
+			case 4:	
+				return string.Format ("The {0} judge today, having just flown in from 'the north' it's Jane!", ordinal);
+			case -1:
+				return string.Format ("And finally, the Master Chef! With 39 Michelin Stars, he is the ultimate taste maker!");
+			default:
+				return string.Format ("We goofed!");
 		}
 
 	}
@@ -79,6 +76,11 @@ public class Announcer : MonoBehaviour
 		else {
 			return i.ToString() + "th";
 		}
+	}
+
+	// A string which will provide a clear transition 
+	public string transition(string player, string meal) {
+		return string.Format ("The judges will now taste {0}'s {1}", player, meal);
 	}
 
 	// Kind of gross but I have to make it respond to ALL OF the scenarios

@@ -16,13 +16,13 @@ import copy
 CARD_ART_DIRECTORY = ".." + os.sep + ".." + os.sep + "Assets" + os.sep + "Resources" + os.sep + "Art"                # Path to Card Art!
 CARD_DIRECTORY = CARD_ART_DIRECTORY + os.sep + "Cards"                                                                 # Path to Final Card Images
 STAT_IMAGE_DIRECTORY = CARD_ART_DIRECTORY + os.sep + "Stats"
-STAT_IMAGES = ["Sweet.png", "Sour.png", "Bitter.png", "Spicy.png", "Salty.png", "Umami.png"]
+STAT_IMAGES = ["Sweet.png", "Sour.gif", "Bitter.png", "Spicy.png", "Salty.png", "Umami.png"]
 
 MECHANICS_WRITEUPS = ".." + os.sep + ".." + os.sep + "Docs" + os.sep + "Docs" + "mechanics.txt"
 
 CARD_FONT = ImageFont.truetype("Bitter-Regular.otf", size=32)
 CARD_FONT_BOLD = ImageFont.truetype("Bitter-Bold.otf", size=50)
-CARD_FONT_ITALIC = ImageFont.truetype("Bitter-Italic.otf", size=30)
+CARD_FONT_ITALIC = ImageFont.truetype("Bitter-Italic.otf", size=28)
 
 BLACK = (0, 0, 0)
 
@@ -99,7 +99,7 @@ def overlay_pictogrammes(card, stats):
 
     # Getting rid of transparency on background
     if card.mode != "RGB":
-        card = card.convert(mode="RGB")
+        card = card.convert(mode="RGBA")
 
     pictogramme_top_left = [PICTOGRAMME_CENTRE[0] - int((sum(stats) * PICTOGRAMME_SIZE[0]) // 2),
                             PICTOGRAMME_CENTRE[1]]
@@ -109,7 +109,7 @@ def overlay_pictogrammes(card, stats):
         if stat_pic.mode != "RGBA":
             stat_pic = stat_pic.convert(mode="RGBA")          # Ensuring we're in the right mode!
         for i in range(int(stats[stat])):
-            card.paste(stat_pic, tuple(pictogramme_top_left))
+            card.paste(stat_pic, tuple(pictogramme_top_left), mask=stat_pic)
             pictogramme_top_left[0] += PICTOGRAMME_SIZE[0] # Moving to where we draw the next pictogramme
     return card
 
